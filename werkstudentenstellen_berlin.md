@@ -10,6 +10,27 @@ arbeiten, Beziehung aufbauen → danach intern ein **Praxissemester in der Schwe
 
 ---
 
+## Verifizierte Funde (Stand Juni 2026) – konkrete Rollen-Typen je Firma
+> Hinweis ehrlich: Einzel-Ausschreibungen rotieren in Tagen/Wochen. Mehrere unten waren beim
+> Nachprüfen bereits „besetzt". Sie belegen aber, dass diese Firmen **wiederkehrend** passende
+> Werkstudenten-Rollen in Berlin posten. Aktuell offene Stellen → über die Firmen-Portale (server-aktuell).
+
+| Firma (Berlin + CH) | Gefundene Werkstudenten-Rollen in Berlin | Fit |
+|---|---|---|
+| Schindler (CH: Luzern) | Power BI · Data Management & BI · Ersatzteillogistik (Excel/SAP) · HR-Recruiting | ⭐⭐⭐ |
+| Stadler (CH: Bussnang) | Einkauf · Projekteinkauf (Materialwirtschaft) · Zulassung | ⭐⭐⭐ |
+| Siemens (CH: Zug) | Projektierung Bahntechnik (explizit „Wirtschaftsingenieurwesen") · PMO | ⭐⭐ |
+| KPMG (CH: Zürich) | Werkstudent Business Intelligence | ⭐⭐ |
+
+**Zuverlässige Live-Portale (zeigen die aktuell offenen Stellen):**
+- Schindler – alle Stellen (akt. 4 Berlin-Jobs): https://job.schindler.com/viewalljobs/?locale=de_DE
+- Schindler auf Indeed (Berlin): https://de.indeed.com/q-schindler-l-berlin-jobs.html
+- Stadler – offene Stellen: https://www.stadlerrail.com/de/karriere/offene-stellen/
+- Siemens Werkstudent Berlin (Indeed): https://de.indeed.com/q-siemens-werkstudent-l-berlin-jobs.html
+- KPMG Karriere: https://jobs.kpmg.de/
+
+---
+
 ## ⭐ Top-Fit für dein Profil (kaufmännisch + WI + SAP/Excel)
 
 ### 1. Stadler (Stadler Pankow GmbH) — Berlin-Pankow ↔ CH-HQ Bussnang/St. Gallen
