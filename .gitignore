@@ -1,0 +1,5 @@
+output/*.pdf
+output/*.txt
+*.pyc
+__pycache__/
+.~lock*
