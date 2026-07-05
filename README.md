@@ -11,6 +11,8 @@ Skills sind ehrlich als „(Grundkenntnisse)" markiert (Lernplan siehe `lernplan
 - `lernplan.md` – kostenlose Ressourcen für „in Aneignung"-Skills
 - `scripts/build_docs.py` – erzeugt die DOCX-Dateien (datengetrieben)
 - `output/` – fertige Word-Dateien
+- `english_exam/` – Vorbereitungs-Kit für die mündliche Englisch-Prüfung M3Ws
+  (Musterantworten, Vokabeln, Diskussionsphrasen, 5-Tage-Lernplan)
 
 ## Erzeugte Dokumente (`output/`)
 - `Lebenslauf_Industrie.docx`
