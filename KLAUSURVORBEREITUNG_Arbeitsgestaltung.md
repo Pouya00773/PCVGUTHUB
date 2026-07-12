@@ -11,6 +11,43 @@
 
 ---
 
+# 🧠 Wie du das OHNE Unterlagen auswendig kannst
+
+> **Du darfst nichts mitnehmen – kein Problem.** Du musst **nicht** jede Ursache und **keine** Zahl auswendig können. Du brauchst nur **zwei Gerüste** im Kopf. Den Rest denkst du dir im Fall selbst aus.
+
+## Gerüst 1 — Die 4 Schritte für Aufgabe 1 (dein Rettungsanker)
+Schreib diese 4 Überschriften **immer zuerst** aufs Blatt, dann füllst du sie:
+
+1. **Analyse** → *messen* (Daten, Gefährdungsbeurteilung, Arbeitsanalyse) + *fragen* (Partizipation)
+2. **Ursachen** → die 6 Belastungsarten durchgehen (Gerüst 2)
+3. **Optimieren** → TOP/STOP (Substitution → Technik → Organisation → PSA)
+4. **Controlling + KVP** → KPIs messen + PDCA + Schulung & Anreize
+
+> 💡 **Merksatz:** „Erst **schauen**, dann **sammeln**, dann **TOP**, dann **dranbleiben**."
+
+## Gerüst 2 — Die 6 Belastungsarten (damit dir immer viele Ursachen einfallen)
+Statt 15 Einzellisten merkst du dir **6 Schubladen**. Im Fall gehst du jede durch und fragst: „Gibt's hier ein Problem?"
+
+1. **Körper** (physisch) → Heben, Zwangshaltung, statische Arbeit, Sitzen/Anthropometrie
+2. **Umgebung** (physikalisch) → Lärm, Klima/Hitze, Licht/Blendung, Vibration
+3. **Mental** (informatorisch) → Reizüberflutung, Vigilanz, schlechte MMI/Anzeigen
+4. **Psyche & Sozial** → Stress, Monotonie, Motivation (Herzberg/Vroom), Mobbing/Burnout/Boreout, Führung, Diversität/Sprache
+5. **Organisation** → Taktung/Zeitdruck, Schichtarbeit, lange Wege, Partialisierung (keine vollständige Tätigkeit)
+6. **Person** → Qualifikation/Unterweisung, Alter, Geschlecht, Gesundheit
+
+> 💡 **Eselsbrücke:** **„Kluge Unternehmen Machen Personal Optimal Produktiv"**
+> → **K**örper · **U**mgebung · **M**ental · **P**syche · **O**rganisation · **P**erson
+
+## So lernst du es (in ~4–5 Tagen)
+1. **Tag 1–2:** beide Gerüste auf ein **leeres Blatt** reproduzieren, bis es ohne Vorlage geht. Nicht lesen – aus dem Kopf **schreiben** (aktives Erinnern lernt 10× besser als Durchlesen).
+2. **Täglich:** die 20 Übungsfragen (Teil D) als Selbsttest – Frage lesen, selbst antworten, dann kontrollieren.
+3. **1× pro Tag:** einen erfundenen Fall nehmen (Callcenter · Lager · Baustelle · Büro · Küche) und die 4 Schritte **blind** durchspielen.
+4. **Laut erklären:** erklär jemandem (oder der Wand) das TOP-Prinzip und die 6 Belastungsarten. Wer's erklären kann, kann's.
+
+> ✅ **Kernbotschaft:** Die Klausur belohnt **Struktur + Breite**, nicht auswendige Details. Mit den 2 Gerüsten im Kopf kannst du **jeden** Fall auf 30 Punkte füllen.
+
+---
+
 # TEIL A — Das Antwort-Gerüst für Aufgabe 1 (30 Punkte)
 
 Du bekommst einen Unternehmensfall und bist der **Arbeitsgestalter**. Beantworte **immer in dieser Reihenfolge** – das ist genau die Logik, die der Prof in seinen Grundlagen-Vorlesungen aufbaut (Belastungs-Beanspruchungs-Konzept, balancierte Rationalisierung, Partizipation, TOP-Prinzip).
