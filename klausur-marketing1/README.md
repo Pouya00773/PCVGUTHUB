@@ -23,7 +23,10 @@ Vier-Tage-Vorbereitung auf die 90-Minuten-Klausur (2–3 Vorfragen + große Mark
 | `14_fehlerprotokoll-vorlage.md` | Protokoll + 15 Start-Regeln | ab Tag 1 |
 | `15_klausurtag-checkliste.md` | Ablauf am Klausurtag | Tag 4 / Klausurmorgen |
 
+## Musterlösungen (`musterloesungen/`)
+Vollständige Muster-Marktanalysen für alle 6 Übungs-Hauptaufgaben (Handtrockner, Pistenraupen, Blut, SPNV-Vergaben, Busse Europa, Ampeln/Verkehrsleittechnik) — im realistischen Klausur-Zeitformat, mit Fermi-Rechnungen und begründeten Ausschlüssen. Nutzungsregeln in `musterloesungen/README.md`.
+
 ## Wichtigste Regel
-Mit „Kontrollversion" markierte Materialien (06, 09, 10-11) erst NACH dem eigenen Versuch ansehen — sonst geht der Active-Recall-Effekt verloren.
+Mit „Kontrollversion" markierte Materialien (06, 09, 10-11) und **alle Musterlösungen** erst NACH dem eigenen Versuch ansehen — sonst geht der Active-Recall-Effekt verloren.
 
 ✅ Alle Seitenangaben und Antwortgerüste sind gegen das Skript `SS26 MarkI v2.pdf` (228 S., PDF-Seiten) verifiziert; ergänzendes Lehrbuchwissen ist in den Karten als *(Zusatz)* markiert. Hinweis aus dem Skript (S. 2): Der Leistungsnachweis umfasst neben der Klausur (80 %) einen separaten Multiple-Choice-Test (20 %) — dafür ggf. zusätzlich Marktforschung (S. 15–35) überfliegen.
