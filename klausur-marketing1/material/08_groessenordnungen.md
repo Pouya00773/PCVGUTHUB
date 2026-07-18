@@ -1,6 +1,6 @@
 # Material 8 — Größenordnungsliste (Plausibilitätsanker)
 
-> Nur runde, verteidigbare Anker. Die mit ★ markierten stammen aus den Vorgaben der Vorlesung; Rest ist Allgemeinwissen als Startpunkt für Fermi-Schätzungen. **Skript-Check Tag 1: vom Professor genannte Zahlen ergänzen/ersetzen.**
+> Nur runde, verteidigbare Anker. Die mit ★ markierten stammen aus den Vorgaben der Vorlesung; Rest ist Allgemeinwissen als Startpunkt für Fermi-Schätzungen (Vorgehen laut Skript S. 42–44: Ableitung aus anderen Märkten ist ein legitimes Schätzverfahren).
 
 ## Basisgrößen ★ (laut Vorlesung)
 - Deutschland: **~80 Mio. Einwohner** ★

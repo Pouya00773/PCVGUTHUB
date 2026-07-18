@@ -1,6 +1,7 @@
 # Material 6 — Marktcluster-Matrix (Kontrollversion für Tag 3)
 
 > Erst selbst füllen (Cluster-Workshop Tag 3), dann vergleichen. Ziel-Test: jeden der 26 Listenmärkte in < 30 s einem Cluster zuordnen + 1 Besonderheit nennen.
+> Geschäftsarten-Zuordnung je Cluster gegen Skript S. 186–228 prüfen; Marktstruktur-Prüffragen aus S. 49–50 (öffentliches Gut? reguliert? zweiseitig? Eintrittsbarrieren? weitere Marktteilnehmer?) auf jedes Cluster anwenden.
 
 ## Cluster 1 — Kommunale/öffentliche Fahrzeugbeschaffung
 *Stadtbusse, Feuerwehrautos, Winterdienst-/Streufahrzeuge* · Exemplar: **Stadtbusse**

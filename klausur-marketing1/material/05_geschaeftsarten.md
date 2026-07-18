@@ -1,8 +1,9 @@
 # Material 5 — Die vier Geschäftsarten des Investitionsgütermarketings
 
-> ⚠️ Inhalte basieren auf der Standard-IGM-Lehre (Geschäftstypenansatz nach Backhaus/Voeth), wie sie Vorlesungen dieses Zuschnitts zugrunde liegt. **Skript-Check am Tag 1:** Folien suchen, Nummern eintragen `[Folie __]`, Abweichungen der Begriffe des Professors übernehmen.
+> ✅ Gegen das Skript verifiziert: Typologien S. 186–189 · Systemgeschäft S. 190–196 · Produktgeschäft S. 197–203 · Anlagengeschäft S. 204–216 (BOT-Exkurs S. 216) · Zuliefergeschäft S. 217–228.
+> Skript-Definitionen: Systemgeschäft = breiter Markt („Marktsegment", keine kundenindividuellen Lösungen) + **Sequenz von Transaktionen** mit Kompatibilitäts-/Standard-Abhängigkeiten und häufigen Lock-ins (S. 192). Anlagengeschäft: klassische Marketinginstrumente kaum vorhanden — im Vordergrund stehen die **Kompetenzen** Kalkulation, Beschaffung, Projektmanagement, Risiko-Controlling, Claim Management (S. 213–214).
 
-| Kriterium | **Produktgeschäft** | **Systemgeschäft** | **Anlagen-/Projektgeschäft** | **Zulieferer-/Integrationsgeschäft** |
+| Kriterium | **Produktgeschäft** `S. 197–203` | **Systemgeschäft** `S. 190–196` | **Anlagen-/Projektgeschäft** `S. 204–216` | **Zulieferer-/Integrationsgeschäft** `S. 217–228` |
 |---|---|---|---|---|
 | Marktlogik | vorgefertigte Standardprodukte für anonymen/breiten Markt | sukzessiver Kauf kompatibler Systembausteine (HW+SW+Service) | kundenindividuelle Großprojekte, Einzelauftrag | dauerhafte Lieferbeziehung zu einzelnen Abnehmern (OEM) |
 | Transaktions-/Beziehungsbezug | Einzeltransaktion | Beziehung zur **Systemarchitektur** (Lock-in über Kaufverbund) | Transaktion (Projekt), aber lange Abwicklung | enge, langfristige **Beziehung** zu wenigen Kunden |

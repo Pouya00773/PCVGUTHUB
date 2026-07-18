@@ -7,7 +7,7 @@ Klausur in vier Tagen: 90 Minuten, keine Hilfsmittel, 2–3 kurze Vorfragen (~30
 **Quellenlage:**
 - ✅ `Bsp Klausur…pdf` vollständig analysiert: 20 nummerierte Positionen, davon 6/7 und 8/9 durch Zeilenumbruch getrennte Einzelfragen → **exakt 18 Vorfragen** (deckungsgleich mit der Nutzerliste, keine übersehene Frage) + 4 Hauptaufgaben (Busse Europa, Flugzeugsitze weltweit, Pistenraupen, Ticketautomaten).
 - ✅ `Bsp Endpr…pdf` vollständig analysiert: 26 Märkte in 3 Schwierigkeitsgruppen (11 einfach / 9 kompliziert / 6 Dienstleistungen; Blut doppelt genannt).
-- ⚠️ `SS26 MarkI v2.pdf` (228 S.) wurde nicht hochgeladen. **Entscheidung des Nutzers: Plan ohne Skript finalisieren.** Das Seitenmapping ist deshalb als strukturierte Platzhalter-Tabelle angelegt und wird am Tag 1 in einem geführten 45-Minuten-Block selbst gefüllt (Anleitung in Abschnitt B). Es werden keine Skriptseiten erfunden.
+- ✅ `SS26 MarkI v2.pdf` (228 S., in `input/`) vollständig analysiert: Seitenmapping in Tabelle B verifiziert, alle Karteikarten gegen die Original-Folien abgeglichen und korrigiert.
 
 **Angenommene Lernzeit** (gekennzeichnete Annahme): ~7 h/Tag intensiv; Kompaktvariante 4 h/Tag. Tag 4 endet bewusst leichter; Klausur am Morgen nach Tag 4.
 
@@ -39,28 +39,29 @@ Nicht Faktenwissen über Märkte, sondern die **Methode der Marktanalyse unter Z
 
 ## B. Quellen- und Seitenmapping
 
-Skriptseiten `[S. __–__]` werden am **Tag 1, Block 1 (45 min)** gefüllt: Inhaltsverzeichnis des Skripts öffnen → je Zeile das passende Kapitel eintragen → pro Vorfrage per Stichwort (Foliensuche) die 1–3 Kernfolien notieren. Qualitätskriterium: Jede der 18 Vorfragen hat danach mindestens eine konkrete Folien-/Seitenangabe.
+**Verifiziert gegen `input/SS26 MarkI v2.pdf` (228 S.; Seitenangaben = PDF-Seiten).** Skriptstruktur: S. 1–8 Organisation · 9–11 Grundlagen · 12–35 Marktanalyse-Begriffe/Marktforschung · 37–44 Umfeld/Marktdefinition/Volumen · 46–64 Wettbewerb/Marktstruktur · 66–84 Entscheidungsprozesse · 85–88 Segmentierung · 90–113 Analysetechniken/Wertkette · 115–185 Marketinginstrumente · 186–228 Geschäftsarten. Hinweis S. 2: Leistungsnachweis = Klausur/Endpräsentation (80 %) + Multiple-Choice-Test (20 %).
 
 | # | Thema | Skript-Seiten | Musterfrage(n) | Prio | Lernmethode |
 |---|---|---|---|---|---|
-| 1 | Grundlagen/Besonderheiten IGM, abgeleitete Nachfrage | [S. __–__] | Basis aller Hauptaufgaben | B | Lesen → Feynman-Kurzerklärung |
-| 2 | Geschäftsarten (Produkt-, System-, Anlagen-, Zuliefergeschäft) | [S. __–__] | V12, V18, (V3) | **A** | Vier-Spalten-Übersicht + Blindabruf |
-| 3 | Marktabgrenzung, Wertschöpfungskette, Kundenidentifikation | [S. __–__] | Hauptaufgaben Schritt 1+3 | **A** | Anwendung an 3 Märkten |
-| 4 | Umfeldanalyse / Rahmenbedingungen | [S. __–__] | Hauptaufgaben Schritt 2 | B | Checkliste mit Wirkungspflicht |
-| 5 | Marktvolumen, Schätzverfahren, Bestand/Ersatzbedarf | [S. __–__] | Hauptaufgaben Schritt 4 | **A** | Fermi-Übungen schriftlich |
-| 6 | Wettbewerbs-/Marktstruktur, Eintrittsbarrieren, Five Forces | [S. __–__] | Hauptaufgaben Schritt 6, V7 | B | Ableitungslogik statt Auswendiglernen |
-| 7 | Erfahrungskurve, Lebenszyklus, Portfolio, strategische Tools | [S. __–__] | V1 | **A** (V1) / C (Rest) | Karteikarte + „Aussagekraft & Grenzen" |
-| 8 | Marktsegmentierung industriell (Makro/Mikro/Individualebene) | [S. __–__] | V6, V11 | **A** | Ebenen-Schema blind zeichnen |
-| 9 | Kundenwert-Segmentierung (ABC, CLV, Scoring, Portfolio) | [S. __–__] | V5 | **A** | Verfahrensliste + je 1 Satz Kritik |
-| 10 | Buying Center, Kaufklassen, Entscheidungsprozess | [S. __–__] | Hauptaufgaben Schritt 8 | **A** | Vergleichsmatrix über 3 Cluster |
-| 11 | Produktpolitik, Bundling, Dienstleistungen, TCO | [S. __–__] | V14, V15 | **A** | Karteikarten + Beispiel je Begriff |
-| 12 | Preispolitik, Preistransparenz, Ausschreibungen | [S. __–__] | V7 | **A** | Karteikarte + Marktbeispiel |
-| 13 | Kommunikationspolitik IGM, Messen, Referenzen | [S. __–__] | V2, V13 | **A** | Instrumentenliste geeignet/ungeeignet |
-| 14 | Distributionspolitik IGM | [S. __–__] | Hauptaufgaben Typ 2 | **A** | Ableitung aus Kundenzahl/Komplexität |
-| 15 | E-Procurement, ERP-Verknüpfung, Automatisierung Beschaffung | [S. __–__] | V8, V9, V10 | **A** | Trio gemeinsam lernen (ein Cluster) |
-| 16 | Lieferantenbewertung, Zertifizierung | [S. __–__] | V4 | B | Karteikarte |
-| 17 | Standards, Lock-in, zweiseitige Märkte, Netzeffekte | [S. __–__] | V3, V17 | **A** | Begriffspaar + je 2 Beispiele |
-| 18 | Claim Management (Anlagengeschäft) | [S. __–__] | V16, V18 | B | Karteikarte, an Anlagengeschäft hängen |
+| 1 | Grundlagen/Besonderheiten IGM, abgeleitete Nachfrage | S. 9–11 | Basis aller Hauptaufgaben | B | Lesen → Feynman-Kurzerklärung |
+| 2 | Geschäftsarten (Typologien 186–189; System 190–196; Produkt 197–203; Anlagen 204–216 inkl. BOT 216; Zulieferer 217–228) | S. 186–228 | V12, V18, (V3) | **A** | Vier-Spalten-Übersicht + Blindabruf |
+| 3 | Marktabgrenzung (Meffert-Kriterien + Wertkettenblick), Wertkette mit 6 Beispielen, Kundenidentifikation | S. 41; 95–107 (+ Übung 47) | Hauptaufgaben Schritt 1+3 | **A** | Anwendung an 3 Märkten |
+| 4 | Umfeldanalyse (Umweltsystem, aktuelle Herausforderungen) | S. 37–39 | Hauptaufgaben Schritt 2 | B | Checkliste mit Wirkungspflicht |
+| 5 | Marktvolumen: Quellen 42, Stabilität 43, Verfahren inkl. „abgeleiteter Bedarf = Neu- + Ersatzbedarf" 44 | S. 42–44 | Hauptaufgaben Schritt 4 | **A** | Fermi-Übungen schriftlich |
+| 6 | Wettbewerbs-/Marktstruktur, Eintrittsbarrieren 51, Kostenstrukturen 52–57 (Porter-Matrix 111; „Five Forces" kommt im Skript NICHT vor) | S. 46, 49–57 | Hauptaufgaben Schritt 6, V7 | B | Ableitungslogik statt Auswendiglernen |
+| 7 | Erfahrungskurve 108–109; Lebenszyklus 91; BCG 92–93; Ansoff 94; Porter 110–111; Business Model Canvas 112–113 | S. 90–94, 108–113 | V1 | **A** (V1) / C (Rest) | Karteikarte + „Aussagekraft & Grenzen" |
+| 8 | Marktsegmentierung: Ansätze 85, Anforderungen 86, mehrstufig O-/K-/I-Ebene (n. Gröne) 87 | S. 85–87 | V6, V11 | **A** | Ebenen-Schema blind zeichnen |
+| 9 | Kundenwert-Segmentierung (ABC/Long Tail, KDB, CLV, Scoring — je mit Skript-Kritik) | S. 88 | V5 | **A** | Verfahrensliste + je 1 Satz Kritik |
+| 10 | Buying Center 72–78 (Rollen 74, Gabelstapler-Beispiele 76–77), Entscheidungsphasen 66–71 | S. 66–78 | Hauptaufgaben Schritt 8 | **A** | Vergleichsmatrix über 3 Cluster |
+| 11 | Produktpolitik: Kern-/Zusatznutzen 115, Bundling 116, Dienstleistungen 117–127 (getrennte Vermarktung 125) | S. 115–128 | V14, V15 | **A** | Karteikarten + Beispiel je Begriff |
+| 12 | Preispolitik: Grundformen 130–139, B2B-Besonderheiten/Schattenkalkulation 140–141, Tendenzen/Markttransparenz 144 (+ 50) | S. 130–144 | V7 | **A** | Karteikarte + Marktbeispiel |
+| 13 | Kommunikationspolitik: Besonderheiten 146–147, Instrumente 148–149, Messen 150–153, Fachmedien 154–159, Online/KI 160–170 | S. 146–170 | V2, V13 | **A** | Instrumentenliste geeignet/ungeeignet |
+| 14 | Distributionspolitik: Besonderheiten 172–173, direkt/indirekt 174–177, Mehrkanal 178–180, Vertriebssteuerung 180–183 | S. 172–185 | Hauptaufgaben Typ 2 | **A** | Ableitung aus Kundenzahl/Komplexität |
+| 15 | E-Procurement/ERP/Automatisierung (Phasenmodell 79–80, Konsequenzen-Folie 81 mappt auf Distribution/Preis/Kommunikation) | S. 79–81 (+ 223) | V8, V9, V10 | **A** | Trio gemeinsam lernen (ein Cluster) |
+| 16 | Lieferantenbewertung (Bausteine 83; 2-Phasen-Kauf Zulieferer 223) | S. 82–83, 223 | V4 | B | Karteikarte |
+| 17 | Standards/Lock-in: Lock-in 58, Netzeffekte 59, Wechselkosten 60, Standards 62–63, Rechte 64; zweiseitiger Markt 49 | S. 49, 58–64 | V3, V17 | **A** | Begriffspaar + je 2 Beispiele |
+| 18 | Claim Management (Anlagengeschäft: Nachträge 210, Kompetenzen 213–214) | S. 210, 213–214 | V16, V18 | B | Karteikarte, an Anlagengeschäft hängen |
+| 19 | Marktforschung (Primär/Sekundär, Quellen, Datenaufbereitung) — keine Vorfrage; eher Stoff des separaten MC-Tests | S. 15–35 | — | C | nur Überblick |
 
 ---
 
@@ -78,7 +79,7 @@ Skriptseiten `[S. __–__]` werden am **Tag 1, Block 1 (45 min)** gefüllt: Inha
 
 | Zeit | Block | Konkrete Handlung | Quelle | Arbeitsergebnis | Selbsttest / Qualitätskriterium |
 |---|---|---|---|---|---|
-| 0:00–0:45 | Seitenmapping | Inhaltsverzeichnis SS26-Skript → Tabelle B füllen; je Vorfrage 1–3 Kernfolien notieren | Skript gesamt (nur navigierend, nicht lesend!) | Gefüllte Mapping-Tabelle | Jede der 18 Vorfragen hat Folienangabe |
+| 0:00–0:30 | Skript-Orientierung | Seitenmapping ist bereits erledigt (Tabelle B). Stattdessen: Skript anhand der Tabelle durchblättern (Kapitelstruktur einprägen) + 5 Stichproben: Karteikarte gegen Original-Folie halten (z. B. V13→S. 153, V15→S. 125) | Skript + Tabelle B | Kapitelstruktur im Kopf | 5/5 Stichproben: Karte deckt Folie ab; gewonnene 15 min → Puffer |
 | 0:45–1:45 | Masterstruktur | 10-Schritte-Schema (Abschnitt G) auf EINE Seite bringen; Operatoren-Checkliste (Material 2) schreiben | Musterklausur + Abschnitt G | **Material 1 + 2** | Nach 15 min Pause: Struktur blind aus dem Kopf nachzeichnen, ≥ 9/10 Schritte |
 | 1:45–3:00 | Abgrenzung/Wertkette/Umfeld/Volumen | Skriptkapitel zu Themen 3, 4, 5 (Tabelle B) aktiv lesen; parallel Formelliste + Größenordnungsliste anlegen | Skript [Themen 3–5] | **Material 7 + 8** (Formeln, Größenordnungen) | Feynman: „Warum ist beim Ticketautomaten der Betreiber nicht der Markt?" in 5 Sätzen erklären |
 | 3:00–3:45 | Fermi-Training | 3 Schätzungen vollständig rechnen (Annahmen→Formel→Rechnung→Bandbreite→Check): Stadtbusse D/Jahr; Aufzüge weltweit Neuinstallationen; Fahrkartenautomaten D Bestand | eigene Formeln | 3 saubere Rechnungen | Jede Rechnung hat alle 5 Elemente; Bandbreite statt Scheinpräzision |
@@ -263,7 +264,7 @@ Qualitätskriterium aller Materialien: ohne Skript verständlich, blind reproduz
 
 ## K. Offene Unsicherheiten (nicht aus Quellen klärbar)
 
-1. Skript `SS26 MarkI v2.pdf` lag nicht vor → alle Seitenangaben in Tabelle B sind bewusst Platzhalter; Füllung am Tag 1 (45 min) durch den Lernenden. Falls das Skript noch hochgeladen wird, fülle ich die Tabelle selbst.
+1. ~~Skript lag nicht vor~~ **Erledigt:** Skript liegt vor (`input/SS26 MarkI v2.pdf`), Tabelle B und alle Karteikarten sind gegen die Original-Folien verifiziert. Neue Erkenntnis aus S. 2: Der Leistungsnachweis besteht aus Klausur/Endpräsentation (80 %) **plus separatem Multiple-Choice-Test (20 %)** — dieser Plan deckt die 90-min-Klausur ab; für den MC-Test ggf. zusätzlich Marktforschung (S. 15–35) überfliegen.
 2. Ob in der echten Klausur 2 oder 3 Vorfragen kommen → beide Zeitschemata trainiert (Probeklausur 1 mit 3, Probeklausur 2 mit 2).
 3. Exakte Punktverteilung der echten Klausur → Annahme 70/30 gemäß Nutzerangabe.
 4. Ob die Hauptaufgabe wörtlich aus der 26er-Liste stammt oder ein strukturgleicher neuer Markt ist → Cluster-Training statt Auswendiglernen deckt beide Fälle ab.
@@ -271,8 +272,6 @@ Qualitätskriterium aller Materialien: ohne Skript verständlich, blind reproduz
 
 ---
 
-## Nächste Schritte nach Freigabe
+## Status
 
-1. Materialien 1, 2, 5, 7, 8 sofort als Markdown-Dateien erstellen (Tag-1-Startpaket), Material 4/3 als 18-Karten-Gerüst mit [Folien-Platzhaltern].
-2. Rubriken (H) als eigenes Bewertungsblatt exportieren.
-3. Sobald `SS26 MarkI v2.pdf` hochgeladen wird: Seitenmapping (Tabelle B) und Karteikarten-Folienverweise automatisch füllen und die Inhalte der 18 Antwortgerüste gegen die Original-Folien verifizieren.
+Alle Materialien sind erstellt (`material/01`–`15`), das Seitenmapping (Tabelle B) und alle 18 Antwortgerüste sind gegen `input/SS26 MarkI v2.pdf` verifiziert. Es kann direkt mit Tag 1 begonnen werden.

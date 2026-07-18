@@ -1,5 +1,6 @@
 # Material 7 — Formelbaukasten Marktvolumen
 
+> Skriptbasis `S. 42–44`: Quellen (Statistiken, Verbände, kumulierte Wettbewerberumsätze, Ableitung aus anderen Märkten, S. 42) · Stabilität der Rahmenbedingungen bestimmt Prognosesicherheit (S. 43) · Verfahren: Trendextrapolation, demographisch gestützte Schätzung, **„abgeleiteter Bedarf: bei Gebrauchsgütern Neu- und Ersatzbedarf"** (S. 44 — Skriptterminus für Formel 2+3!).
 > Jede Schätzung in 5 Elementen notieren: **Annahmen → Formel → Rechnung → Bandbreite → Plausibilitätscheck.**
 
 ## Universalformeln

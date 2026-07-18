@@ -1,5 +1,6 @@
 # Material 10+11 — Kommunikations-/Distributionsmatrix + geeignet/ungeeignet-Liste (Kontrollversion)
 
+> Skriptbasis: Kommunikationspolitik S. 146–170 (Instrumentenliste S. 149, Online-Werbung auf Industriemärkten S. 169), Distributionspolitik S. 172–185 (Entscheidungskriterien S. 177, Mehrkanalsysteme S. 178–179).
 > Am Tag 2 erst selbst erarbeiten, dann vergleichen. Ausschlüsse IMMER im 4-Schritt: ① ungeeignet ② warum ③ stattdessen ④ warum passend.
 
 ## Matrix nach Marktlogik

@@ -1,6 +1,6 @@
 # Material 9 — Buying-Center-Vergleichsmatrix (Kontrollversion)
 
-> **Didaktik:** Am Tag 2 erst selbst aus dem Skript erarbeiten, DANN mit dieser Version vergleichen. `[Folie __]` eintragen.
+> **Didaktik:** Am Tag 2 erst selbst aus dem Skript erarbeiten (Buying Center S. 66–78: Rollen S. 74, Gliederung der BC-Mitglieder S. 75, Beispiel-Entscheidungsprozesse Gabelstapler S. 76–77), DANN mit dieser Version vergleichen. Skript-Detail S. 50: Bei Aufzügen entscheiden i. A. die **Architekten** die Vergabe — Beispiel für „weitere relevante Marktteilnehmer" außerhalb von Anbieter und Kunde.
 
 | Dimension | **Kommunaler/öffentlicher Kunde** (Stadtbusse, Feuerwehr, Ampeln) | **Industrieller OEM** (Flugzeugsitze, Akkus, Kunststoffzähne-Handel) | **Privater Mittelständler/Betreiber** (Pistenraupen, Parkhaus, Gastro) |
 |---|---|---|---|

@@ -4,7 +4,7 @@ Vier-Tage-Vorbereitung auf die 90-Minuten-Klausur (2–3 Vorfragen + große Mark
 
 ## Einstieg
 1. **`LERNPLAN.md`** lesen — kompletter Vier-Tage-Plan (intensiv ~7 h/Tag + 4-h-Variante), Klausurdiagnose, Priorisierung, Strategie.
-2. Tag 1 startet mit dem **Seitenmapping**: Skript `SS26 MarkI v2.pdf` öffnen und in `LERNPLAN.md` (Tabelle B) sowie in den Karteikarten (`material/03-04_…`) die Folien-Platzhalter `[Folie __]` füllen (45 min).
+2. Tag 1 startet mit einer 30-min **Skript-Orientierung**: Das Seitenmapping (Tabelle B im LERNPLAN) ist bereits vollständig gegen `input/SS26 MarkI v2.pdf` verifiziert — nur noch Kapitelstruktur durchblättern und 5 Stichproben Karte↔Folie machen.
 
 ## Materialien (`material/`)
 | Datei | Inhalt | Einsatz |
@@ -26,4 +26,4 @@ Vier-Tage-Vorbereitung auf die 90-Minuten-Klausur (2–3 Vorfragen + große Mark
 ## Wichtigste Regel
 Mit „Kontrollversion" markierte Materialien (06, 09, 10-11) erst NACH dem eigenen Versuch ansehen — sonst geht der Active-Recall-Effekt verloren.
 
-⚠️ Die inhaltlichen Antwortgerüste basieren auf der Standard-IGM-Lehre und sind am Tag 1 gegen die Original-Folien des Skripts zu prüfen (Platzhalter `[Folie __]`). Formulierungen des Professors haben Vorrang.
+✅ Alle Seitenangaben und Antwortgerüste sind gegen das Skript `SS26 MarkI v2.pdf` (228 S., PDF-Seiten) verifiziert; ergänzendes Lehrbuchwissen ist in den Karten als *(Zusatz)* markiert. Hinweis aus dem Skript (S. 2): Der Leistungsnachweis umfasst neben der Klausur (80 %) einen separaten Multiple-Choice-Test (20 %) — dafür ggf. zusätzlich Marktforschung (S. 15–35) überfliegen.
