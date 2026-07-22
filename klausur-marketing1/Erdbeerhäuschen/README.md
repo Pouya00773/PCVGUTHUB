@@ -9,6 +9,10 @@
 | `01_marktanalyse_komplett.md` | Vollständige Marktanalyse entlang der 10-Schritte-Masterstruktur (für den Typ-1-Fall „Skizzieren Sie den Markt …") — inkl. beider Fermi-Rechnungen |
 | `02_schwerpunkt_segm_komm_distr.md` | Vertiefung Segmentierung + Kommunikation + Distribution (für den wahrscheinlichen Typ-2-Fall „… gehen Sie besonders ein auf …") |
 | `03_abgrenzung_fehler_geruest.md` | Abgrenzungs-Block (Typ-3-Fall), Liste typischer Fehler bei genau diesem Markt, 1-Minuten-Merkgerüst zum Auswendiglernen |
+| `04_probeklausur_A.md` | Komplette 90-min-Probeklausur: 3 Vorfragen + Erdbeerhäuschen als Vollanalyse (Typ 1) |
+| `05_probeklausur_B.md` | Komplette 90-min-Probeklausur: 2 Vorfragen + Erdbeerhäuschen mit Schwerpunkt Segmentierung/Kommunikation/Distribution (Typ 2) |
+
+**Übungsreihenfolge:** Erst Markt einmal blind selbst strukturieren → mit `01`/`02` vergleichen → dann Probeklausur A (Tag 3) und Probeklausur B (Tag 4) unter echten 90-Minuten-Bedingungen schreiben und mit der Rubrik bewerten.
 
 ## Die eine Sache, die du dir merken musst
 **Zuerst den Markt definieren — es gibt drei:**
