@@ -18,8 +18,8 @@ Klausurvorbereitung „Grundlagen der Automation" (HTW Berlin, WIW, SS 2026).
 
 Quelltexte in `lernskript/`:
 - `lernplan.md` – nach Punktdichte sortierte Lernreihenfolge
-- `lernskript_at.md` – Skript, neun Teile plus Formelsammlung
-- `karteikarten.md` – 128 Karten aus allen grün markierten Folienkästchen
+- `lernskript_at.md` – Skript, Teil 0 bis 9 plus Formelsammlung
+- `karteikarten.md` – 172 Karten aus allen grün markierten Folienkästchen
 - `erklaerungen.md` – die Kernthemen in Alltagssprache
 - `uebungsloesungen.md` – Übungen 1–7, Minimalformen rechnerisch geprüft
 - `aufgabentypen.md` – Klausur-Aufgabentypen mit Lösungsschema
@@ -34,9 +34,21 @@ python3 scripts/build_lernskript.py    # Word-Dateien
 python3 scripts/build_lernseite.py     # Lernseite
 ```
 
-Die grün hinterlegten Kästchen wurden maschinell aus den Folien gelesen
-(Füllfarbe der PDF-Zeichenobjekte), damit keines übersehen wird. Die
-Quell-PDFs sind bewusst nicht eingecheckt: urheberrechtlich geschütztes
+### Grüne Kästchen finden
+
+```bash
+pip install pymupdf
+python3 scripts/finde_gruene_kaesten.py <ordner-mit-den-folien-pdfs>
+```
+
+Zwei Verfahren, weil eines allein nicht reicht: Der **Vektorpass** liest die
+Füllfarbe der Zeichenobjekte, der **Pixelpass** rendert jede Folie und sucht
+grüne Flächen im Bild. Letzterer ist nötig, weil ein erheblicher Teil der Kästen
+als Rastergrafik eingebettet ist. Das Skript meldet zusätzlich, wo die
+aufgedruckte Foliennummer von der PDF-Seite abweicht — in den Kapiteln 2 und 2.1
+läuft sie um bis zu drei Folien vor.
+
+Die Quell-PDFs sind bewusst nicht eingecheckt: urheberrechtlich geschütztes
 Vorlesungsmaterial, und die Markdown-Quellen tragen den Inhalt.
 
 ## Erzeugte Dokumente (`output/`)

@@ -169,7 +169,32 @@ Zuordnungstabelle.
 
 ---
 
-## Block 7 — Systeme und Signale
+## Block 7 — Grundlagen aus Kapitel 1
+
+Reine Definitionsfragen, dafür sehr viele davon. Kapitel 1 trägt **keine**
+handschriftlichen Klausurmarkierungen, deshalb steht es hier hinten — nicht weil
+es unwichtig wäre, sondern weil es keine belegte Priorität hat.
+
+Lesen: Lernskript Teil 0, Erklärung „Die Automatisierungspyramide".
+
+Können musst du:
+
+- Die vier Grunddefinitionen wörtlich: Automatisierung, System, Prozess, Automat
+- Offen, geschlossen, abgeschlossen unterscheiden
+- Die sieben Ziele der Automation mit je einem Beispiel
+- Basisaufgaben Automation gegen Basisaufgaben Information trennen
+- Prozessleitsystem definieren und die fünf Ebenen der Pyramide von oben nach
+  unten benennen, mit den Abkürzungen ERP, MES, SCADA, PLC
+- Die vier industriellen Revolutionen mit ihren Jahreszahlen
+- Kognitive, assoziative und klassische Steuerungsebene mit harter gegen weicher
+  Echtzeit
+
+**Gut abfragbar sind die Jahreszahlen:** 1784 Webstuhl, 1870 Fließband, 1941 Z3,
+1968/69 erste SPS „Modicon 084" von Richard E. Morley, 1975 TDC2000 von Honeywell.
+
+---
+
+## Block 8 — Systeme und Signale
 
 Definitionsfragen. Am wenigsten Rechenaufwand, gut für kurze Lerneinheiten
 zwischendurch.
@@ -187,11 +212,14 @@ Können musst du:
 - Die drei Stabilitätsfälle am Kugelbild
 - Blockschaltbild: drei Verkettungsarten, Rückwirkungsfreiheit
 - Abtastung gegen Quantisierung, Aliasing
+- **Shannon-Nyquist-Abtasttheorem** mit Formel: f_A > 2·f_max
+- Die exakten Definitionen von Kausalität, Zeitinvarianz und Linearität — sie
+  stehen wörtlich in den grünen Kästen und sind gut abfragbar
 - Signale in geschlossener Darstellung (Kap. 2.1/30, klausurrelevant)
 
 ---
 
-## Block 8 — Digitaltechnik-Grundlagen und Hazards
+## Block 9 — Digitaltechnik-Grundlagen und Hazards
 
 Teils Auswendiglernen, teils Verständnis.
 
@@ -230,8 +258,7 @@ Nichts Neues mehr anfangen.
 
 ---
 
-## Was noch fehlt
+## Vollständigkeit
 
-**Kapitel 1** der Vorlesung liegt nicht vor; die Foliensätze beginnen bei Kapitel
-2. Wenn es prüfungsrelevant ist, besorge es und melde dich — dann ergänze ich
-Skript und Karten.
+Alle neun Foliensätze (Kapitel 1 bis 7), zehn Handouts und die Übungsblätter 1
+bis 7 sind eingearbeitet. Es fehlt nichts mehr.

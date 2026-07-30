@@ -8,9 +8,10 @@ Der Text ist eigenständig formuliert. Fundstellen sind als „Kap. 3/58" notier
 und meinen Foliensatz/Foliennummer — dort stehen die Abbildungen, die hier aus
 urheberrechtlichen Gründen nicht abgedruckt sind.
 
-> **Hinweis zur Vollständigkeit:** Kapitel 1 der Vorlesung liegt nicht vor. Die
-> Foliensätze beginnen bei Kapitel 2. Falls Kapitel 1 prüfungsrelevant ist, muss
-> es ergänzt werden.
+> **Fundstellen meinen die aufgedruckte Foliennummer**, nicht die Seite im PDF.
+> In den Kapiteln 2 und 2.1 laufen beide auseinander: Dort liegt die gedruckte
+> Nummer um bis zu drei Folien vor der PDF-Seite. Maßgeblich ist immer die Zahl
+> unten rechts auf der Folie.
 
 ## Was laut Foliensatz klausurrelevant ist
 
@@ -19,7 +20,7 @@ markiert. Sie bilden die Prioritätenliste beim Lernen.
 
 | Thema | Fundstelle | Markierung |
 |---|---|---|
-| Blockschaltbild eines Systems aufstellen | Kap. 2/12 | klausurrelevant |
+| Blockschaltbild eines Systems aufstellen | Kap. 2/13 | klausurrelevant |
 | Signale in geschlossener Darstellung angeben | Kap. 2.1/30 | klausurrelevant (doppelt betont) |
 | Verknüpfungen mit Konstanten (Regeln 1–18) | Kap. 3/12–13 | klausurrelevant |
 | Anzahl möglicher Verknüpfungen, K = 2^n und V = 2^K | Kap. 3/29 | klausurrelevant, „max. 3 Variablen wahrscheinlich" |
@@ -43,6 +44,133 @@ beim Weg von der disjunktiven zur konjunktiven Minimalform.
 Auf Übungsblatt 1 ist zusätzlich das Klausurformat notiert: *„Ein Schaltplan wird
 vorgegeben und soll analysiert werden. Daraus sollen wir eine Wahrheitstabelle und
 ein KV-Diagramm darstellen."* Das ist der wahrscheinlichste Aufgabentyp überhaupt.
+
+---
+
+## Teil 0 — Was Automatisierung ist
+
+Kapitel 1 legt die Begriffe fest, mit denen der Rest der Vorlesung arbeitet. Es
+trägt keine handschriftlichen Klausurmarkierungen, besteht aber fast vollständig
+aus Definitionen — und die sind gut abfragbar.
+
+### Die vier Grunddefinitionen
+
+**Automatisierung** (Kap. 1/8) — durch Automatisierung werden dynamische Prozesse
+in ihrem Verlauf **erfasst** und derart **gezielt beeinflusst**, dass sie
+vorgegebene Aufgaben und Funktionen **selbsttätig** erfüllen.
+
+**System** (Kap. 1/9) — ein aus mehreren Einzelteilen zusammengesetztes Ganzes;
+die Gesamtheit von Elementen, die miteinander verbunden sind und dadurch als eine
+aufgaben-, sinn- oder zweckgebundene Einheit angesehen werden können.
+
+**Prozess** (Kap. 1/11) — die Gesamtheit von aufeinander einwirkenden Vorgängen
+und Veränderungen in einem System, durch die Materie, Energie oder Information
+umgeformt, transportiert oder gespeichert wird. Ein **technischer Prozess** ist
+die Gesamtheit der Vorgänge in einer technischen Anlage.
+
+**Automat** (Kap. 1/12) — eine Maschine, die vorbestimmte Abläufe selbsttätig
+ausführt. **Automatik** ist die Vorrichtung, die einen Vorgang steuert und regelt.
+Arbeitet ein Automat rein auf Informationsebene, spricht man von einem **Agenten**
+— Software in Form eines Programmcodes.
+
+### Systemgrenzen
+
+| Systemtyp | Energieaustausch | Stoffaustausch |
+|---|---|---|
+| offen | ja | ja |
+| geschlossen | ja | nein |
+| abgeschlossen | nein | nein |
+
+Alle nicht abgeschlossenen Systeme stehen im Kontakt mit ihrer Umwelt. Diese
+wirkt typischerweise durch **Störungen** auf das System ein — der Begriff, der in
+Teil 1 die Regelung notwendig macht.
+
+Im Fertigungsprozess laufen drei Umwandlungen parallel: Stoffumwandlung,
+Energieumwandlung und Informationsumwandlung.
+
+### Ziele der Automation
+
+Sieben Ziele, jeweils mit dem Beispiel der Folie (Kap. 1/19):
+
+| Ziel | Beispiel |
+|---|---|
+| ökonomisch — Rationalisierung, Optimierung | — |
+| gleichmäßig | Stromproduktion |
+| zuverlässig und präzise | Weltraumsonde |
+| sicher | Kraftwerk |
+| ökologisch — ressourcenschonend | — |
+| komfortabel | Spülmaschine |
+| flexibel | 3D-Drucker |
+
+Oberziel über allem: **Kosteneffizienz und Qualität**.
+
+### Basisaufgaben
+
+Die Folie trennt zwei Gruppen (Kap. 1/20), und diese Trennung ist die eigentliche
+Prüfungsfrage.
+
+**Basisaufgaben Automation** — Messen und Wandeln von Prozessgrößen; Steuern und
+Sichern durch Abarbeitung von Logikprogrammen; Regeln zur Stabilisierung von
+Prozessgrößen; Überwachen und Erkennen von gefährlichen Prozesszuständen;
+Anzeigen und Bedienen.
+
+**Basisaufgaben Information** — Archivieren über lange Zeiträume; Vermitteln
+zwischen den Leitebenen; Absichern gegen unerlaubte Zugriffe von innen oder außen.
+
+Realisiert werden beide durch moderne Prozessleitsysteme.
+
+### Prozessleitsystem und Automatisierungspyramide
+
+Ein **Prozessleitsystem** (PLS, englisch Distributed Control System, DCS) ist ein
+hierarchisches und integriertes System zur technischen Realisierung der Aufgaben
+der Prozessleittechnik (Kap. 1/21).
+
+Die Hierarchie ist die klassische Automatisierungspyramide:
+
+| Ebene | System | Aufgabe |
+|---|---|---|
+| Unternehmensebene | ERP — Enterprise Resource Planning | Ressourcenmanagement, Supply Chain |
+| Betriebsleitebene | MES — Manufacturing Execution System | Produktionsplanung |
+| Prozessleitebene | SCADA — Supervisory Control and Data Acquisition | Schnittstelle Mensch/Maschine |
+| Steuerungsebene | PLC / SPS | Basis-Automation, Alarme |
+| Feldebene | Ein- und Ausgangssignale | Sensoren und Aktoren |
+
+> **Merksatz:** Daten werden von unten nach oben **erfasst**, Planung wirkt von
+> oben nach unten. Und die Echtzeitanforderung wird nach unten härter: Auf der
+> Feldebene zählen Millisekunden, auf der Unternehmensebene Tage.
+
+### Die vier industriellen Revolutionen
+
+| Stufe | Kennwort | Marken |
+|---|---|---|
+| Industrie 1.0 | Mechanisierung | 1784 erster mechanischer Webstuhl, Weberaufstände, später Dampfmaschine und Eisenbahn |
+| Industrie 2.0 | Elektrifizierung | 1870 erstes Fließband, Elektrizität als Antriebskraft, Telefon und Schreibmaschine |
+| Industrie 3.0 | Automatisierung | 1941 Zuse Z3, **1969 erste SPS**, Personal Computer |
+| Industrie 4.0 | Vernetzung | cyber-physische Systeme, künstliche Intelligenz, Predictive Maintenance |
+
+Zwei Jahreszahlen aus dem Kapitel lohnen sich gesondert: **1968** kam mit der
+„Modicon 084" von Richard E. Morley die erste SPS der Welt — programmierte
+Verknüpfungen von Ein- und Ausgängen statt fester Verdrahtung. **1975** brachte
+Honeywell mit dem TDC2000 das erste verteilte Prozessleitsystem.
+
+> **Achtung, scheinbarer Widerspruch:** Die Folie zu Industrie 3.0 nennt 1969 als
+> Jahr der ersten SPS, die Folie zur SPS-Geschichte nennt 1968. Gemeint ist
+> dasselbe Gerät; die Modicon 084 wurde 1968 entwickelt und 1969 ausgeliefert.
+
+### Intelligente Systeme
+
+Der Ausblick des Kapitels: Klassische Automatisierungssysteme werden um
+**Wahrnehmungs- und Lernfähigkeiten** erweitert. Eine intelligente
+Produktionsanlage hat drei Ebenen (Kap. 1/35):
+
+| Ebene | Aufgabe | Echtzeit |
+|---|---|---|
+| kognitiv | Auswertung von Langzeitdaten, Optimierungen, modifiziert die assoziative Ebene | — |
+| assoziativ | Überwachung, Erkennung von Notfallszenarien, Umschaltung der Konfiguration | weich |
+| klassische Steuerungsebene | elementar vorgesehene Funktionen über die SPS | **hart** |
+
+Die Unterscheidung harte gegen weiche Echtzeit ist der Kern: Nur die unterste
+Ebene muss eine Frist garantiert einhalten.
 
 ---
 
@@ -121,7 +249,7 @@ zeitlich nicht mehr ändern.
 Ein Gleichgewicht muss nicht existieren; es kann eines, mehrere oder unendlich
 viele geben.
 
-Die Stabilität wird über das Kugel-Gedankenexperiment veranschaulicht (Kap. 2/56 ff.,
+Die Stabilität wird über das Kugel-Gedankenexperiment veranschaulicht (Kap. 2/59 ff.,
 H2 Abb. 4): Eine Kugel liegt in einer Ruhelage x = 0 und wird um x₀ ausgelenkt.
 
 - **Mulde** — eine tangentiale Kraft treibt die Kugel zurück, Reibung entzieht
@@ -137,14 +265,14 @@ bleibt der Wasserstand konstant — Gleichgewicht.
 
 ### Blockschaltbild
 
-**Klausurrelevant (Kap. 2/12).** Ein Blockschaltbild stellt Signalflüsse und
+**Klausurrelevant (Kap. 2/13).** Ein Blockschaltbild stellt Signalflüsse und
 Wirkungszusammenhänge grafisch dar: Rechtecke sind Verarbeitungsschritte, Linien
 sind Signalflüsse. Voraussetzung ist Rückwirkungsfreiheit jedes Blocks — Signale
 laufen nur vom Eingang eines Blocks zu dessen Ausgang, unsichtbare Nebeneffekte
 gibt es nicht.
 
 Blockschaltbilder sind **nicht eindeutig**: dasselbe System lässt sich verschieden
-zerlegen. Drei Verkettungsarten sind zu unterscheiden (Kap. 2/13–15):
+zerlegen. Drei Verkettungsarten sind zu unterscheiden (Kap. 2/14–16):
 
 1. **Reihenschaltung** — Ausgang des ersten Blocks ist Eingang des zweiten.
 2. **Parallelschaltung** — dasselbe Eingangssignal auf mehrere Blöcke, Ausgänge

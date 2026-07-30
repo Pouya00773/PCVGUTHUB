@@ -7,6 +7,42 @@ rekonstruieren — umgekehrt selten.
 
 ---
 
+## Die Automatisierungspyramide — wer entscheidet was
+
+Fünf Ebenen, und die Logik dahinter ist einfach: **Je weiter unten, desto
+schneller muss es gehen — und desto dümmer darf es sein.**
+
+Von unten nach oben:
+
+**Feldebene** — Sensoren und Aktoren. Ein Endschalter meldet „Kiste da", ein
+Ventil öffnet. Hier gibt es keine Entscheidung, nur Signal.
+
+**Steuerungsebene** — die SPS. Sie entscheidet in Millisekunden: Motor an, Motor
+aus. Hier gilt **harte Echtzeit** — eine verpasste Frist ist ein Fehler, nicht
+nur ärgerlich.
+
+**Prozessleitebene** — SCADA. Der Leitstand, an dem ein Mensch die Anlage sieht
+und eingreift. Reaktionszeit: Sekunden.
+
+**Betriebsleitebene** — MES. Welcher Auftrag läuft auf welcher Maschine, in
+welcher Reihenfolge. Reaktionszeit: Minuten bis Stunden.
+
+**Unternehmensebene** — ERP. Einkauf, Lieferkette, Kapazitätsplanung.
+Reaktionszeit: Tage.
+
+Zwei Richtungen laufen gleichzeitig durch die Pyramide: **Daten** werden von
+unten nach oben verdichtet — aus Millionen Sensorwerten wird eine Kennzahl. Und
+**Planung** wirkt von oben nach unten — aus einem Kundenauftrag wird irgendwann
+ein Ventil, das öffnet.
+
+Ein Bild dazu: Die Pyramide funktioniert wie ein Unternehmen. Der Werker an der
+Maschine reagiert sofort und lokal. Der Schichtleiter plant den Tag. Die
+Geschäftsführung plant das Quartal. Niemand erwartet, dass die Geschäftsführung
+über einen klemmenden Endschalter entscheidet — dafür ist sie zu langsam, und
+das ist auch richtig so.
+
+---
+
 ## Steuern und Regeln — der Unterschied in einem Bild
 
 Stell dir vor, du duschst.
@@ -93,6 +129,23 @@ Original gar nicht vorkam.
 Die Abhilfe: schnell genug abtasten. Und dafür muss das Signal **bandbegrenzt**
 sein — es darf keine beliebig hohen Frequenzen enthalten, sonst reicht keine
 Abtastrate der Welt.
+
+**Wie schnell ist schnell genug?** Darauf antwortet das
+**Shannon-Nyquist-Abtasttheorem**: Man braucht mehr als **zwei** Abtastwerte pro
+Periode der höchsten vorkommenden Frequenz.
+
+```
+f_A > 2 · f_max        beziehungsweise        T_A < 1 / (2 · f_max)
+```
+
+Anschaulich: Um eine Schwingung überhaupt als Schwingung zu erkennen, musst du
+mindestens einmal den Berg und einmal das Tal erwischen. Mit nur einem Wert pro
+Periode könnte die Kurve zwischen deinen Messpunkten alles Mögliche tun — und
+genau das ist das Wagenrad im Western.
+
+Praxisbeispiel: Musik auf CD wird mit 44,1 kHz abgetastet, weil das menschliche
+Ohr bis etwa 20 kHz hört. 2 × 20 = 40, plus Sicherheitsabstand für den
+Anti-Aliasing-Filter.
 
 Der zweite Begriff, **Quantisierung**, ist etwas anderes und wird gern
 verwechselt:

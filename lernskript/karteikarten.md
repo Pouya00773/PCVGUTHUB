@@ -1,9 +1,21 @@
 # Karteikarten — Grundlagen der Automation
 
-Die Karten decken alle grün hinterlegten Kästchen der Foliensätze ab. Die
-Kästchen wurden maschinell aus den PDFs ausgelesen (Füllfarbe der Zeichenobjekte),
-sodass keines übersehen wurde: 100 grüne Flächen in den Kapiteln 2, 3, 4, 4.2
-und 5. Reine Beschriftungskästen ohne Lerninhalt sind zu inhaltlichen Karten
+Die Karten decken alle grün hinterlegten Kästchen der Foliensätze ab, Kapitel 1
+bis 7. Gefunden wurden sie mit `scripts/finde_gruene_kaesten.py` über zwei
+Verfahren, weil eines allein nicht reicht:
+
+- **Vektorpass** — liest die Füllfarbe der Zeichenobjekte im PDF. Findet 109
+  Kästen.
+- **Pixelpass** — rendert jede Folie und sucht grüne Flächen im Bild. Nötig,
+  weil ein erheblicher Teil der Kästen als **Rastergrafik** eingebettet ist und
+  damit für den Vektorpass unsichtbar bleibt. Meldet 51 zusätzliche Seiten, die
+  einzeln gesichtet wurden.
+
+Ohne den zweiten Pass fehlten unter anderem das Shannon-Nyquist-Abtasttheorem,
+die Definitionen von Kausalität, Zeitinvarianz und Linearität sowie **sämtliche**
+Kästen der Kapitel 1, 2.1 und 7.
+
+Reine Beschriftungskästen ohne Lerninhalt sind zu inhaltlichen Karten
 zusammengefasst.
 
 Format: **V** ist die Vorderseite (Frage), **R** die Rückseite (Antwort). Die
@@ -14,14 +26,168 @@ markierten Themen. Die zuerst lernen.
 
 ---
 
+## Kapitel 1 — Grundlagen
+
+**V:** Wie ist Automatisierung definiert? — *Kap. 1/8*
+**R:** Durch Automatisierung werden dynamische Prozesse in ihrem Verlauf erfasst
+und derart gezielt beeinflusst, dass sie vorgegebene Aufgaben und Funktionen
+selbsttätig erfüllen.
+
+**V:** Wie ist ein System definiert? — *Kap. 1/9*
+**R:** Ein System ist ein aus mehreren Einzelteilen zusammengesetztes Ganzes: die
+Gesamtheit von Elementen, die miteinander verbunden sind und dadurch als eine
+aufgaben-, sinn- oder zweckgebundene Einheit angesehen werden können — als
+strukturierte systematische Ganzheit.
+
+**V:** Unterscheide offenes, geschlossenes und abgeschlossenes System. —
+*Kap. 1/9*
+**R:** Beim **offenen** System fließen Energie und Stoff über die Grenze. Beim
+**geschlossenen** nur Energie, kein Stoff. Beim **abgeschlossenen** weder noch.
+
+**V:** Wie ist ein Prozess definiert? — *Kap. 1/11*
+**R:** Die Gesamtheit von aufeinander einwirkenden Vorgängen und Veränderungen in
+einem System, durch die Materie, Energie oder Information umgeformt,
+transportiert oder gespeichert wird. Ein technischer Prozess ist die Gesamtheit
+der Vorgänge in einer technischen Anlage.
+
+**V:** Was wird in einem Fertigungsprozess umgewandelt? — *Kap. 1/11*
+**R:** Drei Flüsse laufen parallel: Stoffumwandlung (Eingangsstoff →
+Ausgangsstoff), Energieumwandlung und Informationsumwandlung.
+
+**V:** Wie ist ein Automat definiert? — *Kap. 1/12*
+**R:** Eine Maschine, die vorbestimmte Abläufe selbsttätig ausführt. Der Begriff
+Automatik steht für eine Vorrichtung, die einen Vorgang steuert und regelt.
+Beispiel: Fahrkartenautomat.
+
+**V:** Was ist ein Agent? — *Kap. 1/12*
+**R:** Automaten, die rein auf Informationsebene arbeiten. Sie bestehen aus
+Software in Form eines Programmcodes. Beispiel: Twitter-Bot.
+
+**V:** Nenne die sieben allgemeinen Ziele der Automation mit Beispiel. —
+*Kap. 1/19*
+**R:** Ökonomisch (Rationalisierung, Optimierung), gleichmäßig (Stromproduktion),
+zuverlässig und präzise (Weltraumsonde), sicher (Kraftwerk), ökologisch
+(ressourcenschonend), komfortabel (Spülmaschine), flexibel (3D-Drucker).
+Oberziel: Kosteneffizienz und Qualität.
+
+**V:** Nenne die fünf Basisaufgaben der Automation. — *Kap. 1/20*
+**R:** Messen und Wandeln von Prozessgrößen. Steuern und Sichern durch Abarbeitung
+von Logikprogrammen. Regeln zur Stabilisierung von Prozessgrößen. Überwachen und
+Erkennen von gefährlichen Prozesszuständen. Anzeigen und Bedienen — Darstellen
+von und Eingriff auf Prozess- und Führungsgrößen.
+
+**V:** Nenne die drei Basisaufgaben der Information. — *Kap. 1/20*
+**R:** Archivieren (Bereitstellen über lange Zeiträume), Vermitteln (zwischen den
+Leitebenen) und Absichern (gegen unerlaubte Zugriffe von innen oder außen).
+Realisiert werden sie durch moderne Prozessleitsysteme.
+
+**V:** Wie ist ein Prozessleitsystem definiert? — *Kap. 1/21*
+**R:** Ein Prozessleitsystem (PLS, englisch Distributed Control System DCS) ist
+ein hierarchisches und integriertes System zur technischen Realisierung der
+Aufgaben der Prozessleittechnik.
+
+**V:** Nenne die fünf Ebenen der Automatisierungspyramide von oben nach unten. —
+*Kap. 1/21* ★
+**R:** ERP (Enterprise Resource Planning) auf der Unternehmensebene. MES
+(Manufacturing Execution System) auf der Betriebsleitebene. SCADA (Supervisory
+Control and Data Acquisition) auf der Prozessleitebene. PLC beziehungsweise SPS
+auf der Steuerungsebene. Ein- und Ausgangssignale auf der Feldebene.
+
+**V:** In welche Richtung laufen Daten und Planung in der
+Automatisierungspyramide? — *Kap. 1/21*
+**R:** Daten werden von unten nach oben erfasst, Planung wirkt von oben nach
+unten.
+
+**V:** Was kennzeichnet Industrie 1.0? — *Kap. 1/24*
+**R:** Mechanisierung. 1784 der erste mechanische Webstuhl; die mechanische
+Massenproduktion führte zu hoher Arbeitslosigkeit und den Weberaufständen. Später
+Dampfmaschinen, Eisenbahnen, Kohleabbau, Schwerindustrie.
+
+**V:** Was kennzeichnet Industrie 2.0? — *Kap. 1/24*
+**R:** Elektrifizierung. 1870 das erste Fließband, Ende des 19. Jahrhunderts die
+Einführung der Elektrizität als Antriebskraft. Fließband, Motoren, Telefon,
+Telegramm, Schreibmaschine.
+
+**V:** Was kennzeichnet Industrie 3.0? — *Kap. 1/25* ★
+**R:** Automatisierung. 1941 entwickelte Konrad Zuse den Z3-Computer, 1969 kam
+die erste speicherprogrammierbare Steuerung. Personal Computer begründen einen
+neuen Industriezweig; Vernetzung von Elektronik und IT steht im Fokus.
+
+**V:** Was kennzeichnet Industrie 4.0? — *Kap. 1/25*
+**R:** Vernetzung. Weltweite Vernetzung und Interaktion, Integration
+cyber-physischer Systeme, Informatisierung der Lebens- und Arbeitswelt,
+künstliche Intelligenz in allen Arbeitsbereichen, neue Geschäftsmodelle wie
+Predictive Maintenance.
+
+**V:** Welche war die erste SPS der Welt? — *Kap. 1/28* ★
+**R:** Die „Modicon 084" von Richard E. Morley, 1968. Ihr Prinzip: programmierte
+Verknüpfungen von Ein- und Ausgängen statt fester Verdrahtung.
+
+**V:** Nenne die drei Ebenen einer intelligenten Produktionsanlage. — *Kap. 1/35*
+**R:** **Kognitive Ebene** — Auswertung von Langzeitdaten ermöglicht
+Optimierungen, die die Szenarien der assoziativen Ebene modifizieren.
+**Assoziative Ebene** — Überwachung und Erkennung etwa von Notfallszenarien,
+Umschaltung der Konfiguration, weiche Echtzeit. **Klassische Steuerungsebene** —
+elementare Funktionen durch die SPS, harte Echtzeit.
+
+**V:** Wodurch unterscheiden sich intelligente von klassischen
+Automatisierungssystemen? — *Kap. 1/36*
+**R:** Durch die Erweiterung um Wahrnehmungs- und Lernfähigkeiten. Das ist der
+signifikante Evolutionsschritt gegenüber der klassischen Automation.
+
+**V:** Welche Anforderungen stellt modellbasierte Automation in Produktion und
+Fertigung? — *Kap. 1/23*
+**R:** Harte Echtzeit, Verfügbarkeit und Sicherheit.
+
+**V:** Was ist der Vorteil der Modulbauweise bei Flachbaugruppen? — *Kap. 1/29*
+**R:** Sie ist für einfache und komplexe Systeme gleichermaßen geeignet.
+
+---
+
 ## Kapitel 2 — Systeme
 
-**V:** Wie definiert DIN 19226 Teil 1 das Steuern? — *Kap. 2/67* ★
+**V:** Wie definiert DIN 19226 Teil 1 das Steuern? — *Kap. 2/70* ★
 **R:** Das Steuern ist ein Vorgang in einem System, bei dem die Eingangsgrößen die
 Ausgangsgrößen aufgrund der dem System eigentümlichen Gesetzmäßigkeiten
 beeinflussen. Kennzeichen: offene Wirkungskette, keine Rückführung.
 
-**V:** Was leistet die Systemtheorie in der Automatisierung? — *Kap. 2/64*
+**V:** Wie lautet die exakte Definition der Kausalität? — *Kap. 2/37*
+**R:** Ein System ist kausal, wenn der Output zu jedem Zeitpunkt nur von den
+Werten des Inputs zu der betreffenden Zeit und davor abhängt.
+
+**V:** Wie lautet die exakte Definition der Zeitinvarianz? — *Kap. 2/44*
+**R:** Ein System ist zeitinvariant, wenn eine Zeitverschiebung des Inputs zu
+einer Zeitverschiebung des Outputs führt. Ist y(t) der Output zum Input u(t), so
+ist y(t−T) der Output, wenn u(t−T) angelegt wird. Zeitdiskret entsprechend:
+y[k−K] zum Input u[k−K].
+
+**V:** Woran erkennt man ein zeitvariantes System? — *Kap. 2/44*
+**R:** Taucht die Zeit **explizit** im Modell auf, ist das System zeitvariant.
+Beispiel Rakete: Die Masse ist wegen des Treibstoffverbrauchs zeitabhängig, das
+Modell lautet ÿ(t) = u(t) / M(t).
+
+**V:** Welche zwei Eigenschaften machen ein System linear? — *Kap. 2/48* ★
+**R:** **Superposition** — der Output für u₁(t) + u₂(t) ist gleich y₁(t) + y₂(t).
+**Homogenität** — der Output von α·u₁(t) ist gleich α·y₁(t). Zusammengefasst:
+α·u₁(t) + β·u₂(t) → α·y₁(t) + β·y₂(t).
+
+**V:** Welche Folgerung ergibt sich direkt aus der Homogenität? — *Kap. 2/48* ★
+**R:** Input Null ergibt Output Null. Liefert ein System bei Eingang null einen
+Ausgang ungleich null, kann es nicht linear sein — ein schneller Test.
+
+**V:** Wie ist das Gleichgewicht definiert und wie heißt es noch? — *Kap. 2/55*
+**R:** Ein System befindet sich im Gleichgewicht, wenn sich die Kenn- und
+Zustandsgrößen nicht mehr mit der Zeit ändern. Weitere Namen: Stationärzustand,
+Steady State, Fließgleichgewicht. Bedingung kontinuierlich dx/dt = 0 für alle t,
+diskret x[k+1] − x[k] = 0 für alle k.
+
+**V:** Welche Frage beantwortet die Stabilität? — *Kap. 2/63*
+**R:** Welche Auswirkung eine kleine Störung auf ein System im Steady State hat.
+Asymptotisch stabil: erreicht nach Anregung mit endlicher Energie wieder seine
+Ruheposition. Grenzstabil: konvergiert zu einem konstanten Ausgangswert.
+Instabil: kehrt nicht ins Gleichgewicht zurück und divergiert.
+
+**V:** Was leistet die Systemtheorie in der Automatisierung? — *Kap. 2/67*
 **R:** Drei Dinge: Simulation „in silico", also computerbasierte und mathematische
 Modelle, mit denen physikalische und physiologische Vorgänge virtuell nachgestellt
 werden. Mächtige systemtheoretische Werkzeuge zur Analyse und Optimierung. Und
@@ -74,7 +240,7 @@ tangentiale Kraft, sie bleibt liegen, wandert aber nicht weiter — grenzstabil.
 Kugel auf der Kuppe: die Kraft wächst mit der Auslenkung, sie rollt davon —
 instabil.
 
-**V:** Welche drei Verkettungsarten gibt es im Blockschaltbild? — *Kap. 2/13–15* ★
+**V:** Welche drei Verkettungsarten gibt es im Blockschaltbild? — *Kap. 2/14–16* ★
 **R:** Reihenschaltung (Ausgang des einen ist Eingang des nächsten),
 Parallelschaltung (gleicher Eingang auf mehrere Blöcke, Ausgänge summiert) und
 Rückführung (Ausgang wird auf den Eingang zurückgeführt — die Struktur des
@@ -88,10 +254,37 @@ dessen Ausgang, es gibt keine nicht dargestellten Nebeneffekte zwischen Blöcken
 
 ## Kapitel 2.1 — Signale
 
-**V:** Was ist ein Signal, was ein System?
-**R:** Ein Signal ist eine Funktion einer oder mehrerer unabhängiger Variablen —
-meist der Zeit — und trägt Information. Ein System verarbeitet Eingangssignale und
-erzeugt daraus Ausgangssignale.
+**V:** Was ist ein Signal, was ein System? — *Kap. 2.1/5*
+**R:** Signale sind Funktionen einer oder mehrerer unabhängiger Variablen — zum
+Beispiel Zeit oder Ort — und enthalten Information über das Verhalten bestimmter
+Erscheinungen. Systeme verarbeiten spezielle Signale und erzeugen wiederum neue:
+Aus Eingangssignalen werden Ausgangssignale erzeugt.
+
+**V:** Wie wirkt die Umgebung auf ein System ein? — *Kap. 2.1/4*
+**R:** Alle nicht abgeschlossenen Systeme — offene wie geschlossene — stehen im
+Kontakt mit ihrer Umwelt und tauschen mit ihr Materie, Energie oder Information
+aus. Die Umwelt wirkt typischerweise durch **Störungen** auf das System ein.
+
+**V:** Wie notiert man zeitkontinuierliche und zeitdiskrete Signale? —
+*Kap. 2.1/47* ★
+**R:** Kontinuierliche Signale bekommen **runde** Klammern, die unabhängige
+Variable ist reell und heißt meist t: u(t). Diskrete Signale bekommen **eckige**
+Klammern, die unabhängige Variable ist ganzzahlig und heißt meist k oder n: u[k].
+
+**V:** Wie ist die Abtastung formal definiert? — *Kap. 2.1/37* ★
+**R:** Ein kontinuierliches Signal wird mit dem Abtastintervall T_A beziehungsweise
+der Abtastfrequenz f_A := 1/T_A zu äquidistanten Zeitpunkten k·T_A gemessen, mit
+k = {0, 1, 2, …}. Dabei entsteht das zeitdiskrete Signal `x[k] := x(k · T_A)`.
+
+**V:** Wie lautet das Shannon-Nyquist-Abtasttheorem? — *Kap. 2.1/41* ★
+**R:** Eine Funktion, die keine Frequenzen höher als f_max enthält, ist durch eine
+beliebige Reihe von Funktionswerten im Abstand `T_A < 1/(2·f_max)` eindeutig
+bestimmt. Das entspricht einer Abtastrate `f_A > 2 · f_max`.
+
+**V:** Warum muss die Bandbreite begrenzt sein? — *Kap. 2.1/41* ★
+**R:** Bei der Abtastung ist zu beachten, dass die Bandbreite — also die im Signal
+auftretenden Frequenzen — begrenzt ist. Ansonsten tritt ein gravierender
+Informationsverlust auf, genannt **Aliasing**.
 
 **V:** Nenne die wichtigen Standardsignale. — *Kap. 2.1/11–19*
 **R:** Sprungfunktion, Rechteckfunktion, Signumfunktion, Rampenfunktion,
@@ -106,7 +299,7 @@ Zeitpunkten Werte entnommen. Quantisierung macht aus wertkontinuierlich
 wertdiskret — die Werte werden auf Stufen gerundet. Zusammen ergibt das die
 Digitalisierung.
 
-**V:** Was ist Aliasing und wie vermeidet man es? — *Kap. 2.1/40*
+**V:** Was ist Aliasing und wie vermeidet man es? — *Kap. 2.1/43*
 **R:** Wird zu langsam abgetastet, erscheint im rekonstruierten Signal eine
 Frequenz, die im Original gar nicht vorkommt. Der Informationsverlust ist nicht
 reparierbar. Vermeidung: Das Signal muss bandbegrenzt sein und hinreichend schnell
@@ -404,6 +597,26 @@ Speichern. Man betrachtet Ausgangsvariablen — insbesondere Schütze und
 Hilfsschütze — als Speicher und trägt je Speicher die Setz- und die
 Rücksetzbedingung ein.
 
+**V:** Wie lautet die Aufgabe „Parkhausanzeige"? — *Kap. 4.2/11*
+**R:** Anzeige der freien Plätze. S1 sensiert ein einfahrendes, S2 ein
+ausfahrendes Auto. Mit dem Taster „Setzen" wird der Anfangswert 10 eingestellt.
+Sind keine freien Plätze da, leuchtet eine rote Lampe. Umsetzung mit dem
+vorgefertigten Zähler **CTUD**.
+
+**V:** Wie sieht die erweiterte RS-Tabelle der Drei-Pumpen-Aufgabe aus? —
+*Kap. 4.2/21* ★
+**R:** Schritt 1: Bedingung S1 (0→1), setzt IO1. Schritt 2: IO1 ∧ ¬Q1 ∧ ¬Q2,
+setzt Q1, setzt IO1 zurück. Schritt 3: IO1 ∧ Q1 ∧ ¬Q2, setzt Q2, setzt IO1
+zurück. Schritt 4: IO1 ∧ Q1 ∧ Q2, setzt Q3, setzt IO1 zurück. Zusätzlich: ¬S0
+setzt Q1, Q2 und Q3 gemeinsam zurück.
+
+**V:** Warum braucht die Drei-Pumpen-Aufgabe eine Flankenauswertung? —
+*Kap. 4.2/21* ★
+**R:** Weil derselbe EIN-Taster S1 dreimal verwendet wird. Ohne Flanke wäre S1 im
+nächsten Zyklus immer noch 1 und die Kette liefe in einem einzigen Durchlauf
+durch. Im FUP steht deshalb ein P-Baustein hinter S1, der den Merker IO1 für
+genau einen Zyklus setzt.
+
 ---
 
 ## Kapitel 5 — SPS
@@ -621,6 +834,46 @@ Siemens, SFC in Codesys.
 ---
 
 ## Kapitel 7 — Automaten
+
+**V:** Wie sind Schaltwerke definiert? — *Kap. 7/6* ★
+**R:** Schaltwerke sind universelle Beschreibungen für zeit- und wertdiskrete
+Systeme. Diese werden **endliche Automaten** genannt, englisch finite state
+machine.
+
+**V:** In welche Bestandteile lässt sich jedes Schaltwerk zerlegen? —
+*Kap. 7/6* ★
+**R:** In zwei Schaltnetze plus Zustandsregister (Speicherwerk aus Flipflops).
+Schaltnetz 1 ist die **Übergangsfunktion** und berechnet den Folgezustand,
+Schaltnetz 2 ist die **Ausgangsfunktion** und berechnet den Ausgang.
+
+**V:** Wodurch ist ein endlicher Automat definiert? — *Kap. 7/7* ★
+**R:** Durch eine endliche Menge von Eingabesymbolen x_i ∈ X (Alphabet), eine
+endliche Menge von Zuständen z_i ∈ Z, einen Anfangszustand z₀ ∈ Z und eine
+Zustandsübergangsfunktion δ: Z × X → Z. Zusätzlich kann er eine endliche Menge
+von Ausgabesymbolen y_i ∈ Y und eine Ausgabefunktion λ: Z × X → Y umfassen.
+
+**V:** Wie lautet das 6-Tupel eines Automaten? — *Kap. 7/7* ★
+**R:** `A = (X, Z, z₀, Y, δ, λ)` — Eingabealphabet, Zustandsmenge,
+Anfangszustand, Ausgabealphabet, Übergangsfunktion, Ausgabefunktion.
+
+**V:** Beschreibe das Trivialbeispiel Türsystem. — *Kap. 7/11*
+**R:** Die Tür soll aufgehen, wenn Taster S1 gedrückt wird (x₁ = 1), und zugehen,
+wenn Taster S2 gedrückt wird (x₂ = 1). Ansonsten verbleibt die Tür in ihrem
+Zustand. Zwei Zustände: z₁ „Tür zu" (Anfangszustand) und z₂ „Tür auf". Ausgänge:
+y₁ = 1 „öffnet", y₂ = 1 „schliesst".
+
+**V:** Beschreibe den Warenautomaten als Automat. — *Kap. 7/12* ★
+**R:** Er liefert gegen ein 2-€-Stück oder zwei 1-€-Stücke eine Ware. Der
+Rückgabeknopf gibt eingeworfenes Geld zurück, sofern 2 € noch nicht erreicht
+sind. Eingabealphabet X = {1, 2, r} mit r für Rückgabe. Ausgabealphabet
+Y = {w, n, 1, 2} mit w für Ware und n für Nichts. Zustandsmenge Z = {z₁, z₂},
+wobei z₀ der neutrale Anfangs- und zugleich Endzustand ist.
+
+**V:** Aus welchen drei Blöcken besteht das Schaltwerk der Ampelschaltung? —
+*Kap. 7/27* ★
+**R:** Ausgabefunktion (liefert y₀, y₁, y₂ an die drei Lampen),
+Übergangsfunktion (verarbeitet die Eingabe x₀ vom Ampelknopf und die Zustände
+q₀, q₁) und Zustandsspeicher aus zwei D-Flipflops, die q₀ und q₁ halten.
 
 **V:** Nenne die drei Automatentypen und ihre Ausgabefunktion. — *Kap. 7/8* ★
 **R:** Mealy-Automat: die Ausgabefunktion λ hängt vom aktuellen Zustand **und der
