@@ -17,9 +17,11 @@ Skills sind ehrlich als „(Grundkenntnisse)" markiert (Lernplan siehe `lernplan
 Klausurvorbereitung „Grundlagen der Automation" (HTW Berlin, WIW, SS 2026).
 
 Quelltexte in `lernskript/`:
+- `klausurmarker.md` – die 16 belegten Klausurmarkierungen mit Wortlaut,
+  einzige Wahrheitsquelle für das ★ auf den Karten
 - `lernplan.md` – nach Punktdichte sortierte Lernreihenfolge
 - `lernskript_at.md` – Skript, Teil 0 bis 9 plus Formelsammlung
-- `karteikarten.md` – 172 Karten aus allen grün markierten Folienkästchen
+- `karteikarten.md` – 183 Karten aus allen grün markierten Folienkästchen
 - `erklaerungen.md` – die Kernthemen in Alltagssprache
 - `uebungsloesungen.md` – Übungen 1–7, Minimalformen rechnerisch geprüft
 - `aufgabentypen.md` – Klausur-Aufgabentypen mit Lösungsschema
@@ -33,6 +35,22 @@ pip install python-docx
 python3 scripts/build_lernskript.py    # Word-Dateien
 python3 scripts/build_lernseite.py     # Lernseite
 ```
+
+### Klausurmarkierungen
+
+```bash
+python3 scripts/finde_klausurmarker.py <ordner> [--marker]
+```
+
+Sucht die handschriftlichen Klausurhinweise — im Textlayer und optional über die
+Spuren des türkisen Textmarkers. Beide Verfahren liefern nur **Kandidaten**: Die
+Handschrifterkennung zerlegt das Wort regelmäßig, und türkise Flächen kommen auch
+gedruckt vor. Was zählt, steht in `lernskript/klausurmarker.md`; dort ist jede
+Fundstelle am Bild geprüft.
+
+Das ★ auf den Karteikarten wird **mechanisch** aus dieser Liste vergeben, nicht
+von Hand gesetzt. `scripts/karten.py` bricht den Build ab, wenn ein ★ ohne Beleg
+auftaucht oder ein Beleg ohne ★ bleibt.
 
 ### Grüne Kästchen finden
 

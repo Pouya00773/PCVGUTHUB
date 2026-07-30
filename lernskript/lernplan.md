@@ -1,7 +1,8 @@
 # Lernplan
 
 Der Plan ist nach **Punktdichte** sortiert, nicht nach Vorlesungsreihenfolge. Er
-richtet sich nach zwei harten Hinweisen aus deinen Unterlagen:
+richtet sich nach zwei belastbaren Hinweisen aus deinen Unterlagen — belastbar
+heisst: schriftlich vorhanden und nachprüfbar, nicht von mir geschlossen.
 
 1. Die handschriftliche Notiz auf Übungsblatt 1: *„Klausuraufgabe: Ein Schaltplan
    wird vorgegeben und soll analysiert werden. Daraus sollen wir eine
@@ -15,6 +16,12 @@ Klausur, und sie taucht in mindestens zwei verschiedenen Aufgabentypen auf
 größten Teil der Punkte im Griff.
 
 ---
+
+> **Grenze der Belege.** Sechzehn Folien tragen einen handschriftlichen
+> Klausurhinweis; die Liste mit Wortlaut steht in `klausurmarker.md`. Die
+> Reihenfolge der Blöcke unten geht darüber hinaus und ist **meine
+> Einschätzung** — sie folgt der Punktverteilung von Übung 7 und dem Umfang der
+> Themen, nicht einer Ansage des Dozenten.
 
 ## Die Reihenfolge in einem Satz
 

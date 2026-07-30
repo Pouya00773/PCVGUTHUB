@@ -10,59 +10,19 @@ import json
 import re
 from pathlib import Path
 
+from karten import lies_karten, lies_marker, pruefe, kapitel_code
+
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "lernskript"
 OUT = ROOT / "output"
 OUT.mkdir(exist_ok=True)
 
-FUNDSTELLE = re.compile(r"—\s*\*([^*]+)\*\s*$")
-
-
-def parse_karten(md):
-    karten, kapitel = [], ""
-    pattern = re.compile(
-        r"^## (.+?)$|^\*\*V:\*\*\s*(.+?)\n\*\*R:\*\*\s*(.+?)(?=\n\n|\n>|\Z)",
-        re.M | re.S,
-    )
-    for m in pattern.finditer(md):
-        if m.group(1):
-            kapitel = m.group(1).strip()
-            continue
-        frage = " ".join(m.group(2).split())
-        antwort = " ".join(m.group(3).split())
-        stern = "★" in frage
-        frage = frage.replace("★", "").strip()
-        quelle = ""
-        fm = FUNDSTELLE.search(frage)
-        if fm:
-            quelle = fm.group(1).strip()
-            frage = FUNDSTELLE.sub("", frage).strip()
-        karten.append(
-            {
-                "kap": kapitel,
-                "q": md_inline(frage),
-                "a": md_inline(antwort),
-                "star": stern,
-                "src": quelle,
-            }
-        )
-    return karten
-
-
 def md_inline(text):
     """**fett** und `code` nach HTML, alles andere escapen."""
-    text = (
-        text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-    )
+    text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"`([^`]+)`", r"<code>\1</code>", text)
     return text
-
-
-def kapitel_code(name):
-    """'Kapitel 4.2 — Schaltwerke' -> 'K4.2'"""
-    m = re.match(r"Kapitel\s+([\d.]+)", name)
-    return "K" + m.group(1) if m else name.split()[0][:4].upper()
 
 
 CSS = """
@@ -175,6 +135,10 @@ select{text-transform:none;letter-spacing:0;font-size:.78rem;color:var(--ink)}
 .tag.klausur{border-color:var(--signal);color:var(--signal);
   background:var(--signal-soft);font-weight:600}
 .tag.seite{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.tag.verwandt{border-color:var(--ink-2);color:var(--ink-2)}
+.legende{font-size:.72rem;line-height:1.5;color:var(--ink-2);
+  border-left:2px solid var(--rule);padding-left:12px}
+.legende b{color:var(--ink);font-weight:600}
 
 .q{font-size:1.24rem;line-height:1.35;font-weight:650;letter-spacing:-.012em;
   text-wrap:balance;margin:0}
@@ -231,7 +195,8 @@ const seen=new Set(), known=new Set();
 function pool(){
   return cards.map((c,i)=>i).filter(i=>{
     const c=cards[i];
-    if(filter==='klausur'&&!c.star) return false;
+    if(filter==='belegt'&&c.stufe!=='belegt') return false;
+    if(filter==='verwandt'&&c.stufe!=='verwandt') return false;
     if(filter==='offen'&&known.has(i)) return false;
     if(kapFilter&&c.kap!==kapFilter) return false;
     return true;
@@ -285,16 +250,20 @@ function render(){
     $('#src-'+side).textContent=c.src||'Foliensatz';
     $('#nr-'+side).textContent=(pos+1)+' / '+total;
   }
-  $('#klausur-f').hidden=!c.star;
-  $('#klausur-b').hidden=!c.star;
+  for(const side of ['f','b']){
+    const el=$('#stufe-'+side);
+    el.hidden=!c.stufe;
+    el.textContent=c.stufe==='belegt'?'★ Belegt markiert':'◆ Verwandtes Thema';
+    el.className='tag '+(c.stufe==='belegt'?'klausur':'verwandt');
+  }
   $('#bar-i').style.width=(total?((pos+1)/total*100):0)+'%';
   paint();paintStats();
 }
 function paintStats(){
   $('#s-known').textContent=known.size;
   $('#s-total').textContent=cards.length;
-  $('#s-star').textContent=cards.filter((c,i)=>c.star&&known.has(i)).length
-    +' / '+cards.filter(c=>c.star).length;
+  $('#s-star').textContent=cards.filter((c,i)=>c.stufe==='belegt'&&known.has(i)).length
+    +' / '+cards.filter(c=>c.stufe==='belegt').length;
 }
 
 addEventListener('keydown',e=>{
@@ -332,11 +301,14 @@ rebuild(false);
 
 
 def build():
-    karten = parse_karten((SRC / "karteikarten.md").read_text(encoding="utf-8"))
-    for k in karten:
-        k["code"] = kapitel_code(k["kap"])
+    positiv, _ = lies_marker()
+    roh = lies_karten(marker=(positiv, set()))
+    stat = pruefe(roh, positiv)
+
+    karten = [{"kap": k["kapitel"], "code": kapitel_code(k["kapitel"]),
+               "q": md_inline(k["frage"]), "a": md_inline(k["antwort"]),
+               "src": k["quelle"], "stufe": k["stufe"]} for k in roh]
     kapitel = sorted({k["kap"] for k in karten}, key=lambda s: (len(s), s))
-    n_star = sum(1 for k in karten if k["star"])
 
     optionen = "".join(f'<option value="{k}">{k}</option>' for k in kapitel)
 
@@ -345,13 +317,14 @@ def build():
 <div class="wrap">
   <header>
     <h1>Grundlagen der Automation</h1>
-    <span class="sub mono">{len(karten)} Karten · {n_star} klausurrelevant</span>
+    <span class="sub mono">{stat['karten']} Karten · {stat['belegt']} belegt · {stat['verwandt']} verwandt</span>
   </header>
 
   <div class="bar">
     <div class="seg" role="group" aria-label="Kartenauswahl">
       <button data-f="alle" aria-pressed="true">Alle</button>
-      <button data-f="klausur" aria-pressed="false">Nur Klausur</button>
+      <button data-f="belegt" aria-pressed="false">★ Belegt</button>
+      <button data-f="verwandt" aria-pressed="false">◆ Verwandt</button>
       <button data-f="offen" aria-pressed="false">Offen</button>
     </div>
     <select id="kap" aria-label="Kapitel filtern">
@@ -360,6 +333,15 @@ def build():
     <button class="btn" id="shuffle">Mischen</button>
   </div>
 
+  <p class="legende">
+    <b>★ belegt</b> — auf genau dieser Folie steht ein handschriftlicher
+    Klausurhinweis, {stat['marker_gesamt']} Folien insgesamt.
+    <b>◆ verwandt</b> — gleiches Thema wie eine markierte Folie, aber ohne
+    eigenen Hinweis; das ist eine Einschätzung, kein Beleg.
+    Die Hinweise stammen aus eigener Mitschrift und grenzen den Stoff nicht ab —
+    Karten ohne Zeichen können genauso drankommen.
+  </p>
+
   <div class="progress"><i id="bar-i"></i></div>
 
   <div class="stage" id="stage">
@@ -367,7 +349,7 @@ def build():
       <div class="face front">
         <div class="face-body">
           <div class="tagrow">
-            <span class="tag klausur" id="klausur-f" hidden>Klausurrelevant</span>
+            <span class="tag" id="stufe-f" hidden></span>
           </div>
           <p class="q" id="q"></p>
           <span class="hint mono">Tippen oder Leertaste zum Umdrehen</span>
@@ -380,7 +362,7 @@ def build():
         <div class="face-body">
           <div class="tagrow">
             <span class="tag seite">Antwort</span>
-            <span class="tag klausur" id="klausur-b" hidden>Klausurrelevant</span>
+            <span class="tag" id="stufe-b" hidden></span>
           </div>
           <p class="a" id="a"></p>
         </div>
@@ -411,8 +393,9 @@ def build():
     pfad = OUT / "lernseite.html"
     pfad.write_text(html, encoding="utf-8")
     print(f"geschrieben: {pfad.relative_to(ROOT)} "
-          f"({pfad.stat().st_size/1024:.0f} KB, {len(karten)} Karten, "
-          f"{len(kapitel)} Kapitel)")
+          f"({pfad.stat().st_size/1024:.0f} KB, {stat['karten']} Karten, "
+          f"{len(kapitel)} Kapitel, belegt {stat['belegt']}, "
+          f"verwandt {stat['verwandt']})")
     return pfad
 
 

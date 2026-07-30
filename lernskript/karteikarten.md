@@ -19,10 +19,25 @@ Reine Beschriftungskästen ohne Lerninhalt sind zu inhaltlichen Karten
 zusammengefasst.
 
 Format: **V** ist die Vorderseite (Frage), **R** die Rückseite (Antwort). Die
-Fundstelle steht als „Kap./Folie" dabei.
+Fundstelle steht als „Kap./Folie" dabei und meint die **aufgedruckte**
+Foliennummer.
 
-Karten mit **★** gehören zu den in den Folien handschriftlich als klausurrelevant
-markierten Themen. Die zuerst lernen.
+## Was die Zeichen bedeuten
+
+| Zeichen | Bedeutung |
+|---|---|
+| **★ belegt** | Auf genau dieser Folie steht ein handschriftlicher Klausurhinweis. Nachweis in `klausurmarker.md`, jede Fundstelle am Bild geprüft. |
+| **◆ verwandt** | Meine Einschätzung. Die Karte behandelt dasselbe Thema wie eine markierte Folie, aber auf **dieser** Folie steht kein Hinweis. |
+| ohne Zeichen | Kein Hinweis, keine besondere Einstufung. |
+
+Das ★ wird **nicht von Hand gesetzt**, sondern beim Bauen aus
+`lernskript/klausurmarker.md` vergeben — anhand der Fundstelle. Dadurch kann es
+nicht mehr großzügiger vergeben werden, als es Belege gibt.
+
+> **Zur Herkunft:** Die Hinweise sind eigene handschriftliche Mitschrift in den
+> Folien, kein offizielles Dokument des Dozenten. Und sie grenzen den Stoff
+> **nicht ab** — Karten ohne ★ können genauso drankommen. Sechzehn Folien tragen
+> einen Hinweis; alles andere heißt nur, dass dort nichts notiert wurde.
 
 ---
 
@@ -87,7 +102,7 @@ ein hierarchisches und integriertes System zur technischen Realisierung der
 Aufgaben der Prozessleittechnik.
 
 **V:** Nenne die fünf Ebenen der Automatisierungspyramide von oben nach unten. —
-*Kap. 1/21* ★
+*Kap. 1/21* ◆
 **R:** ERP (Enterprise Resource Planning) auf der Unternehmensebene. MES
 (Manufacturing Execution System) auf der Betriebsleitebene. SCADA (Supervisory
 Control and Data Acquisition) auf der Prozessleitebene. PLC beziehungsweise SPS
@@ -108,7 +123,7 @@ Dampfmaschinen, Eisenbahnen, Kohleabbau, Schwerindustrie.
 Einführung der Elektrizität als Antriebskraft. Fließband, Motoren, Telefon,
 Telegramm, Schreibmaschine.
 
-**V:** Was kennzeichnet Industrie 3.0? — *Kap. 1/25* ★
+**V:** Was kennzeichnet Industrie 3.0? — *Kap. 1/25* ◆
 **R:** Automatisierung. 1941 entwickelte Konrad Zuse den Z3-Computer, 1969 kam
 die erste speicherprogrammierbare Steuerung. Personal Computer begründen einen
 neuen Industriezweig; Vernetzung von Elektronik und IT steht im Fokus.
@@ -119,7 +134,7 @@ cyber-physischer Systeme, Informatisierung der Lebens- und Arbeitswelt,
 künstliche Intelligenz in allen Arbeitsbereichen, neue Geschäftsmodelle wie
 Predictive Maintenance.
 
-**V:** Welche war die erste SPS der Welt? — *Kap. 1/28* ★
+**V:** Welche war die erste SPS der Welt? — *Kap. 1/28* ◆
 **R:** Die „Modicon 084" von Richard E. Morley, 1968. Ihr Prinzip: programmierte
 Verknüpfungen von Ein- und Ausgängen statt fester Verdrahtung.
 
@@ -146,7 +161,7 @@ Fertigung? — *Kap. 1/23*
 
 ## Kapitel 2 — Systeme
 
-**V:** Wie definiert DIN 19226 Teil 1 das Steuern? — *Kap. 2/70* ★
+**V:** Wie definiert DIN 19226 Teil 1 das Steuern? — *Kap. 2/70* ◆
 **R:** Das Steuern ist ein Vorgang in einem System, bei dem die Eingangsgrößen die
 Ausgangsgrößen aufgrund der dem System eigentümlichen Gesetzmäßigkeiten
 beeinflussen. Kennzeichen: offene Wirkungskette, keine Rückführung.
@@ -166,12 +181,12 @@ y[k−K] zum Input u[k−K].
 Beispiel Rakete: Die Masse ist wegen des Treibstoffverbrauchs zeitabhängig, das
 Modell lautet ÿ(t) = u(t) / M(t).
 
-**V:** Welche zwei Eigenschaften machen ein System linear? — *Kap. 2/48* ★
+**V:** Welche zwei Eigenschaften machen ein System linear? — *Kap. 2/48* ◆
 **R:** **Superposition** — der Output für u₁(t) + u₂(t) ist gleich y₁(t) + y₂(t).
 **Homogenität** — der Output von α·u₁(t) ist gleich α·y₁(t). Zusammengefasst:
 α·u₁(t) + β·u₂(t) → α·y₁(t) + β·y₂(t).
 
-**V:** Welche Folgerung ergibt sich direkt aus der Homogenität? — *Kap. 2/48* ★
+**V:** Welche Folgerung ergibt sich direkt aus der Homogenität? — *Kap. 2/48* ◆
 **R:** Input Null ergibt Output Null. Liefert ein System bei Eingang null einen
 Ausgang ungleich null, kann es nicht linear sein — ein schneller Test.
 
@@ -240,7 +255,14 @@ tangentiale Kraft, sie bleibt liegen, wandert aber nicht weiter — grenzstabil.
 Kugel auf der Kuppe: die Kraft wächst mit der Auslenkung, sie rollt davon —
 instabil.
 
-**V:** Welche drei Verkettungsarten gibt es im Blockschaltbild? — *Kap. 2/14–16* ★
+**V:** Stelle das Blockschaltbild zu y[n] = (2·u[n] − u[n]²)² auf. — *Kap. 2/13*
+**R:** Das Eingangssignal x[n] verzweigt auf zwei Pfade: oben ein Block
+„Multipliziere mit 2", unten ein Block „Quadriere". Beide laufen auf einen
+Summierer, der den unteren Zweig **subtrahiert**. Dessen Ausgang geht in einen
+zweiten Block „Quadriere", der y[n] liefert. Man arbeitet die Klammer von innen
+nach außen ab.
+
+**V:** Welche drei Verkettungsarten gibt es im Blockschaltbild? — *Kap. 2/14–16* ◆
 **R:** Reihenschaltung (Ausgang des einen ist Eingang des nächsten),
 Parallelschaltung (gleicher Eingang auf mehrere Blöcke, Ausgänge summiert) und
 Rückführung (Ausgang wird auf den Eingang zurückgeführt — die Struktur des
@@ -260,28 +282,36 @@ Beispiel Zeit oder Ort — und enthalten Information über das Verhalten bestimm
 Erscheinungen. Systeme verarbeiten spezielle Signale und erzeugen wiederum neue:
 Aus Eingangssignalen werden Ausgangssignale erzeugt.
 
+**V:** Wie findet man die geschlossene Darstellung eines skizzierten Signals? —
+*Kap. 2.1/30*
+**R:** Das Signal in Abschnitte zerlegen. Für jede Sprungstelle einen
+verschobenen Sprung ansetzen (Sprunghöhe mal σ(t−t₀), nach unten mit
+Minuszeichen), für jeden Knick im Anstieg eine verschobene Rampe, für jede Nadel
+einen gewichteten Dirac-Impuls δ(t−t₀). Alles addieren und an zwei, drei
+Zeitpunkten zur Probe einsetzen.
+
 **V:** Wie wirkt die Umgebung auf ein System ein? — *Kap. 2.1/4*
 **R:** Alle nicht abgeschlossenen Systeme — offene wie geschlossene — stehen im
 Kontakt mit ihrer Umwelt und tauschen mit ihr Materie, Energie oder Information
 aus. Die Umwelt wirkt typischerweise durch **Störungen** auf das System ein.
 
 **V:** Wie notiert man zeitkontinuierliche und zeitdiskrete Signale? —
-*Kap. 2.1/47* ★
+*Kap. 2.1/47* ◆
 **R:** Kontinuierliche Signale bekommen **runde** Klammern, die unabhängige
 Variable ist reell und heißt meist t: u(t). Diskrete Signale bekommen **eckige**
 Klammern, die unabhängige Variable ist ganzzahlig und heißt meist k oder n: u[k].
 
-**V:** Wie ist die Abtastung formal definiert? — *Kap. 2.1/37* ★
+**V:** Wie ist die Abtastung formal definiert? — *Kap. 2.1/37* ◆
 **R:** Ein kontinuierliches Signal wird mit dem Abtastintervall T_A beziehungsweise
 der Abtastfrequenz f_A := 1/T_A zu äquidistanten Zeitpunkten k·T_A gemessen, mit
 k = {0, 1, 2, …}. Dabei entsteht das zeitdiskrete Signal `x[k] := x(k · T_A)`.
 
-**V:** Wie lautet das Shannon-Nyquist-Abtasttheorem? — *Kap. 2.1/41* ★
+**V:** Wie lautet das Shannon-Nyquist-Abtasttheorem? — *Kap. 2.1/41* ◆
 **R:** Eine Funktion, die keine Frequenzen höher als f_max enthält, ist durch eine
 beliebige Reihe von Funktionswerten im Abstand `T_A < 1/(2·f_max)` eindeutig
 bestimmt. Das entspricht einer Abtastrate `f_A > 2 · f_max`.
 
-**V:** Warum muss die Bandbreite begrenzt sein? — *Kap. 2.1/41* ★
+**V:** Warum muss die Bandbreite begrenzt sein? — *Kap. 2.1/41* ◆
 **R:** Bei der Abtastung ist zu beachten, dass die Bandbreite — also die im Signal
 auftretenden Frequenzen — begrenzt ist. Ansonsten tritt ein gravierender
 Informationsverlust auf, genannt **Aliasing**.
@@ -290,7 +320,7 @@ Informationsverlust auf, genannt **Aliasing**.
 **R:** Sprungfunktion, Rechteckfunktion, Signumfunktion, Rampenfunktion,
 Exponentialfunktion, periodische Signale und der Dirac-Impuls.
 
-**V:** Wie schreibt man eine Rechteckfunktion mit Sprungfunktionen? — *Kap. 2.1/12* ★
+**V:** Wie schreibt man eine Rechteckfunktion mit Sprungfunktionen? — *Kap. 2.1/12* ◆
 **R:** Als Differenz zweier verschobener Sprünge: σ(t) − σ(t−T).
 
 **V:** Was ist der Unterschied zwischen Abtastung und Quantisierung?
@@ -325,7 +355,7 @@ darstellen und umgekehrt. Dadurch kann man Gattertypen gegeneinander austauschen
 und Bauteile einsparen — eine Schaltung lässt sich mit reinen NAND- oder reinen
 NOR-Gattern aufbauen.
 
-**V:** Was ist der BCD-Code? — *Kap. 3/45* ★
+**V:** Was ist der BCD-Code? — *Kap. 3/45* ◆
 **R:** Binary-coded decimal, dualkodierte Dezimalziffer. Jede Dezimalziffer 0 bis
 9 wird durch vier Bit dargestellt, also in einem Halbbyte.
 
@@ -355,14 +385,19 @@ Gültigkeit? — *Kap. 3/10*
 **R:** Alle Schaltzeiten müssen null sein. Genau hier setzt das Hazard-Thema an:
 Reale Gatter haben Laufzeiten und verletzen diese Annahme.
 
-**V:** Nenne die vier UND-Regeln mit Konstanten. — *Kap. 3/13* ★
+**V:** Nenne die acht Verknüpfungen zweier Konstanten. — *Kap. 3/12*
+**R:** UND: 0∧0 = 0, 0∧1 = 0, 1∧0 = 0, 1∧1 = 1 — nur zwei Einsen ergeben eine
+Eins. ODER: 0∨0 = 0, 0∨1 = 1, 1∨0 = 1, 1∨1 = 1 — nur zwei Nullen ergeben eine
+Null.
+
+**V:** Nenne die vier UND-Regeln mit Konstanten. — *Kap. 3/13* ◆
 **R:** 0 ∧ A = 0, 1 ∧ A = A, A ∧ A = A, A ∧ ¬A = 0.
 
-**V:** Nenne die vier ODER-Regeln mit Konstanten. — *Kap. 3/13* ★
+**V:** Nenne die vier ODER-Regeln mit Konstanten. — *Kap. 3/13* ◆
 **R:** 0 ∨ A = A, 1 ∨ A = 1, A ∨ A = A, A ∨ ¬A = 1.
 
 **V:** Wie viele Zeilen und wie viele Verknüpfungen gibt es bei n
-Eingangsvariablen? — *Kap. 3/29* ★
+Eingangsvariablen? — *Kap. 3/29* ◆
 **R:** K = 2ⁿ Kombinationsmöglichkeiten, also Zeilen der Wahrheitstabelle, und
 V = 2^K = 2^(2ⁿ) mögliche Verknüpfungen. Bei n = 2 also 4 Zeilen und 16
 Verknüpfungen.
@@ -373,12 +408,12 @@ Vorrangregeln? — *Kap. 3/43*
 amerikanischen bindet UND stärker als ODER (Punkt vor Strich). In beiden bindet
 die Negation am stärksten. Empfehlung der Vorlesung: Bei ODER immer klammern.
 
-**V:** Wie bildet man die DNF? — *Kap. 3/50* ★
+**V:** Wie bildet man die DNF? — *Kap. 3/50* ◆
 **R:** Alle Zeilen mit Ausgang 1 betrachten. Je Zeile einen Minterm bilden: alle
 Variablen UND-verknüpft, negiert wenn die Variable in der Zeile 0 ist. Alle
 Minterme ODER-verknüpfen. Kurz: UND vor ODER.
 
-**V:** Wie bildet man die KNF? — *Kap. 3/52* ★
+**V:** Wie bildet man die KNF? — *Kap. 3/52* ◆
 **R:** Alle Zeilen mit Ausgang 0 betrachten. Je Zeile einen Maxterm bilden: alle
 Variablen ODER-verknüpft, negiert wenn die Variable in der Zeile 1 ist. Alle
 Maxterme UND-verknüpfen.
@@ -388,13 +423,13 @@ Maxterme UND-verknüpfen.
 KV-Diagramm die Nullen zusammenfassen, das ergibt die disjunktive Minimalform von
 ¬Y, und darauf De Morgan anwenden.
 
-**V:** Wie sind KV-Tafeln aufgebaut? — *Kap. 3/59* ★
+**V:** Wie sind KV-Tafeln aufgebaut? — *Kap. 3/59* ◆
 **R:** Nachbarfelder unterscheiden sich in genau einer Variablen (Gray-Code).
 Randfelder gelten als benachbart, die Tafel ist gedanklich ein Torus. Bei n
 Eingangsvariablen gibt es 2ⁿ Felder. Jedes Feld erhält den Funktionswert aus der
 Wahrheitstabelle.
 
-**V:** Nenne die vier Regeln des KV-Minimierungsverfahrens. — *Handout 4* ★
+**V:** Nenne die vier Regeln des KV-Minimierungsverfahrens. — *Handout 4* ◆
 **R:** 1. Signalwerte in die nummerierten Felder eintragen. 2. Symmetrisch
 liegende 1-Felder zu Zweier-, Vierer- oder Achterblöcken einkreisen. 3. Jedes
 1-Feld mindestens einmal einkreisen, möglichst große Einkreisungen finden.
@@ -404,7 +439,7 @@ liegende 1-Felder zu Zweier-, Vierer- oder Achterblöcken einkreisen. 3. Jedes
 **R:** Genau k Variablen. Deshalb immer so groß wie möglich einkreisen,
 Überlappungen sind erlaubt und oft nötig.
 
-**V:** Was sind Don't-Care-Terme und wie behandelt man sie? — *Kap. 3/70* ★
+**V:** Was sind Don't-Care-Terme und wie behandelt man sie? — *Kap. 3/70* ◆
 **R:** Eingangskombinationen, die technisch nicht auftreten können oder deren
 Ergebnis gleichgültig ist. Sie werden als X in die KV-Tafel eingetragen und dürfen
 nach Belieben als 0 oder 1 gelesen werden. Ein X wird nur einbezogen, wenn es
@@ -412,6 +447,18 @@ einen Block vergrößert — es **muss** nicht überdeckt werden.
 
 **V:** Bis wie viele Variablen ist das KV-Diagramm praktikabel? — *Kap. 3/58*
 **R:** Etwa sechs. Vorgeschlagen 1952 von Veitch, 1953 von Karnaugh modifiziert.
+
+**V:** Worum geht es bei der Generatorüberwachung? — *Kap. 3/73*
+**R:** Ein Generator ist mit maximal 10 kW belastbar. Vier zuschaltbare Motoren
+M1 bis M4 mit 2, 3, 5 und 7 kW werden über die Signale B1 bis B4 (E0.1 bis E0.4)
+gemeldet, wobei **laufend = 0 und aus = 1** gilt. Eine Meldeleuchte P1 (A4.0)
+soll bei allen zulässigen Kombinationen leuchten — zulässig heißt, dass die Summe
+der laufenden Motoren 10 kW nicht überschreitet.
+
+**V:** Welche Falle steckt in der Generatorüberwachung? — *Kap. 3/73*
+**R:** Die invertierte Logik der Sensoren: **laufend = 0**, aus = 1. Wer die
+Wahrheitstabelle mit „1 heißt läuft" aufstellt, bekommt die Umkehrfunktion und
+damit jede Folgeaufgabe falsch.
 
 **V:** Was ist der Unterschied zwischen Glitch und Hazard? — *Kap. 3/80*
 **R:** Ein Glitch ist eine nicht beabsichtigte Signaländerung am Gatterausgang.
@@ -453,7 +500,7 @@ Weiterschaltung erfolgt durch Sensorsignale.
 **V:** Nenne die beiden Ausführungen elektrischer Steuerungen. — *Kap. 4/13*
 **R:** Verbindungsprogrammiert (VPS) und speicherprogrammiert (SPS).
 
-**V:** Vergleiche VPS und SPS in vier Merkmalen. — *Kap. 5/3* ★
+**V:** Vergleiche VPS und SPS in vier Merkmalen. — *Kap. 5/3* ◆
 **R:** Hardware: VPS aufgabenspezifisch, SPS aufgabenneutral. Funktionsrealisierung:
 VPS über elektrische Verbindungen, SPS als abgespeichertes Programm. Interne
 Verarbeitung: VPS zeitlich parallel, SPS zeitzyklisch und im Zyklus seriell.
@@ -473,13 +520,13 @@ elektromagnetisch mit Anker und haben immer doppelt unterbrechende Kontakte.
 **R:** Leistungsschütze schalten große Lasten und haben
 Lichtbogen-Löscheinrichtungen. Hilfsschütze schalten kleinere Steuerspannungen.
 
-**V:** Wie werden Relais und Schütze gekennzeichnet? — *Kap. 4/31* ★
+**V:** Wie werden Relais und Schütze gekennzeichnet? — *Kap. 4/31* ◆
 **R:** K für Relais, Q für Schütz. Spulenanschlüsse A1 (+) und A2 (−).
 Hauptstromkontakte einstellig: 3/4 bei Gleichstrom, 1/2 bei Wechselstrom.
 Steuerkontakte zweistellig: erste Ziffer ist die fortlaufende Ordnungsziffer,
 zweite Ziffer die Funktionsziffer — 1/2 bedeutet Öffner, 3/4 bedeutet Schließer.
 
-**V:** Was bedeutet die Kontaktbezeichnung 13/14, was 21/22? ★
+**V:** Was bedeutet die Kontaktbezeichnung 13/14, was 21/22? ◆
 **R:** 13/14 ist der erste Schließer (Funktionsziffer 3/4), 21/22 der zweite
 Öffner (Funktionsziffer 1/2).
 
@@ -502,7 +549,7 @@ schmilzt und verdampft.
 Freilaufdiode.
 
 **V:** In welchem Zustand werden Kontaktsteuerungen im Schaltplan dargestellt? —
-*Kap. 4/39* ★
+*Kap. 4/39* ◆
 **R:** Immer im nicht geschalteten Zustand — stromlos, Taster unbetätigt.
 
 **V:** Was unterscheidet den ausführlichen vom kompakten Stromlaufplan? —
@@ -517,13 +564,13 @@ links nach rechts.
 Steuerleistung schaltet große Last), umkehren, verriegeln, allgemein logisch
 verknüpfen und speichern.
 
-**V:** Wie funktioniert die Selbsthaltung? — *Kap. 4/42* ★
+**V:** Wie funktioniert die Selbsthaltung? — *Kap. 4/42* ◆
 **R:** Im Stromkreis des Relais K1 liegt ein Schließer desselben Relais K1
 parallel zum EIN-Taster S1. Wird S1 kurz betätigt, zieht K1 an, der Schließer K1
 überbrückt S1, und K1 bleibt erregt. Der Einschaltimpuls ist gespeichert.
 
 **V:** Was ist der Zusammenhang zwischen Selbsthaltung und Schaltnetz/Schaltwerk? —
-*Kap. 4/42* ★
+*Kap. 4/42* ◆
 **R:** Schaltnetz = ohne Selbsthaltung, der Ausgang hängt nur vom aktuellen
 Eingang ab. Schaltwerk = mit Selbsthaltung, es gibt einen gespeicherten Zustand.
 
@@ -531,6 +578,18 @@ Eingang ab. Schaltwerk = mit Selbsthaltung, es gibt einen gespeicherten Zustand.
 **R:** Das dominierende Verhalten gibt an, wie die Schaltung auf gleichzeitiges
 EIN und AUS reagiert. Bei dominierend setzend hat die Erregung Vorrang vor dem
 AUS-Taster, bei dominierend rücksetzend ist es umgekehrt.
+
+**V:** Wie lautet die Übung Förderband? — *Kap. 4/53*
+**R:** Das Band startet mit dem Taster Start und läuft, bis der Endlagenschalter
+rechts eine Kiste erkennt. Dann stoppt es und läuft erst wieder an, wenn der
+Endlagenschalter links eine Kiste feststellt. Die Endlagenschalter sind hier als
+**Schließer** dargestellt. Aufgabe ist der Schaltplan der Steuerungsseite in
+konventioneller Schaltungstechnik.
+
+**V:** Mit welcher Spannung arbeitet der Steuerkreis? — *Kap. 4/53*
+**R:** **24 V.** Der Steuerstromkreis läuft von 24 V nach 0 V, der Leistungsteil
+dagegen am Drehstromnetz L1/L2/L3. Auf der Folie ist der 24-V-Kreis
+handschriftlich mit Schließer, Öffner und Schützspule K1 durchskizziert.
 
 **V:** Wozu dient die Wendeschützschaltung? — *Kap. 4/49*
 **R:** Zur Umkehr der Drehrichtung von Drehstrommotoren. Zwei Schütze Q1 und Q2
@@ -550,12 +609,12 @@ Anlauf in Dreieckschaltung.
 
 ## Kapitel 4.2 — Schaltwerke
 
-**V:** Was unterscheidet Schaltnetz und Schaltwerk? — *Kap. 4.2/3, Kap. 7/4* ★
+**V:** Was unterscheidet Schaltnetz und Schaltwerk? — *Kap. 4.2/3, Kap. 7/4* ◆
 **R:** Beim Schaltnetz hängt der Ausgang nur von der aktuellen Eingangsbelegung
 ab, es ist rein kombinatorisch. Das Schaltwerk hat zusätzlich Speicher oder
 Zeitglieder — der Ausgang hängt von Eingang **und** innerem Zustand ab.
 
-**V:** Was ist der Unterschied zwischen SR- und RS-Speicher? — *Kap. 4.2/5* ★
+**V:** Was ist der Unterschied zwischen SR- und RS-Speicher? — *Kap. 4.2/5* ◆
 **R:** Nur der Vorrang bei gleichzeitigem Setzen und Rücksetzen. SR ist
 setzdominant, RS ist rücksetzdominant. In der Foliennotation gilt: Der Eingang,
 der im Funktionsplan **unten am Q** steht, wird in der Anweisungsliste zuletzt
@@ -570,6 +629,29 @@ A := FALSE; END_IF;`
 **V:** Welchen Speichervorrang wählt man in der Sicherheitstechnik?
 **R:** Rücksetzdominant. Ein gleichzeitig anliegendes AUS muss in jedem Fall
 gewinnen.
+
+**V:** Wie lautet die Aufgabe „Werktor"? — *Kap. 4.2/7*
+**R:** Ein Werkstor wird über einen Elektromotor auf- und zugesteuert, über die
+Leistungsschütze Q1 (Rechtslauf, Tor auf) und Q2 (Linkslauf, Tor zu). Die
+Endlagen melden B1 und B2. Schalter S3 wählt zwischen Automatik und Tippen: In
+Automatik fährt das Tor nach kurzem Tippen von S1 oder S2 ganz auf oder zu, im
+Tippbetrieb nur solange getippt wird. Umschalten der Richtung ist nur über den
+Stopp S0 möglich.
+
+**V:** Warum ist beim Werktor ein Umschalten nur über Stopp erlaubt? —
+*Kap. 4.2/7*
+**R:** Weil Q1 und Q2 den Motor in entgegengesetzte Richtungen ansteuern. Ein
+direktes Umschalten hieße, beide Schütze gleichzeitig zu erregen — deshalb
+braucht die Schaltung eine **Verriegelung**, und der Stopp erzwingt den sicheren
+Zwischenzustand.
+
+**V:** Wie sieht die Speicherlösung der Drei-Pumpen-Aufgabe im Stromlaufplan
+aus? — *Kap. 4.2/18*
+**R:** Realisierung über **Hilfsschütze**: Zwei Hilfsschütze K1 und K2 bilden
+zusammen mit den Leistungsschützen Q1, Q2, Q3 eine Kette. Jeder Zweig hängt an
+S1, jeder trägt Selbsthaltung, und die Öffner der jeweils schon angezogenen
+Schütze schalten den nächsten Zweig frei. S0 als Öffner trennt alle Zweige
+gemeinsam.
 
 **V:** Welcher Zählerbaustein ist der Standard nach IEC 61131? — *Kap. 4.2/10*
 **R:** CTUD, count up/down. Er zählt bei steigender Flanke an CU aufwärts und an
@@ -604,14 +686,14 @@ Sind keine freien Plätze da, leuchtet eine rote Lampe. Umsetzung mit dem
 vorgefertigten Zähler **CTUD**.
 
 **V:** Wie sieht die erweiterte RS-Tabelle der Drei-Pumpen-Aufgabe aus? —
-*Kap. 4.2/21* ★
+*Kap. 4.2/21* ◆
 **R:** Schritt 1: Bedingung S1 (0→1), setzt IO1. Schritt 2: IO1 ∧ ¬Q1 ∧ ¬Q2,
 setzt Q1, setzt IO1 zurück. Schritt 3: IO1 ∧ Q1 ∧ ¬Q2, setzt Q2, setzt IO1
 zurück. Schritt 4: IO1 ∧ Q1 ∧ Q2, setzt Q3, setzt IO1 zurück. Zusätzlich: ¬S0
 setzt Q1, Q2 und Q3 gemeinsam zurück.
 
 **V:** Warum braucht die Drei-Pumpen-Aufgabe eine Flankenauswertung? —
-*Kap. 4.2/21* ★
+*Kap. 4.2/21* ◆
 **R:** Weil derselbe EIN-Taster S1 dreimal verwendet wird. Ohne Flanke wäre S1 im
 nächsten Zyklus immer noch 1 und die Kette liefe in einem einzigen Durchlauf
 durch. Im FUP steht deshalb ein P-Baustein hinter S1, der den Merker IO1 für
@@ -632,24 +714,24 @@ D-Speicher), Zeitfunktionen (Einschaltverzögerung, Puls), Zählfunktionen
 (arithmetische Verknüpfung) und Transformation (Radizieren, Differenzieren,
 Betrag, Exponieren).
 
-**V:** Was bedeutet das EVA-Prinzip? — *Kap. 5/11* ★
+**V:** Was bedeutet das EVA-Prinzip? — *Kap. 5/11* ◆
 **R:** Eingabe — Verarbeitung — Ausgabe. Eine SPS besteht in minimaler Ausführung
 immer aus Eingabeeinheit, Verarbeitungseinheit und Ausgabeeinheit. Die zyklische
 Abarbeitung ist grundlegendes Merkmal und nutzt ein Prozessabbild.
 
-**V:** Beschreibe den SPS-Zyklus in drei Schritten. — *Kap. 5/12* ★
+**V:** Beschreibe den SPS-Zyklus in drei Schritten. — *Kap. 5/12* ◆
 **R:** Erstens Prozessabbild der Eingänge (PAE) erstellen — alle Eingänge werden
 einmalig eingelesen und eingefroren. Zweitens Anwenderprogramm abarbeiten,
 Anweisung für Anweisung seriell. Drittens Prozessabbild der Ausgänge (PAA)
 ausgeben.
 
-**V:** Was ist die Zykluszeit? — *Kap. 5/14* ★
+**V:** Was ist die Zykluszeit? — *Kap. 5/14* ◆
 **R:** Die Zeit für die Abarbeitung eines Zyklus einschließlich aller
 Kommunikationsaufgaben. Sie hängt von der Rechenzeit ab, also von der Zahl der
 Anweisungen. Höherpriorisierte Tasks unterbrechen den Zyklus und verlängern ihn.
 
 **V:** Was ist die Reaktionszeit und warum ist sie länger als die Zykluszeit? —
-*Kap. 5/14* ★
+*Kap. 5/14* ◆
 **R:** Die Reaktionszeit ist die Dauer zwischen der Änderung eines Eingangssignals
 und der Reaktion am Ausgang. Ändert sich ein Eingang kurz nach dem Einlesen, wird
 er erst im nächsten Zyklus erfasst und wirkt erst an dessen Ende — im ungünstigsten
@@ -682,11 +764,11 @@ Hardwarekonfiguration auf. Der Systemspeicher enthält die Operandenbereiche
 Merker, Zeiten und Zähler sowie die Prozessabbilder und Lokaldaten.
 
 **V:** Nenne die drei Programmorganisationseinheiten nach DIN EN 61131-3. —
-*Handout H3* ★
+*Handout H3* ◆
 **R:** Programm (Zyklusbaustein, PLC_PRG), Funktionsbaustein FB — parametrierbar
 **mit** Speicher — und Funktion FC — parametrierbar **ohne** Speicher.
 
-**V:** Nenne die fünf SPS-Programmiersprachen nach IEC 61131-3. — *Kap. 5/23* ★
+**V:** Nenne die fünf SPS-Programmiersprachen nach IEC 61131-3. — *Kap. 5/23* ◆
 **R:** Textsprachen: Anweisungsliste AWL (IL) und Strukturierter Text ST (SCL).
 Grafische Sprachen: Funktionsbausteinsprache FUP (FBD), Kontaktplan KOP (LD) und
 Ablaufsprache AS (SFC).
@@ -714,16 +796,16 @@ Logikplan, zur Beschreibung kontinuierlicher Vorgänge. Es ist **proprietär**
 Reihenschaltung, ODER eine Parallelschaltung. Jeder Kontaktplan muss mit einer
 Zuweisung, einem Funktions- oder Bausteinaufruf abgeschlossen werden.
 
-**V:** Nenne die Bit-Datentypen mit ihrer Größe. — *Kap. 5/26* ★
+**V:** Nenne die Bit-Datentypen mit ihrer Größe. — *Kap. 5/26* ◆
 **R:** BOOL 1 Bit (FALSE, TRUE), BYTE 8 Bit, WORD 16 Bit, DWORD 32 Bit, STRING
 variabel.
 
-**V:** Nenne die Arithmetiktypen mit Wertebereich. — *Kap. 5/26* ★
+**V:** Nenne die Arithmetiktypen mit Wertebereich. — *Kap. 5/26* ◆
 **R:** INT 16 Bit von −32768 bis +32767. DINT 32 Bit von −2147483648 bis
 +2147483647. REAL 32 Bit als Dezimalzahl mit Punkt, etwa 341.7, oder in
 Exponentialdarstellung 3.417E+02.
 
-**V:** Nenne die drei Zeittypen mit Größe und Schreibweise. — *Kap. 5/26* ★
+**V:** Nenne die drei Zeittypen mit Größe und Schreibweise. — *Kap. 5/26* ◆
 **R:** TIME 32 Bit, geschrieben `t#12h20m30s`. TIME_OF_DAY 32 Bit, geschrieben
 `tod#08:36:12`. DATE 16 Bit, geschrieben `d#1990-01-01`.
 
@@ -732,30 +814,30 @@ Exponentialdarstellung 3.417E+02.
 **R:** Weil sie auch reine Bitfolgen darstellen können, deren einzelne Bits keine
 Stellenwertigkeit haben — etwa EB 0 als E 0.0 bis E 0.7.
 
-**V:** Wie ist die Namenskonvention für Variablen aufgebaut? — *Kap. 5/27* ★
+**V:** Wie ist die Namenskonvention für Variablen aufgebaut? — *Kap. 5/27* ◆
 **R:** Aus drei Bestandteilen: Anwendungsbereich, Kontrolle, Datentyp.
 Anwendungsbereich: Global g, Local l, POU-Parameter p, Temporary tmp. Kontrolle:
 Input i, Output o. Datentyp: Bool x, Integer i, Real r, Time tim, Date dt, Char c,
 Word w, String str.
 
-**V:** Was bedeutet der Variablenname `gixS1`? — *Kap. 5/27* ★
+**V:** Was bedeutet der Variablenname `gixS1`? — *Kap. 5/27* ◆
 **R:** g = global, i = Input, x = BOOL. Also eine globale Eingangsvariable vom
 Datentyp BOOL mit dem Bezeichner S1.
 
-**V:** Wie ist die Adressierung nach IEC 61131-3 aufgebaut? — *Handout 4* ★
+**V:** Wie ist die Adressierung nach IEC 61131-3 aufgebaut? — *Handout 4* ◆
 **R:** Prozentzeichen, Präfix für den Speicherort, Präfix für die Größe, dann eine
 oder mehrere durch Punkte getrennte Zahlen. Speicherort: I (E) Eingang, Q (A)
 Ausgang, M Merker, DB Datenbaustein, T Zeiten, Z Zähler. Größe: X Bit, B Byte,
 W Wort, D Doppelwort, L Langwort.
 
-**V:** Was bedeuten `%IX136.1`, `%QW800` und `%MD10`? — *Handout 4* ★
+**V:** Was bedeuten `%IX136.1`, `%QW800` und `%MD10`? — *Handout 4* ◆
 **R:** Eingangsbit 136.1, Ausgangswort 800 und Merker-Doppelwort 10.
 
-**V:** Was enthält eine Zuordnungstabelle in Kurzform? ★
+**V:** Was enthält eine Zuordnungstabelle in Kurzform? ◆
 **R:** Drei Spalten: Symbol, Adresse, Kommentar. Beispiel: S1 | E0.1 | Start-Taster,
 Schließer.
 
-**V:** Was enthält eine Zuordnungstabelle in Langform? ★
+**V:** Was enthält eine Zuordnungstabelle in Langform? ◆
 **R:** Fünf Spalten, getrennt nach Ein- und Ausgängen: Bezeichnung, Datentyp,
 Symbol, Adresse, Zuordnung. Beispiel: Start-Taster | Bool | S1 | E0.1 |
 Betätigt = 1. Bei einem Öffner steht dort Betätigt = 0.
@@ -770,12 +852,12 @@ Funktionsbausteinen.
 
 ## Kapitel 6 — Ablaufsteuerung / SFC
 
-**V:** Wie definiert DIN IEC 60050-351 die Ablaufsteuerung? ★
+**V:** Wie definiert DIN IEC 60050-351 die Ablaufsteuerung? ◆
 **R:** Als eine Steuerung mit schrittweisem Ablauf, bei der der Übergang von einem
 Schritt auf den folgenden programmgemäß entsprechend den vorgegebenen
 Übergangsbedingungen — Weiterschaltbedingungen, Transitionen — erfolgt.
 
-**V:** Nenne die zwei Merkmale einer Ablaufsteuerung. — *Kap. 6/10* ★
+**V:** Nenne die zwei Merkmale einer Ablaufsteuerung. — *Kap. 6/10* ◆
 **R:** Es ist immer nur ein Schritt aktiv. Und die Transition erfolgt, wenn die
 Weiterschaltbedingung erfüllt ist — dann **muss** weitergeschaltet werden.
 
@@ -788,7 +870,7 @@ greift direkt auf den Ausgang durch. Einrichten — Stellgeräte einzeln, unter
 Umgehung vorhandener Verriegelungen. Tippbetrieb/Einzelschritt — Weiterschaltung
 durch Bedieneingriff.
 
-**V:** Welche zwei Strukturelemente hat ein Ablaufplan? — *Kap. 6/13* ★
+**V:** Welche zwei Strukturelemente hat ein Ablaufplan? — *Kap. 6/13* ◆
 **R:** Zustände beziehungsweise Schritte mit den dazugehörigen Aktionen, und
 Transitionen.
 
@@ -813,7 +895,14 @@ einen Wert, etwa „Zähler := 7".
 **R:** Sie beginnt mit einem Anfangsschritt (initial step), der die Anlage in
 Grundstellung bringt. Nach Beendigung geht die Kette in die Grundstellung zurück.
 
-**V:** Welche Regel gilt am Anfang einer ODER-Verzweigung? ★
+**V:** Wie lautet die Übungsaufgabe „3 Pumpen"? — *Kap. 6/36*
+**R:** Drei Pumpen werden über die Leistungsschütze Q1, Q2 und Q3 nacheinander
+durch **jeweils eine erneute Betätigung** des EIN-Tasters S1 eingeschaltet. Mit
+dem AUS-Taster S0 werden alle laufenden Pumpen gleichzeitig abgeschaltet. Zu
+entwerfen ist die Ablaufkette mit Aktionen und Transitionen; die Lösung auf der
+Folgefolie steht in FUP.
+
+**V:** Welche Regel gilt am Anfang einer ODER-Verzweigung? ◆
 **R:** Es darf nur **eine** Weiterschaltbedingung wahr sein, sonst muss eine
 Priorität vorgegeben werden. Ein Stern zeigt an, dass von links nach rechts
 abgearbeitet wird — der linke Strang hat dann höhere Priorität.
@@ -822,7 +911,7 @@ abgearbeitet wird — der linke Strang hat dann höhere Priorität.
 **R:** Es darf nicht eine Bedingung immer sofort erfüllt sein, sonst besteht keine
 Chance, je eine Alternative zu wählen.
 
-**V:** Welche Regel gilt für die UND-Verzweigung? ★
+**V:** Welche Regel gilt für die UND-Verzweigung? ◆
 **R:** Nach DIN IEC 60050-351 werden durch **eine** Weiterschaltbedingung alle
 parallelen Zweige aktiviert und nur durch Erfüllung einer **gemeinsamen**
 Weiterschaltbedingung wieder zusammengeführt.
@@ -835,24 +924,24 @@ Siemens, SFC in Codesys.
 
 ## Kapitel 7 — Automaten
 
-**V:** Wie sind Schaltwerke definiert? — *Kap. 7/6* ★
+**V:** Wie sind Schaltwerke definiert? — *Kap. 7/6* ◆
 **R:** Schaltwerke sind universelle Beschreibungen für zeit- und wertdiskrete
 Systeme. Diese werden **endliche Automaten** genannt, englisch finite state
 machine.
 
 **V:** In welche Bestandteile lässt sich jedes Schaltwerk zerlegen? —
-*Kap. 7/6* ★
+*Kap. 7/6* ◆
 **R:** In zwei Schaltnetze plus Zustandsregister (Speicherwerk aus Flipflops).
 Schaltnetz 1 ist die **Übergangsfunktion** und berechnet den Folgezustand,
 Schaltnetz 2 ist die **Ausgangsfunktion** und berechnet den Ausgang.
 
-**V:** Wodurch ist ein endlicher Automat definiert? — *Kap. 7/7* ★
+**V:** Wodurch ist ein endlicher Automat definiert? — *Kap. 7/7* ◆
 **R:** Durch eine endliche Menge von Eingabesymbolen x_i ∈ X (Alphabet), eine
 endliche Menge von Zuständen z_i ∈ Z, einen Anfangszustand z₀ ∈ Z und eine
 Zustandsübergangsfunktion δ: Z × X → Z. Zusätzlich kann er eine endliche Menge
 von Ausgabesymbolen y_i ∈ Y und eine Ausgabefunktion λ: Z × X → Y umfassen.
 
-**V:** Wie lautet das 6-Tupel eines Automaten? — *Kap. 7/7* ★
+**V:** Wie lautet das 6-Tupel eines Automaten? — *Kap. 7/7* ◆
 **R:** `A = (X, Z, z₀, Y, δ, λ)` — Eingabealphabet, Zustandsmenge,
 Anfangszustand, Ausgabealphabet, Übergangsfunktion, Ausgabefunktion.
 
@@ -862,7 +951,7 @@ wenn Taster S2 gedrückt wird (x₂ = 1). Ansonsten verbleibt die Tür in ihrem
 Zustand. Zwei Zustände: z₁ „Tür zu" (Anfangszustand) und z₂ „Tür auf". Ausgänge:
 y₁ = 1 „öffnet", y₂ = 1 „schliesst".
 
-**V:** Beschreibe den Warenautomaten als Automat. — *Kap. 7/12* ★
+**V:** Beschreibe den Warenautomaten als Automat. — *Kap. 7/12* ◆
 **R:** Er liefert gegen ein 2-€-Stück oder zwei 1-€-Stücke eine Ware. Der
 Rückgabeknopf gibt eingeworfenes Geld zurück, sofern 2 € noch nicht erreicht
 sind. Eingabealphabet X = {1, 2, r} mit r für Rückgabe. Ausgabealphabet
@@ -870,39 +959,39 @@ Y = {w, n, 1, 2} mit w für Ware und n für Nichts. Zustandsmenge Z = {z₁, z�
 wobei z₀ der neutrale Anfangs- und zugleich Endzustand ist.
 
 **V:** Aus welchen drei Blöcken besteht das Schaltwerk der Ampelschaltung? —
-*Kap. 7/27* ★
+*Kap. 7/27* ◆
 **R:** Ausgabefunktion (liefert y₀, y₁, y₂ an die drei Lampen),
 Übergangsfunktion (verarbeitet die Eingabe x₀ vom Ampelknopf und die Zustände
 q₀, q₁) und Zustandsspeicher aus zwei D-Flipflops, die q₀ und q₁ halten.
 
-**V:** Nenne die drei Automatentypen und ihre Ausgabefunktion. — *Kap. 7/8* ★
+**V:** Nenne die drei Automatentypen und ihre Ausgabefunktion. — *Kap. 7/8* ◆
 **R:** Mealy-Automat: die Ausgabefunktion λ hängt vom aktuellen Zustand **und der
 Eingabe** ab. Moore-Automat: die Ausgabefunktion μ hängt **nur vom aktuellen
 Zustand** ab. Medwedjew-Automat: **keine** Ausgabefunktion, die Ausgabe **ist**
 der aktuelle Zustand.
 
-**V:** Wie ist ein Mealy-Automat formal definiert? — *Kap. 7/8* ★
+**V:** Wie ist ein Mealy-Automat formal definiert? — *Kap. 7/8* ◆
 **R:** A = (X, Z, z₀, Y, δ, λ) mit Eingabemenge X, Zustandsmenge Z,
 Anfangszustand z₀, Ausgabemenge Y, Übergangsfunktion δ und Ausgabefunktion λ.
 
-**V:** Welcher Automatentyp kommt mit den wenigsten Zuständen aus? — *Kap. 7/8* ★
+**V:** Welcher Automatentyp kommt mit den wenigsten Zuständen aus? — *Kap. 7/8* ◆
 **R:** Der Mealy-Automat. Alle drei Typen sind ineinander transferierbar, aber
 Mealy braucht die wenigsten Zustände — weil die Ausgabe zusätzlich von der Eingabe
 abhängen darf und deshalb weniger Zustände zur Unterscheidung nötig sind.
 
-**V:** Woran erkennt man im Zustandsgraphen, ob Moore oder Mealy vorliegt? ★
+**V:** Woran erkennt man im Zustandsgraphen, ob Moore oder Mealy vorliegt? ◆
 **R:** Steht die Ausgabe **im Zustandskreis**, ist es ein Moore-Automat. Steht sie
 **an der Kante** in der Form `Eingang / Ausgabe`, ist es ein Mealy-Automat.
 
-**V:** Formuliere die Musterbegründung für einen Moore-Automaten. — *Übung 7* ★
+**V:** Formuliere die Musterbegründung für einen Moore-Automaten. — *Übung 7* ◆
 **R:** „Es handelt sich um einen Moore-Automaten, weil die Ausgabefunktion y nur
 vom aktuellen Zustand abhängig ist."
 
-**V:** Wie wandelt man Mealy in Moore um? — *Kap. 7/8* ★
+**V:** Wie wandelt man Mealy in Moore um? — *Kap. 7/8* ◆
 **R:** Jeden Zustand für jede dort auftretende Ausgabe aufspalten und die Ausgabe
 in den Zustand schreiben. Die Zustandszahl steigt.
 
-**V:** Wie wandelt man Moore in Mealy um? — *Kap. 7/8* ★
+**V:** Wie wandelt man Moore in Mealy um? — *Kap. 7/8* ◆
 **R:** Die Ausgabe eines Zustands an alle **eingehenden** Kanten schreiben. Die
 Zustandszahl bleibt gleich oder sinkt.
 
@@ -912,20 +1001,20 @@ akzeptierende Endzustände — die Ausgabe ist im Kern ja/nein. Der Transduktor
 erzeugt zu jeder Eingabe eine Ausgabe, wandelt also Eingabefolgen in
 Ausgabefolgen um.
 
-**V:** Wie viele Zeilen hat die Folgezustandstabelle? ★
+**V:** Wie viele Zeilen hat die Folgezustandstabelle? ◆
 **R:** 2 hoch (Anzahl Zustandsbits + Anzahl Eingangsbits). Bei zwei Zustandsbits
 und zwei Eingängen also 2⁴ = 16 Zeilen.
 
-**V:** Welche Spalten hat die Folgezustandstabelle? ★
+**V:** Welche Spalten hat die Folgezustandstabelle? ◆
 **R:** Aktueller Zustand, Eingang, Folgezustand und Ausgabe.
 
-**V:** Wie kommt man vom Zustandsgraphen zur Schaltung? — *Übung 7* ★
+**V:** Wie kommt man vom Zustandsgraphen zur Schaltung? — *Übung 7* ◆
 **R:** Erstens Automatentyp bestimmen. Zweitens Folgezustandstabelle aufstellen.
 Drittens je ein KV-Diagramm für jedes Zustandsbit z(n+1) und eines für die
 Ausgangsvariable, daraus die minimale DNF. Viertens Schaltplan zeichnen: je
 Zustandsbit ein D-Flipflop, davor das Gatternetz aus NOT, AND und OR.
 
-**V:** Wie behandelt man eine unzulässige Eingangskombination? — *Übung 7* ★
+**V:** Wie behandelt man eine unzulässige Eingangskombination? — *Übung 7* ◆
 **R:** Als Don't-Care in den KV-Diagrammen. Soll der Automat bei unzulässiger
 Eingabe im aktuellen Zustand bleiben, ergänzt man die Gleichungen so, dass
 z(n+1) = z(n) für diese Kombination gilt.

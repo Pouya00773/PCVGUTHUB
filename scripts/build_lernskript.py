@@ -22,6 +22,7 @@ from docx.enum.section import WD_SECTION
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
+from karten import lies_karten, lies_marker, pruefe
 from docx_common import (
     set_base_style,
     heading,
@@ -368,27 +369,7 @@ def build_spickzettel(skript_blocks):
     return pfad
 
 
-def parse_karten(md):
-    """Liest karteikarten.md als Liste von (Kapitel, Frage, Antwort, klausurrelevant)."""
-    karten, kapitel = [], ""
-    for m in re.finditer(
-        r"^## (.+?)$|^\*\*V:\*\*\s*(.+?)\n\*\*R:\*\*\s*(.+?)(?=\n\n|\n>|\Z)",
-        md,
-        re.M | re.S,
-    ):
-        if m.group(1):
-            kapitel = m.group(1).strip()
-            continue
-        frage = " ".join(m.group(2).split())
-        antwort = " ".join(m.group(3).split())
-        stern = "★" in frage
-        frage = frage.replace("★", "").strip()
-        frage = re.sub(r"—\s*\*[^*]+\*\s*$", "", frage).strip()
-        karten.append((kapitel, frage, antwort, stern))
-    return karten
-
-
-def build_karteikarten(karten):
+def build_karteikarten(karten, stat):
     """Zweispaltiges Schneidebogen-Dokument: Frage fett, Antwort darunter."""
     doc = Document()
     set_base_style(doc, size=9)
@@ -399,35 +380,43 @@ def build_karteikarten(karten):
     heading(doc, "Karteikarten — Grundlagen der Automation", size=13)
     p = doc.add_paragraph()
     r = p.add_run(
-        f"{len(karten)} Karten aus allen grün hinterlegten Kästchen der "
-        f"Foliensätze. Mit ★ markierte Karten gehören zu den in den Folien "
-        f"handschriftlich als klausurrelevant gekennzeichneten Themen — diese "
-        f"zuerst lernen."
+        f"{stat['karten']} Karten aus allen grün hinterlegten Kästchen der "
+        f"Foliensätze.  ★ belegt ({stat['belegt']}): auf genau dieser Folie steht "
+        f"ein handschriftlicher Klausurhinweis.  ◆ verwandt ({stat['verwandt']}): "
+        f"gleiches Thema wie eine markierte Folie, aber ohne eigenen Hinweis — "
+        f"das ist eine Einschätzung, kein Beleg. Die Hinweise stammen aus eigener "
+        f"Mitschrift und grenzen den Stoff nicht ab."
     )
     r.font.size = Pt(8)
     r.italic = True
 
     set_columns(doc, 2)
     kapitel = None
-    for kap, frage, antwort, stern in karten:
-        if kap != kapitel:
-            kapitel = kap
-            subheading(doc, kap, size=10)
+    for k in karten:
+        if k["kapitel"] != kapitel:
+            kapitel = k["kapitel"]
+            subheading(doc, kapitel, size=10)
         pf = doc.add_paragraph()
         pf.paragraph_format.space_before = Pt(5)
         pf.paragraph_format.space_after = Pt(0)
         pf.paragraph_format.keep_with_next = True
-        if stern:
-            rs = pf.add_run("★ ")
+        zeichen = {"belegt": "★ ", "verwandt": "◆ "}.get(k["stufe"], "")
+        if zeichen:
+            rs = pf.add_run(zeichen)
             rs.font.size = Pt(9)
             rs.bold = True
-        write_inline(pf, frage, size=9).runs[-1].bold = True
+        write_inline(pf, k["frage"], size=9)
         for run in pf.runs:
             run.bold = True
+        if k["quelle"]:
+            rq = pf.add_run(f"  ({k['quelle']})")
+            rq.font.size = Pt(8)
+            rq.bold = False
+            rq.italic = True
         pa = doc.add_paragraph()
         pa.paragraph_format.space_after = Pt(3)
         pa.paragraph_format.left_indent = Cm(0.3)
-        write_inline(pa, antwort, size=9)
+        write_inline(pa, k["antwort"], size=9)
 
     add_page_numbers(doc, prefix="Karteikarten")
     pfad = OUT / "Karteikarten_Automation.docx"
@@ -460,12 +449,14 @@ def main():
 
     skript_blocks = parse(md("lernskript_at.md"))
     aufgaben_blocks = parse(md("aufgabentypen.md"))
-    karten = parse_karten(md("karteikarten.md"))
+    positiv, _ = lies_marker()
+    karten = lies_karten(marker=(positiv, set()))
+    stat = pruefe(karten, positiv)
 
     erzeugt = [
         build_lernskript(skript_blocks, aufgaben_blocks),
         build_spickzettel(skript_blocks),
-        build_karteikarten(karten),
+        build_karteikarten(karten, stat),
         build_einfaches_doc(
             parse(md("erklaerungen.md")),
             "Einfach erklärt",
@@ -490,8 +481,9 @@ def main():
     ]
     for pfad in erzeugt:
         print(f"geschrieben: {pfad.relative_to(ROOT)}  ({pfad.stat().st_size/1024:.0f} KB)")
-    print(f"\nKarteikarten: {len(karten)} "
-          f"(davon klausurrelevant: {sum(1 for k in karten if k[3])})")
+    print(f"\nKarteikarten: {stat['karten']}  "
+          f"belegt {stat['belegt']}  verwandt {stat['verwandt']}  "
+          f"(Marker: {stat['marker_gesamt']})")
 
 
 if __name__ == "__main__":

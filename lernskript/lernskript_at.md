@@ -15,8 +15,14 @@ urheberrechtlichen Gründen nicht abgedruckt sind.
 
 ## Was laut Foliensatz klausurrelevant ist
 
-Die folgenden Punkte sind in den Folien handschriftlich als klausurrelevant
-markiert. Sie bilden die Prioritätenliste beim Lernen.
+Auf sechzehn Folien steht ein **handschriftlicher** Klausurhinweis. Jede
+Fundstelle ist am gerenderten Bild geprüft; die vollständige Liste mit Wortlaut
+steht in `lernskript/klausurmarker.md`.
+
+> **Was das ist und was nicht.** Die Hinweise sind eigene Mitschrift in den
+> Folien, kein offizielles Dokument des Dozenten. Und sie grenzen den Stoff
+> **nicht ab**: Sie sagen, wo etwas notiert wurde — nicht, dass alles Übrige
+> nicht drankommt.
 
 | Thema | Fundstelle | Markierung |
 |---|---|---|
@@ -30,14 +36,15 @@ markiert. Sie bilden die Prioritätenliste beim Lernen.
 | Kennzeichnung von Relais- und Schützkontakten beschriften | Kap. 4/31 | klausurrelevant, „beschriften in Klausur" |
 | Selbsthaltung — Schaltnetz ohne, Schaltwerk mit | Kap. 4/42 | klausurrelevant |
 | Übung Förderband, 24-V-Steuerkreis | Kap. 4/53 | klausurrelevant |
-| Beispiel Werktor (SR-Speicher) | Kap. 4.2/7 | leicht klausurrelevant |
+| Beispiel Werktor (SR-Speicher) | Kap. 4.2/7 | „**Vielleicht** klausurrelevant“ — ausdrücklich unsicher |
 | Beispiel mit Speichern | Kap. 4.2/18 | klausurrelevant |
 | Übungsaufgabe 3 Pumpen (Ablaufkette) | Kap. 6/36 | klausurrelevant |
 | Unterschied Schaltnetz ↔ Schaltwerk „ordentlich erklären können" | Kap. 7/4 | klausurrelevant |
 | Automatentyp erkennen und umwandeln | Kap. 7/8 | klausurrelevant |
 
 Ausdrücklich **nicht** klausurrelevant sind laut Markierung die De Morganschen
-Gesetze als Herleitung (Kap. 3/17) und die Signalübersicht auf Kap. 2.1/15.
+Gesetze als Herleitung (Kap. 3/17) und die Signalübersicht auf Kap. 2.1/15 —
+die einzigen beiden negativen Markierungen.
 De Morgan wird als Werkzeug trotzdem gebraucht — beim Umformen von NAND/NOR und
 beim Weg von der disjunktiven zur konjunktiven Minimalform.
 
