@@ -368,14 +368,130 @@ def build_spickzettel(skript_blocks):
     return pfad
 
 
-def main():
-    skript_blocks = parse((SRC / "lernskript_at.md").read_text(encoding="utf-8"))
-    aufgaben_blocks = parse((SRC / "aufgabentypen.md").read_text(encoding="utf-8"))
+def parse_karten(md):
+    """Liest karteikarten.md als Liste von (Kapitel, Frage, Antwort, klausurrelevant)."""
+    karten, kapitel = [], ""
+    for m in re.finditer(
+        r"^## (.+?)$|^\*\*V:\*\*\s*(.+?)\n\*\*R:\*\*\s*(.+?)(?=\n\n|\n>|\Z)",
+        md,
+        re.M | re.S,
+    ):
+        if m.group(1):
+            kapitel = m.group(1).strip()
+            continue
+        frage = " ".join(m.group(2).split())
+        antwort = " ".join(m.group(3).split())
+        stern = "★" in frage
+        frage = frage.replace("★", "").strip()
+        frage = re.sub(r"—\s*\*[^*]+\*\s*$", "", frage).strip()
+        karten.append((kapitel, frage, antwort, stern))
+    return karten
 
-    a = build_lernskript(skript_blocks, aufgaben_blocks)
-    b = build_spickzettel(skript_blocks)
-    for pfad in (a, b):
+
+def build_karteikarten(karten):
+    """Zweispaltiges Schneidebogen-Dokument: Frage fett, Antwort darunter."""
+    doc = Document()
+    set_base_style(doc, size=9)
+    for s in doc.sections:
+        s.top_margin = s.bottom_margin = Cm(1.2)
+        s.left_margin = s.right_margin = Cm(1.2)
+
+    heading(doc, "Karteikarten — Grundlagen der Automation", size=13)
+    p = doc.add_paragraph()
+    r = p.add_run(
+        f"{len(karten)} Karten aus allen grün hinterlegten Kästchen der "
+        f"Foliensätze. Mit ★ markierte Karten gehören zu den in den Folien "
+        f"handschriftlich als klausurrelevant gekennzeichneten Themen — diese "
+        f"zuerst lernen."
+    )
+    r.font.size = Pt(8)
+    r.italic = True
+
+    set_columns(doc, 2)
+    kapitel = None
+    for kap, frage, antwort, stern in karten:
+        if kap != kapitel:
+            kapitel = kap
+            subheading(doc, kap, size=10)
+        pf = doc.add_paragraph()
+        pf.paragraph_format.space_before = Pt(5)
+        pf.paragraph_format.space_after = Pt(0)
+        pf.paragraph_format.keep_with_next = True
+        if stern:
+            rs = pf.add_run("★ ")
+            rs.font.size = Pt(9)
+            rs.bold = True
+        write_inline(pf, frage, size=9).runs[-1].bold = True
+        for run in pf.runs:
+            run.bold = True
+        pa = doc.add_paragraph()
+        pa.paragraph_format.space_after = Pt(3)
+        pa.paragraph_format.left_indent = Cm(0.3)
+        write_inline(pa, antwort, size=9)
+
+    add_page_numbers(doc, prefix="Karteikarten")
+    pfad = OUT / "Karteikarten_Automation.docx"
+    doc.save(pfad)
+    return pfad
+
+
+def build_einfaches_doc(blocks, titel, untertitel, dateiname, prefix):
+    doc = Document()
+    set_base_style(doc)
+    for s in doc.sections:
+        s.top_margin = s.bottom_margin = Cm(2.0)
+        s.left_margin = s.right_margin = Cm(2.2)
+    heading(doc, titel, size=14)
+    if untertitel:
+        p = doc.add_paragraph()
+        r = p.add_run(untertitel)
+        r.italic = True
+        r.font.size = Pt(10)
+    render(doc, blocks, base_size=11)
+    add_page_numbers(doc, prefix=prefix)
+    pfad = OUT / dateiname
+    doc.save(pfad)
+    return pfad
+
+
+def main():
+    def md(name):
+        return (SRC / name).read_text(encoding="utf-8")
+
+    skript_blocks = parse(md("lernskript_at.md"))
+    aufgaben_blocks = parse(md("aufgabentypen.md"))
+    karten = parse_karten(md("karteikarten.md"))
+
+    erzeugt = [
+        build_lernskript(skript_blocks, aufgaben_blocks),
+        build_spickzettel(skript_blocks),
+        build_karteikarten(karten),
+        build_einfaches_doc(
+            parse(md("erklaerungen.md")),
+            "Einfach erklärt",
+            "Die klausurrelevanten Themen in Alltagssprache",
+            "Erklaerungen_Automation.docx",
+            "Einfach erklärt",
+        ),
+        build_einfaches_doc(
+            parse(md("uebungsloesungen.md")),
+            "Übungsaufgaben mit Lösungsweg",
+            "Übungen 1 bis 7, Minimalformen rechnerisch geprüft",
+            "Uebungsloesungen_Automation.docx",
+            "Übungslösungen",
+        ),
+        build_einfaches_doc(
+            parse(md("lernplan.md")),
+            "Lernplan",
+            "Nach Punktdichte sortiert, nicht nach Vorlesungsreihenfolge",
+            "Lernplan_Automation.docx",
+            "Lernplan",
+        ),
+    ]
+    for pfad in erzeugt:
         print(f"geschrieben: {pfad.relative_to(ROOT)}  ({pfad.stat().st_size/1024:.0f} KB)")
+    print(f"\nKarteikarten: {len(karten)} "
+          f"(davon klausurrelevant: {sum(1 for k in karten if k[3])})")
 
 
 if __name__ == "__main__":

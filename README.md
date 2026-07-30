@@ -13,17 +13,31 @@ Skills sind ehrlich als „(Grundkenntnisse)" markiert (Lernplan siehe `lernplan
 - `scripts/docx_common.py` – gemeinsame DOCX-Formathelfer
 - `output/` – fertige Word-Dateien
 
-## Lernskript Automatisierungstechnik
+## Lernmaterial Automatisierungstechnik
 Klausurvorbereitung „Grundlagen der Automation" (HTW Berlin, WIW, SS 2026).
-- `lernskript/lernskript_at.md` – Skript-Quelltext, neun Teile plus Formelsammlung
-- `lernskript/aufgabentypen.md` – Klausur-Aufgabentypen mit Lösungsschema
-- `scripts/build_lernskript.py` – erzeugt daraus die Word-Dateien
-- `output/Lernskript_Automation.docx`, `output/Spickzettel_Automation.docx`
+
+Quelltexte in `lernskript/`:
+- `lernplan.md` – nach Punktdichte sortierte Lernreihenfolge
+- `lernskript_at.md` – Skript, neun Teile plus Formelsammlung
+- `karteikarten.md` – 128 Karten aus allen grün markierten Folienkästchen
+- `erklaerungen.md` – die Kernthemen in Alltagssprache
+- `uebungsloesungen.md` – Übungen 1–7, Minimalformen rechnerisch geprüft
+- `aufgabentypen.md` – Klausur-Aufgabentypen mit Lösungsschema
+
+Erzeugte Dateien in `output/`: `Lernplan_`, `Lernskript_`, `Karteikarten_`,
+`Erklaerungen_`, `Uebungsloesungen_`, `Spickzettel_Automation.docx` sowie
+`lernseite.html` (interaktive Karteikarten, läuft offline im Browser).
 
 ```bash
 pip install python-docx
-python3 scripts/build_lernskript.py
+python3 scripts/build_lernskript.py    # Word-Dateien
+python3 scripts/build_lernseite.py     # Lernseite
 ```
+
+Die grün hinterlegten Kästchen wurden maschinell aus den Folien gelesen
+(Füllfarbe der PDF-Zeichenobjekte), damit keines übersehen wird. Die
+Quell-PDFs sind bewusst nicht eingecheckt: urheberrechtlich geschütztes
+Vorlesungsmaterial, und die Markdown-Quellen tragen den Inhalt.
 
 ## Erzeugte Dokumente (`output/`)
 - `Lebenslauf_Industrie.docx`

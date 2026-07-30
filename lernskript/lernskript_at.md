@@ -735,6 +735,31 @@ SR:  Q := S OR (NOT R AND Q)      (* S steht aussen, gewinnt *)
 RS:  Q := NOT R AND (S OR Q)      (* R steht aussen, gewinnt *)
 ```
 
+Die Vorlesung erklärt es über die **Abarbeitungsreihenfolge**, und das ist für
+das Lesen der Folien der praktischere Zugang (Kap. 4.2/5). Die SPS arbeitet
+seriell ab, also gewinnt schlicht die zuletzt ausgeführte Anweisung:
+
+| | Speichern mit vorrangigem Rücksetzen | Speichern mit vorrangigem Setzen |
+|---|---|---|
+| Anweisungsliste | `U E1 / S A / U E0 / R A` | `U E0 / R A / U E1 / S A` |
+| zuletzt ausgeführt | Rücksetzen → gewinnt | Setzen → gewinnt |
+| im Funktionsplan | R steht unten am Q | S steht unten am Q |
+
+In Strukturiertem Text sieht dasselbe so aus:
+
+```
+(* vorrangiges Ruecksetzen *)
+IF E1 THEN A := TRUE;  END_IF;
+IF E0 THEN A := FALSE; END_IF;
+
+(* vorrangiges Setzen *)
+IF E0 THEN A := FALSE; END_IF;
+IF E1 THEN A := TRUE;  END_IF;
+```
+
+> **Lesehilfe für den Funktionsplan:** Welcher Eingang **unten am Q** steht, ist
+> der dominante. Das ist schneller erkannt als der Bausteinname.
+
 In der Sicherheitstechnik ist fast immer **rücksetzdominant** gefordert: Ein
 gleichzeitiges AUS muss gewinnen.
 
@@ -937,16 +962,38 @@ Beispiel: `gixS1` ist eine globale Eingangsvariable vom Datentyp BOOL.
 
 ### Zuordnungstabelle
 
-Die Zuordnungstabelle verbindet die technologische Beschreibung mit den
-SPS-Adressen und ist in fast jeder Übungsaufgabe der erste Teilschritt. Sie
-enthält je Signal: Betriebsmittelkennzeichen, Bedeutung im Klartext, Signalart
-(Öffner/Schließer), logische Zuordnung und SPS-Adresse.
+Die Zuordnungstabelle — auch Zuordnungsliste genannt — listet alle für die
+Steuerung relevanten Betriebsmittel auf und ordnet sie den Ein- und Ausgängen zu.
+Sie ist in fast jeder Übungsaufgabe der erste Teilschritt und Grundlage für die
+Variablendeklaration in Funktionen und Funktionsbausteinen.
 
-| BMK | Bedeutung | Art | Logik | Adresse |
+Es gibt zwei zulässige Formen.
+
+**Kurzform** — drei Spalten:
+
+| Symbole | Adressen | Kommentare |
+|---|---|---|
+| S1 | E0.1 | Start-Taster, Schließer |
+| S2 | E0.2 | Schalter links, Öffner |
+| S3 | E0.3 | Schalter rechts, Öffner |
+| H1 | A0.1 | Lampe gelb |
+| H2 | A0.2 | Lampe grün |
+
+**Langform** — fünf Spalten, getrennt nach Ein- und Ausgängen:
+
+| Eingänge | Datentyp | Symbol | Adresse | Zuordnung |
 |---|---|---|---|---|
-| S1 | EIN-Taster | Schließer | betätigt = 1 | %IX0.0 |
-| S0 | AUS-Taster | Öffner | betätigt = 0 | %IX0.1 |
-| Q1 | Leistungsschütz Motor | — | angezogen = 1 | %QX0.0 |
+| Start-Taster | Bool | S1 | E0.1 | Betätigt = 1 |
+| Schalter links | Bool | S2 | E0.2 | Betätigt = 0 |
+| Schalter rechts | Bool | S3 | E0.3 | Betätigt = 0 |
+
+| Ausgänge | Datentyp | Symbol | Adresse | Zuordnung |
+|---|---|---|---|---|
+| Lampe gelb | Bool | H1 | A0.1 | Lampe an = 1 |
+| Lampe grün | Bool | H2 | A0.2 | Lampe an = 1 |
+
+Die Spalte „Zuordnung" trägt die entscheidende Information: **Betätigt = 0**
+kennzeichnet einen Öffner, **Betätigt = 1** einen Schließer.
 
 > **Fallstrick:** Öffner. Ein AUS-Taster wird als Öffner ausgeführt (Drahtbruch­sicherheit).
 > Im Programm muss er deshalb **nicht** negiert abgefragt werden — der unbetätigte
@@ -1067,16 +1114,33 @@ Der Ausgang hängt vom Eingang und vom gespeicherten Zustand ab, und der Zustand
 Formal wird ein endlicher Automat beschrieben durch Zustandsmenge, Eingabemenge,
 Ausgabemenge, Übergangsfunktion und Ausgabefunktion sowie einen Anfangszustand.
 
-### Mealy und Moore — klausurrelevant
+### Die drei Automatentypen — klausurrelevant
 
-**Kap. 7/8, handschriftlich: Automatentyp erkennen und umwandeln.**
+**Kap. 7/8, handschriftlich: „Automatentypen in andere Automatentypen umwandeln —
+klausurrelevant."**
 
-| | Moore | Mealy |
-|---|---|---|
-| Ausgabefunktion hängt ab von | **nur** vom aktuellen Zustand | Zustand **und** Eingang |
-| Notation im Graphen | Ausgabe steht **im Zustandskreis** | Ausgabe steht **an der Kante**, als `Eingang / Ausgabe` |
-| Reaktion | verzögert, erst im Folgezustand | sofort im selben Takt |
-| Zustandsanzahl | tendenziell mehr | tendenziell weniger |
+Der **Mealy-Automat** ist formal definiert als
+
+```
+A = (X, Z, z₀, Y, δ, λ)
+```
+
+mit Eingabemenge X, Zustandsmenge Z, Anfangszustand z₀, Ausgabemenge Y,
+Übergangsfunktion δ und Ausgabefunktion λ.
+
+| | Moore | Mealy | Medwedjew |
+|---|---|---|---|
+| Ausgabefunktion | μ, **nur** vom aktuellen Zustand | λ, Zustand **und** Eingabe | **keine** — die Ausgabe *ist* der Zustand |
+| Notation im Graphen | Ausgabe steht **im Zustandskreis** | Ausgabe steht **an der Kante**, als `Eingang / Ausgabe` | Zustandsbits werden direkt abgegriffen |
+| Reaktion | verzögert, erst im Folgezustand | sofort im selben Takt | verzögert |
+| Zustandsanzahl | tendenziell mehr | **die wenigsten** | am meisten |
+
+> **Kernaussage der Folie:** Die drei Typen sind ineinander transferierbar, jedoch
+> kommt der Mealy-Automat mit den wenigsten Zuständen aus.
+
+Der Medwedjew-Automat wird gern übersehen, steht aber gleichberechtigt auf der
+Folie: Er hat gar keine Ausgabefunktion, man liest die Speicherbits unmittelbar
+als Ausgang ab. Im Blockschaltbild fehlt entsprechend der zweite Block hinter δ.
 
 Die Musterbegründung steht handschriftlich auf Übung 7: *„Moore-Automat, weil die
 Ausgabefunktion y nur vom aktuellen Zustand abhängig ist."* Genau diese
