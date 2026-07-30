@@ -10,7 +10,20 @@ Skills sind ehrlich als „(Grundkenntnisse)" markiert (Lernplan siehe `lernplan
 - `zielfirmen.md` – kuratierte Zielfirmen je Branche + ATS-Keyword-Bank
 - `lernplan.md` – kostenlose Ressourcen für „in Aneignung"-Skills
 - `scripts/build_docs.py` – erzeugt die DOCX-Dateien (datengetrieben)
+- `scripts/docx_common.py` – gemeinsame DOCX-Formathelfer
 - `output/` – fertige Word-Dateien
+
+## Lernskript Automatisierungstechnik
+Klausurvorbereitung „Grundlagen der Automation" (HTW Berlin, WIW, SS 2026).
+- `lernskript/lernskript_at.md` – Skript-Quelltext, neun Teile plus Formelsammlung
+- `lernskript/aufgabentypen.md` – Klausur-Aufgabentypen mit Lösungsschema
+- `scripts/build_lernskript.py` – erzeugt daraus die Word-Dateien
+- `output/Lernskript_Automation.docx`, `output/Spickzettel_Automation.docx`
+
+```bash
+pip install python-docx
+python3 scripts/build_lernskript.py
+```
 
 ## Erzeugte Dokumente (`output/`)
 - `Lebenslauf_Industrie.docx`
