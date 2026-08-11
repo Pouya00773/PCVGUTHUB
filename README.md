@@ -19,10 +19,17 @@ Skills sind ehrlich als „(Grundkenntnisse)" markiert (Lernplan siehe `lernplan
 - `Lebenslauf_Tech-Konsum.docx`
 - `Anschreiben_Vorlage.docx` (mit Platzhaltern `{{...}}`)
 
+## Stellenspezifische Bewerbungen (`bewerbungen/`)
+- `bewerbungen/pwc-ai-adoption/` – Werkstudent AI Adoption & Enablement (w/m/d), PwC Deutschland
+  - `analyse.md` – Anforderungsabgleich, Differenzierung, offene Punkte vor dem Versand
+  - `lebenslauf.md` / `anschreiben.md` – Textfassungen
+  - erzeugt via `scripts/build_pwc.py` → `output/*_PwC.docx`
+
 ## Neu generieren
 ```bash
 pip install python-docx
-python3 scripts/build_docs.py
+python3 scripts/build_docs.py   # Branchen-Varianten
+python3 scripts/build_pwc.py    # PwC AI Adoption & Enablement
 ```
 
 ## Vor dem Versand
