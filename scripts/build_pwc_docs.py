@@ -42,6 +42,8 @@ PERSON = {
         "Geburtsdatum: {{GEBURT}}",
         "LinkedIn: {{LINKEDIN}}",
     ],
+    # erscheint nur im Lebenslauf-Kopf
+    "verfuegbarkeit": "Verfügbarkeit: {{STUNDEN}} Stunden/Woche ab {{STARTDATUM}}",
 }
 
 STELLE = {
@@ -60,7 +62,7 @@ PROFIL = (
     "Teams gebraucht wird. Ausgeprägte Detailorientierung, systematisches Denken in Edge Cases und "
     "Ausnahmefällen sowie klares, nachvollziehbares Fehlerreporting. Testautomatisierung "
     "(Selenium, Cypress, JUnit) sowie API- und Performance-Tests werden aktuell im Selbststudium "
-    "aufgebaut (Details siehe Abschnitt „In Aneignung“)."
+    "aufgebaut (Details siehe Abschnitt „Kenntnisse & Fähigkeiten“)."
 )
 
 ERFAHRUNG = [
@@ -250,6 +252,9 @@ def build_cv():
         cp = doc.add_paragraph(line)
         cp.paragraph_format.space_after = Pt(0)
 
+    vp = doc.add_paragraph(PERSON["verfuegbarkeit"])
+    vp.paragraph_format.space_after = Pt(0)
+
     bew = doc.add_paragraph()
     bew.paragraph_format.space_before = Pt(6)
     br = bew.add_run(f"Bewerbung als: {STELLE['titel']} · {STELLE['bereich']}")
@@ -259,11 +264,9 @@ def build_cv():
     heading(doc, "Profil")
     doc.add_paragraph(PROFIL)
 
-    heading(doc, "Qualitätssicherung & Testing – Kernkompetenzen")
-    doc.add_paragraph("Praxiserprobt: " + " · ".join(QA_PRAXIS))
-    doc.add_paragraph(
-        "In Aneignung (Selbststudium, siehe lernplan.md): " + " · ".join(QA_ANEIGNUNG)
-    )
+    heading(doc, "Kenntnisse & Fähigkeiten – Qualitätssicherung und Testing")
+    doc.add_paragraph("Praxiserprobt: " + ", ".join(QA_PRAXIS))
+    doc.add_paragraph("Im Aufbau (Selbststudium): " + ", ".join(QA_ANEIGNUNG))
 
     heading(doc, "Berufserfahrung")
     for e in ERFAHRUNG:
@@ -274,8 +277,8 @@ def build_cv():
         entry(doc, e["titel"], e["firma"], e["zeit"], e["bullets"])
 
     heading(doc, "IT-Kenntnisse")
-    doc.add_paragraph("Sicher: " + " · ".join(IT_PRAXIS))
-    doc.add_paragraph("Grundkenntnisse: " + " · ".join(IT_GRUND))
+    doc.add_paragraph("Sicher: " + ", ".join(IT_PRAXIS))
+    doc.add_paragraph("Grundkenntnisse: " + ", ".join(IT_GRUND))
 
     heading(doc, "Sprachen")
     for s in SPRACHEN:
@@ -365,7 +368,9 @@ def build_cover_letter():
         "ich meinen Weg in der Qualitätssicherung bei PwC weitergehen und dort deutlich tiefer "
         "einsteigen – insbesondere im Testen von KI-gestützten und datengetriebenen Systemen.",
 
-        "Über die Gelegenheit zu einem persönlichen Gespräch freue ich mich sehr.",
+        "Ab {{STARTDATUM}} stehe ich Ihnen mit {{STUNDEN}} Stunden pro Woche zur Verfügung, in der "
+        "vorlesungsfreien Zeit gerne auch mit mehr. Über die Gelegenheit zu einem persönlichen "
+        "Gespräch freue ich mich sehr.",
 
         "Mit freundlichen Grüßen",
         PERSON["name"],
