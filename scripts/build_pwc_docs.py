@@ -336,47 +336,45 @@ def build_cover_letter():
     absaetze = [
         "Sehr geehrte Damen und Herren,",
 
-        "die meisten Fehler, die ich in der Qualitätssicherung finde, liegen nicht in der Funktion "
-        "selbst, sondern daneben: im Pflichtfeld, das leer bleibt, in der Bearbeitungsreihenfolge, "
-        "die niemand vorgesehen hat, im Datensatz aus einem Altsystem, der vom Beispiel in der "
-        "Anforderung abweicht. Seit Dezember prüfe ich bei der AKG Software Consulting GmbH "
-        "Software vor der Freigabe. Die wichtigste Erfahrung aus dieser Zeit: Der spezifizierte "
-        "Ablauf ist schnell verifiziert – die eigentliche Arbeit beginnt dort, wo die Anforderung "
-        "keine Vorgabe mehr macht.",
+        "in der Qualitätssicherung bin ich gelandet, ohne es geplant zu haben – geblieben bin ich, "
+        "weil mich kaum etwas so fasziniert wie der Moment, in dem ein System genau an der Stelle "
+        "bricht, die im Konzept nicht vorgesehen war. Seit Dezember prüfe ich bei der AKG Software "
+        "Consulting GmbH Software vor der Freigabe, und ich möchte diesen Weg dort fortsetzen, wo "
+        "er anspruchsvoller wird: im PET AI Tech-Hub.",
 
-        "Aus diesem Grund messe ich der Phase vor der Testdurchführung inzwischen ein ähnliches "
-        "Gewicht bei wie der Durchführung selbst. Wenn ich mit unserem Produktmanager die "
-        "Anforderungen für einen Testplan durchgehe, zeigt sich regelmäßig, dass eine Formulierung "
-        "zwei Lesarten zulässt, ohne dass dazu eine Entscheidung getroffen wurde. Solche "
-        "Unklarheiten lassen sich später durch Testen nur schwer aufdecken; sie treten zutage, "
-        "wenn vorab geklärt wird, welches Verhalten im Ausnahmefall erwartet wird. Die anschließende "
-        "Umsetzung folgt einem festen Rahmen: Testfälle entwerfen, in Azure DevOps Test Plans "
-        "verwalten, Fehler so dokumentieren, dass die Entwicklung ohne Rückfragen damit arbeiten "
-        "kann, nachtesten und abnehmen.",
+        "Meine Arbeit beginnt nicht bei der Testausführung. Testpläne erstelle ich gemeinsam mit "
+        "unserem Produktmanager – wir gehen die Anforderungen durch, leiten Testszenarien und "
+        "Abnahmekriterien ab und klären die Fälle, zu denen die Spezifikation schweigt. "
+        "Erfahrungsgemäß sind das genau die Fälle, die später teuer werden. Die Testfälle verwalte "
+        "ich in Azure DevOps Test Plans, Schnittstellen prüfe ich per API-Test gegen die "
+        "Spezifikation, und ich sehe mir an, wie sich das System unter Last verhält. Gefundene "
+        "Fehler dokumentiere ich so, dass die Entwicklung ohne eine einzige Rückfrage damit "
+        "arbeiten kann – das ist der Maßstab, den ich an meine eigene Arbeit anlege.",
 
-        "Im PET AI Tech-Hub stellt sich die Frage nach dem erwarteten Ergebnis unter "
-        "anspruchsvolleren Bedingungen. Klassische Software lässt sich gegen einen definierten "
-        "Sollwert prüfen. Bei KI-gestützten und datengetriebenen Systemen steht dem eine Menge "
-        "plausibler Ausgaben gegenüber, und es ist zu entscheiden, ab wann eine Abweichung als "
-        "Fehler gilt. Eine abschließende Antwort darauf habe ich nicht; es ist aber die "
-        "Fragestellung, in der ich mich fachlich weiterentwickeln möchte. Aus dem Studium bringe "
-        "ich mit Python und SQL die Grundlage mit, um Datenstände und Testdaten selbst zu prüfen.",
+        "Warum ich mich gerade bei Ihnen bewerbe, liegt am KI-Anteil Ihrer Projekte. Bei "
+        "klassischer Software habe ich einen definierten Sollwert, gegen den ich prüfe. Ein Modell "
+        "liefert stattdessen Ausgaben, die plausibel wirken und trotzdem falsch sein können. Testen "
+        "heißt dort, die Kriterien überhaupt erst zu definieren, mit Referenzdaten zu arbeiten und "
+        "Verhalten statistisch statt binär zu bewerten. Ich habe mich in dieses Thema eingelesen, "
+        "weil es mich fachlich reizt – und ich möchte daran arbeiten, statt weiter darüber zu "
+        "lesen. Aus dem Studium bringe ich mit Python und SQL die Grundlage mit, um Datenstände "
+        "und Testdaten selbst zu prüfen.",
 
-        "Hinzu kommt der Einsatzkontext. Wer einen Antrag einreicht oder auf die Abrechnung seines "
-        "Energieversorgers wartet, kann bei einer fehlerhaften Anwendung nicht auf einen anderen "
-        "Anbieter ausweichen. Im öffentlichen Sektor und in der Energiewirtschaft entfällt dieser "
-        "Ausweg – für mich ein Grund, sorgfältiger zu prüfen, als es wirtschaftlich zwingend wäre.",
+        "Dass dies im öffentlichen Sektor und in der Energiewirtschaft stattfindet, macht die "
+        "Aufgabe für mich relevanter, nicht kleiner. Eine Anwendung, die Bürgerinnen und Bürger, "
+        "Kommunen oder Netzbetreiber nutzen müssen, kann niemand abwählen, wenn sie fehlerhaft ist. "
+        "Qualität ist dort keine Frage der Kundenzufriedenheit, sondern der Verlässlichkeit.",
 
-        "Meine Tests führe ich bislang überwiegend manuell durch; die Automatisierung mit Cypress "
-        "eigne ich mir derzeit im Selbststudium an. Der Übergang fällt mir leichter, weil ich aus "
-        "der manuellen Arbeit einschätzen kann, welche Fälle sich für eine Automatisierung eignen "
-        "und welche eine gezielte Prüfung erfordern. Diesen Schritt möchte ich in einem Team gehen, "
-        "in dem die Qualitätssicherung eng mit Entwicklung und Produktmanagement zusammenarbeitet "
-        "und nicht am Ende der Prozesskette steht.",
+        "Meine Tests führe ich bislang überwiegend manuell durch. Cypress eigne ich mir gerade im "
+        "Selbststudium an, und dabei merke ich, wie sehr die manuelle Erfahrung trägt: Ich weiß "
+        "inzwischen, welche Fälle sich als Regressionstests zu automatisieren lohnen und welche "
+        "eine gezielte Prüfung von Hand brauchen. Diesen Schritt möchte ich in einem "
+        "cross-funktionalen Team machen, in dem die Qualitätssicherung von Anfang an mit am Tisch "
+        "sitzt.",
 
         "Ab {{STARTDATUM}} stehe ich Ihnen mit {{STUNDEN}} Stunden pro Woche zur Verfügung, in der "
-        "vorlesungsfreien Zeit auch darüber hinaus. Über die Einladung zu einem Gespräch freue ich "
-        "mich.",
+        "vorlesungsfreien Zeit auch darüber hinaus. Gern zeige ich Ihnen im Gespräch, wie ich an "
+        "einen Testfall herangehe.",
 
         "Mit freundlichen Grüßen",
         PERSON["name"],
