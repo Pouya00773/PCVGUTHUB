@@ -33,14 +33,12 @@ OUT.mkdir(exist_ok=True)
 # DATEN – hier bei Bedarf anpassen
 # ---------------------------------------------------------------------------
 PERSON = {
-    "name": "{{NAME}}",
+    "name": "Pouya Shakourpour Shireh Jini",
     "untertitel": "Werkstudent Qualitätssicherung · B.Sc. Wirtschaftsingenieurwesen (HTW Berlin)",
     "kontakt": [
-        "{{ANSCHRIFT}}",
-        "Telefon: {{TELEFON}}",
+        "Scheffelstr. 45, 10367 Berlin",
+        "Telefon: 0176 80782540",
         "E-Mail: pouyapouya144@gmail.com",
-        "Geburtsdatum: {{GEBURT}}",
-        "LinkedIn: {{LINKEDIN}}",
     ],
     # erscheint nur im Lebenslauf-Kopf
     "verfuegbarkeit": "Verfügbarkeit: {{STUNDEN}} Stunden/Woche ab {{STARTDATUM}}",
@@ -53,7 +51,8 @@ STELLE = {
 }
 
 PROFIL = (
-    "Ich arbeite als Werkstudent in der Software-Qualitätssicherung. Zusammen mit dem "
+    "Ich arbeite als Werkstudent in der Software-Qualitätssicherung für eine Planungssoftware im "
+    "Bahnbau. Zusammen mit dem "
     "Produktmanagement schreibe ich Testpläne, teste manuell in der Produktabnahme und führe "
     "API- und Performance-Tests durch. Wir arbeiten in Sprints; Testfälle, Fehler und Codestände "
     "laufen über Azure DevOps. Vor meinem Studium des Wirtschaftsingenieurwesens an der HTW Berlin "
@@ -65,7 +64,8 @@ PROFIL = (
 ERFAHRUNG = [
     {
         "titel": "Werkstudent Qualitätssicherung (Produktabnahme)",
-        "firma": "AKG Software Consulting GmbH, Berlin",
+        "firma": "AKG Software Consulting GmbH, Berlin – Planungssoftware Vestra InfraVision "
+        "(Trassierung und Infrastrukturplanung von Schienennetzen)",
         "zeit": "12/2025 – heute",
         "bullets": [
             "Erstellung von Testplänen in enger Zusammenarbeit mit dem Produktmanagement – "
@@ -290,9 +290,9 @@ def build_cv():
 
     hinweis(
         doc,
-        "HINWEIS (vor Versand löschen): Platzhalter {{...}} ersetzen und diese Zeile entfernen. "
-        "Optional: konkrete Zahlen in die AKG-Bullets ergänzen (Testfälle pro Sprint, gemeldete "
-        "Fehler, Teamgröße, betreute Module).",
+        "HINWEIS (vor Versand löschen): {{STUNDEN}} und {{STARTDATUM}} eintragen und diese Zeile "
+        "entfernen. Optional: konkrete Zahlen in die AKG-Bullets ergänzen (Testfälle pro Sprint, "
+        "gemeldete Fehler, Teamgröße, betreute Module).",
     )
 
     path = OUT / "Lebenslauf_PwC_QA.docx"
@@ -315,14 +315,15 @@ def build_cover_letter():
     for line in [
         "PricewaterhouseCoopers GmbH",
         "Wirtschaftsprüfungsgesellschaft",
+        "Recruiting / Human Resources",
         "Public & Energy Transformation – PET AI Tech-Hub",
-        "{{FIRMA_ADRESSE}}",
+        "{{STANDORT}}",
     ]:
         p = doc.add_paragraph(line)
         p.paragraph_format.space_after = Pt(0)
 
     doc.add_paragraph("")
-    d = doc.add_paragraph("Berlin, {{DATUM}}")
+    d = doc.add_paragraph("Berlin, den {{DATUM}}")
     d.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
     bt = doc.add_paragraph()
@@ -336,47 +337,44 @@ def build_cover_letter():
     absaetze = [
         "Sehr geehrte Damen und Herren,",
 
-        "in der Qualitätssicherung bin ich gelandet, ohne es geplant zu haben – geblieben bin ich, "
-        "weil mich kaum etwas so fasziniert wie der Moment, in dem ein System genau an der Stelle "
-        "bricht, die im Konzept nicht vorgesehen war. Seit Dezember prüfe ich bei der AKG Software "
-        "Consulting GmbH Software vor der Freigabe, und ich möchte diesen Weg dort fortsetzen, wo "
-        "er anspruchsvoller wird: im PET AI Tech-Hub.",
+        "in meiner aktuellen Werkstudentenstelle bei der AKG Software Consulting GmbH arbeite ich "
+        "in der Qualitätssicherung für die Planungssoftware Vestra InfraVision, die in der "
+        "Trassierung und Infrastrukturplanung von Schienennetzen eingesetzt wird. Ich teste die "
+        "Software vor der Freigabe, erstelle die Testpläne gemeinsam mit dem Produktmanagement und "
+        "verfolge gefundene Fehler bis zur Behebung nach. Diese Tätigkeit hat mir gezeigt, wie viel "
+        "Verantwortung in der Qualitätssicherung von Software steckt, die in öffentlicher "
+        "Infrastruktur eingesetzt wird. Genau deshalb überzeugt mich die Perspektive, diese Arbeit "
+        "im PET AI Tech-Hub bei PwC fortzusetzen.",
 
-        "Meine Arbeit beginnt nicht bei der Testausführung. Testpläne erstelle ich gemeinsam mit "
-        "unserem Produktmanager – wir gehen die Anforderungen durch, leiten Testszenarien und "
-        "Abnahmekriterien ab und klären die Fälle, zu denen die Spezifikation schweigt. "
-        "Erfahrungsgemäß sind das genau die Fälle, die später teuer werden. Die Testfälle verwalte "
-        "ich in Azure DevOps Test Plans, Schnittstellen prüfe ich per API-Test gegen die "
-        "Spezifikation, und ich sehe mir an, wie sich das System unter Last verhält. Gefundene "
-        "Fehler dokumentiere ich so, dass die Entwicklung ohne eine einzige Rückfrage damit "
-        "arbeiten kann – das ist der Maßstab, den ich an meine eigene Arbeit anlege.",
+        "Der Bereich Public Sector & Energy passt für mich gut zu dem, was ich bisher gemacht habe. "
+        "Die Software, die ich heute teste, wird für die Planung von Schienennetzen genutzt, also "
+        "für Vorhaben mit langer Laufzeit und öffentlicher Wirkung. Fehler fallen dort selten "
+        "sofort auf, sondern erst dann, wenn ihre Korrektur aufwendig wird. Dass PwC Bund, Länder "
+        "und Kommunen bei der Digitalisierung und der Energiewende begleitet, betrifft genau diese "
+        "Art von Anwendungen.",
 
-        "Warum ich mich gerade bei Ihnen bewerbe, liegt am KI-Anteil Ihrer Projekte. Bei "
-        "klassischer Software habe ich einen definierten Sollwert, gegen den ich prüfe. Ein Modell "
-        "liefert stattdessen Ausgaben, die plausibel wirken und trotzdem falsch sein können. Testen "
-        "heißt dort, die Kriterien überhaupt erst zu definieren, mit Referenzdaten zu arbeiten und "
-        "Verhalten statistisch statt binär zu bewerten. Ich habe mich in dieses Thema eingelesen, "
-        "weil es mich fachlich reizt – und ich möchte daran arbeiten, statt weiter darüber zu "
-        "lesen. Aus dem Studium bringe ich mit Python und SQL die Grundlage mit, um Datenstände "
-        "und Testdaten selbst zu prüfen.",
+        "Künstliche Intelligenz gehört für mich inzwischen selbstverständlich zum Alltag im Studium "
+        "und bei der Arbeit. Dabei ist mir wichtig, KI nicht einfach nur zu verwenden, sondern ihre "
+        "Ergebnisse einzuschätzen. Mir fällt regelmäßig auf, wie unterschiedlich die Qualität "
+        "ausfällt und wie plausibel eine falsche Antwort wirken kann. Aus Sicht der "
+        "Qualitätssicherung ist das die eigentlich schwierige Frage: Bei klassischer Software prüfe "
+        "ich gegen einen festgelegten Sollwert, bei einem KI-gestützten System muss zuerst "
+        "definiert werden, ab wann ein Ergebnis überhaupt als falsch gilt. Genau daran würde ich "
+        "gern arbeiten.",
 
-        "Dass dies im öffentlichen Sektor und in der Energiewirtschaft stattfindet, macht die "
-        "Aufgabe für mich relevanter, nicht kleiner. Eine Anwendung, die Bürgerinnen und Bürger, "
-        "Kommunen oder Netzbetreiber nutzen müssen, kann niemand abwählen, wenn sie fehlerhaft ist. "
-        "Qualität ist dort keine Frage der Kundenzufriedenheit, sondern der Verlässlichkeit.",
+        "Qualitätssicherung ist das Feld, in dem ich meine Werkstudententätigkeit fortsetzen "
+        "möchte – nicht aus einem allgemeinen Interesse heraus, sondern weil ich dort meine "
+        "persönlichen Stärken am besten einbringen kann: genaues Arbeiten, technisches Verständnis "
+        "und eine klare Kommunikation gegenüber Entwicklung und Fachbereich. Meine Tests führe ich "
+        "bisher überwiegend manuell durch, ergänzt um API- und Performance-Tests. "
+        "Testautomatisierung mit Cypress eigne ich mir derzeit selbst an, weil ich den nächsten "
+        "fachlichen Schritt machen möchte. Aus dem Studium bringe ich mit Python und SQL die "
+        "Grundlagen mit, um Testdaten und Datenstände selbst zu prüfen.",
 
-        "Meine Tests führe ich bislang überwiegend manuell durch. Cypress eigne ich mir gerade im "
-        "Selbststudium an, und dabei merke ich, wie sehr die manuelle Erfahrung trägt: Ich weiß "
-        "inzwischen, welche Fälle sich als Regressionstests zu automatisieren lohnen und welche "
-        "eine gezielte Prüfung von Hand brauchen. Diesen Schritt möchte ich in einem "
-        "cross-funktionalen Team machen, in dem die Qualitätssicherung von Anfang an mit am Tisch "
-        "sitzt.",
+        "Ab {{STARTDATUM}} stehe ich Ihnen mit {{STUNDEN}} Stunden pro Woche zur Verfügung. Über "
+        "eine Einladung zum persönlichen Gespräch freue ich mich sehr.",
 
-        "Ab {{STARTDATUM}} stehe ich Ihnen mit {{STUNDEN}} Stunden pro Woche zur Verfügung, in der "
-        "vorlesungsfreien Zeit auch darüber hinaus. Gern zeige ich Ihnen im Gespräch, wie ich an "
-        "einen Testfall herangehe.",
-
-        "Mit freundlichen Grüßen",
+        "Mit freundlichen Grüßen,",
         PERSON["name"],
     ]
     for a in absaetze:
@@ -385,8 +383,8 @@ def build_cover_letter():
 
     hinweis(
         doc,
-        "HINWEIS (vor Versand löschen): Platzhalter {{...}} ersetzen (Adresse des Standorts, auf den "
-        "du dich bewirbst, Datum, Referenznummer aus der Anzeige) und diese Zeile entfernen.",
+        "HINWEIS (vor Versand löschen): {{STANDORT}}, {{DATUM}}, {{REFERENZ}}, {{STUNDEN}} und "
+        "{{STARTDATUM}} eintragen und diese Zeile entfernen.",
     )
 
     path = OUT / "Anschreiben_PwC_QA.docx"
