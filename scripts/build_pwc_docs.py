@@ -336,47 +336,44 @@ def build_cover_letter():
     absaetze = [
         "Sehr geehrte Damen und Herren,",
 
-        "Software wird selten dort brüchig, wo alles nach Plan läuft, sondern in den Ausnahmen: "
-        "im leeren Datensatz, im doppelten Klick, im Sonderfall, den niemand vorgesehen hat. Genau "
-        "diese „Unlucky Paths“ zu finden, ist das, was ich seit Dezember 2025 als Werkstudent in "
-        "der Qualitätssicherung bei der AKG Software Consulting GmbH täglich tue – und weshalb mich "
-        "Ihre Ausschreibung im PET AI Tech-Hub unmittelbar angesprochen hat.",
+        "die meisten Fehler, die ich finde, stecken nicht in der Funktion selbst. Die tut in der "
+        "Regel, was sie soll. Sie stecken daneben: im Feld, das jemand leer lässt, in der "
+        "Reihenfolge, in der niemand geklickt hätte, im Datensatz aus einem Altsystem, der anders "
+        "aussieht als das Beispiel in der Anforderung. Seit Dezember teste ich bei der AKG Software "
+        "Consulting GmbH Software, bevor sie freigegeben wird, und das ist die Sache, die ich aus "
+        "den ersten Monaten mitnehme: Der vorgesehene Ablauf ist schnell geprüft. Aufwendig wird "
+        "es dort, wo die Anforderung nichts mehr vorgibt.",
 
-        "In der Produktabnahme plane und führe ich Softwaretests durch: vom Testfallentwurf über "
-        "die Ausführung bis zur Abnahmeempfehlung. Die Testpläne dazu erstelle ich in enger "
-        "Zusammenarbeit mit unserem Produktmanager – aus den Produktanforderungen leiten wir "
-        "gemeinsam Testumfang, Testszenarien und Abnahmekriterien ab. Neben dem manuellen Test "
-        "gehören API- und Performance-Tests zu meinen Aufgaben: Schnittstellen gegen die "
-        "Spezifikation zu prüfen und zu sehen, wie sich das System unter Last verhält. Wir arbeiten "
-        "in Sprints, sodass ich gewohnt bin, den Testumfang eng am Entwicklungszyklus abzustimmen.",
+        "Deshalb ist mir der Teil vor dem Testen inzwischen fast wichtiger als das Testen selbst. "
+        "Wenn ich mit unserem Produktmanager die Anforderungen für einen Testplan durchgehe, "
+        "stellt sich regelmäßig heraus, dass ein Satz zwei Lesarten zulässt und niemand entschieden "
+        "hat, welche gilt. So etwas findet man später durch Testen nicht mehr zuverlässig – man "
+        "findet es, wenn man vorher fragt, was eigentlich passieren soll, wenn der Sonderfall "
+        "eintritt. Was danach kommt, ist Handwerk: Testfälle schreiben, sie in Azure DevOps Test "
+        "Plans verwalten, Fehler so dokumentieren, dass die Entwicklung ohne Rückfrage damit "
+        "arbeiten kann, nachtesten, abnehmen.",
 
-        "Testfälle und Testläufe verwalte ich in Azure DevOps Test Plans; gefundene Fehler erfasse "
-        "ich reproduzierbar, priorisiere sie und verfolge sie bis zum Retest nach – über Git "
-        "beziehungsweise Azure Repos ordne ich sie versionsgenau dem jeweiligen Codestand zu. Dabei "
-        "habe ich gelernt, dass ein Fehlerbericht erst dann gut ist, wenn die Entwicklung ohne "
-        "Rückfrage damit arbeiten kann; kommunikationsstarkes Fehlerreporting ist für mich kein "
-        "Nebenprodukt, sondern Teil der Aufgabe.",
+        "Im PET AI Tech-Hub stellt sich diese Frage – was ist eigentlich das richtige Ergebnis? – "
+        "unter deutlich schwierigeren Bedingungen. Bei klassischer Software gibt es einen Sollwert, "
+        "den ich gegen die Anforderung halten kann. Bei einem Modell gibt es eine Menge von "
+        "Ausgaben, die alle plausibel aussehen, und die Frage, ab wann eine davon falsch genug ist, "
+        "um ein Fehler zu sein. Darauf habe ich keine fertige Antwort. Es ist aber genau die Art "
+        "von Problem, an der ich als Nächstes arbeiten möchte, und aus dem Studium bringe ich mit "
+        "Python und SQL zumindest genug mit, um mir Datenstände und Testdaten selbst anzusehen.",
 
-        "Mein Studium des Wirtschaftsingenieurwesens an der HTW Berlin bringt neben Programmierung "
-        "(Python, C#) und Datenbanken vor allem eine zweite Perspektive mit: Ich denke Anforderungen "
-        "von der fachlichen Seite her und übersetze zwischen Business und Technik. Für ein "
-        "cross-funktionales Team, das gesellschaftliche Problemstellungen in Public Sector und "
-        "Energy in reale Lösungen überführt, sehe ich darin einen echten Mehrwert. Offen sage ich "
-        "auch, wo ich stehe: Meine Tests führe ich bislang manuell aus; die Automatisierung mit "
-        "Selenium, Cypress und JUnit baue ich derzeit im Selbststudium auf, mit eigenen kleinen "
-        "Testprojekten und der klaren Absicht, das bei Ihnen in die Praxis zu bringen. Und statt "
-        "Jira oder TestRail nutze ich Azure DevOps – der Umstieg ist eine Frage von Tagen, die "
-        "Konzepte dahinter sind dieselben.",
+        "Dazu kommt, wo diese Systeme eingesetzt werden. Wer einen Antrag stellen muss oder auf "
+        "eine Netzabrechnung wartet, kann nicht zur Konkurrenz wechseln, wenn das Formular hakt. "
+        "Im öffentlichen Sektor und in der Energiewirtschaft gibt es diesen Ausweg nicht – das ist "
+        "für mich ein guter Grund, genauer hinzusehen, als es wirtschaftlich zwingend wäre.",
 
-        "Die Verbindung aus Digitalisierung, Energiewende und öffentlichem Auftrag ist für mich der "
-        "Bereich, in dem Qualitätssicherung am meisten zählt – dort trägt eine fehlerhafte Anwendung "
-        "unmittelbar Konsequenzen für Menschen, die sie nicht umgehen können. Genau deshalb möchte "
-        "ich meinen Weg in der Qualitätssicherung bei PwC weitergehen und dort deutlich tiefer "
-        "einsteigen – insbesondere im Testen von KI-gestützten und datengetriebenen Systemen.",
+        "Meine Tests laufen bisher überwiegend manuell. Testautomatisierung mit Cypress bringe ich "
+        "mir gerade selbst bei, und der Schritt fällt mir leichter, weil ich aus der manuellen "
+        "Arbeit weiß, welche Fälle sich zu automatisieren lohnen und welche man besser einmal "
+        "selbst anschaut. Diesen Schritt würde ich gern bei Ihnen machen – in einem Team, in dem "
+        "QA neben Entwicklung und Produkt sitzt und nicht am Ende der Kette.",
 
-        "Ab {{STARTDATUM}} stehe ich Ihnen mit {{STUNDEN}} Stunden pro Woche zur Verfügung, in der "
-        "vorlesungsfreien Zeit gerne auch mit mehr. Über die Gelegenheit zu einem persönlichen "
-        "Gespräch freue ich mich sehr.",
+        "Ab {{STARTDATUM}} kann ich mit {{STUNDEN}} Stunden pro Woche einsteigen, in der "
+        "vorlesungsfreien Zeit auch mehr. Über ein Gespräch würde ich mich freuen.",
 
         "Mit freundlichen Grüßen",
         PERSON["name"],
