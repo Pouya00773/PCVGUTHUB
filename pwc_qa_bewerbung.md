@@ -17,25 +17,30 @@ Blick des Recruiters sofort darauf treffen).
 
 | Anforderung der Anzeige | Dein Stand | Wo es im CV steht |
 |---|---|---|
-| Testmanagement & Qualitätssicherung, manuelle Tests | ✅ Praxis (AKG, Produktabnahme) | Kernkompetenzen + Bullet 1 |
-| Softwarequalität über alle Entwicklungsphasen | ✅ Praxis (Test-/Projektdokumentation) | Bullet 4 |
-| Teamübergreifende Zusammenarbeit mit Dev-/Produktteams | ✅ Praxis (Abstimmung mit Entwicklung) | Bullet 5 |
-| Edge Cases / „Unlucky Paths“ systematisch analysieren | ✅ Praxis – wörtlich aus der Anzeige gespiegelt | Bullet 2 |
-| Detailorientierung, kommunikationsstarkes Fehlerreporting | ✅ Praxis (reproduzierbare Fehlerberichte) | Bullet 3 + Anschreiben Abs. 2 |
-| Dokumentationskompetenz | ✅ Praxis | Bullet 4 |
+| **Testmanagement & Qualitätssicherung, Planung manueller Tests** | ✅ Praxis – **Testpläne mit dem Produktmanagement**, Produktabnahme | Kernkompetenzen + Bullets 1–2 |
+| Softwarequalität über alle Entwicklungsphasen | ✅ Praxis (Test-/Projektdokumentation) | Bullet 5 |
+| **Teamübergreifende Zusammenarbeit mit Dev- und Produktteams** | ✅ Praxis – **direkte Zusammenarbeit mit dem Produktmanager** | Bullets 1 + 6 |
+| Edge Cases / „Unlucky Paths“ systematisch analysieren | ✅ Praxis – wörtlich aus der Anzeige gespiegelt | Bullet 3 |
+| Detailorientierung, kommunikationsstarkes Fehlerreporting | ✅ Praxis (reproduzierbare Fehlerberichte) | Bullet 4 + Anschreiben Abs. 2 |
+| Dokumentationskompetenz | ✅ Praxis | Bullet 5 |
 | **Testmanagement-Tools (TestRail, Jira)** | ✅ Praxis mit **Azure DevOps Test Plans** – funktional äquivalent | Kernkompetenzen + AKG-Bullet 2 |
 | **Agile Umgebungen (Scrum, Kanban)** | ✅ Praxis – Arbeit in **Sprints** | Kernkompetenzen + AKG-Bullet 6 |
 | **Versionskontrolle / Code-Repositories** | ✅ Praxis – **Git / Azure Repos** | Kernkompetenzen + AKG-Bullet 7 |
 | **Fortgeschrittenes Studium Informatik / SWE / Wirt.-Inf.** | ⚠️ Wirtschaftsingenieurwesen, 4. Semester | Ausbildung – als „vergleichbar“ positioniert |
-| Testautomatisierung (Selenium, Cypress, JUnit) | ❌ noch nicht belegt | „In Aneignung“ |
-| API-, Performance-, Sicherheitstests | ❌ noch nicht belegt | „In Aneignung“ |
-| Testen von KI-Modellen (nur „von Vorteil“) | ❌ | „In Aneignung“ |
+| Testautomatisierung (Selenium, Cypress, JUnit) | ❌ noch nicht belegt | „Im Aufbau“ |
+| API-, Performance-, Sicherheitstests | ❌ noch nicht belegt | „Im Aufbau“ |
+| Testen von KI-Modellen (nur „von Vorteil“) | ❌ | „Im Aufbau“ |
 | Prozessoptimierung | ✅ Studieninhalt + kaufm. Praxis | Ausbildung |
 
 **Realistische Einschätzung:** Von den elf inhaltlichen Anforderungen der Anzeige triffst du **neun
-mit echter Praxis** – inklusive Testmanagement-Tool, agilem Arbeiten und Versionskontrolle. Für eine
-Werkstudentenstelle ist das sehr stark; du bringst die QA-Grundausbildung bereits mit, statt sie erst
-bei PwC zu bekommen.
+mit echter Praxis** – inklusive Testplanung, Testmanagement-Tool, agilem Arbeiten und
+Versionskontrolle. Für eine Werkstudentenstelle ist das sehr stark; du bringst die QA-Grundausbildung
+bereits mit, statt sie erst bei PwC zu bekommen.
+
+Besonders schwer wiegt, dass du **Testpläne gemeinsam mit dem Produktmanagement erstellst**. Das ist
+kein ausführender Beitrag mehr, sondern Mitentscheidung darüber, *was* getestet wird – und es belegt
+die „enge Zusammenarbeit mit Entwicklungs- und Produktteams" aus der Anzeige wörtlich, statt sie nur
+zu behaupten.
 
 Dass dein Tool Azure DevOps heißt und nicht Jira oder TestRail, ist kein Minus: Test Plans ist ein
 vollwertiges Testmanagement-Modul, Boards sind Work-Item-Tracking, Repos sind Git. Die Anzeige nennt
@@ -55,7 +60,7 @@ Doppelprofil (kaufmännische Ausbildung + technisches Studium) ein Argument ist 
 Leitplanke aus `README.md`: keine erfundenen Qualifikationen. Konkret heißt das:
 
 - **Kein** „Erfahrung mit Selenium/Cypress/JUnit“, **kein** „Jira“, **kein** „TestRail“ im
-  Erfahrungsteil. Diese Begriffe stehen ausschließlich im Block **„In Aneignung (Selbststudium)“**.
+  Erfahrungsteil. Diese Begriffe stehen ausschließlich im Block **„Im Aufbau (Selbststudium)“**.
   Azure DevOps (Test Plans, Boards, Repos), Sprints und Git stehen dagegen in der Praxis – die hast du.
 - Das ist kein Nachteil beim ATS: Die Keywords sind im Dokument vorhanden und werden gematcht. Der
   Unterschied ist nur, dass du im Gespräch nicht auffliegst.
@@ -74,7 +79,8 @@ Leitplanke aus `README.md`: keine erfundenen Qualifikationen. Konkret heißt das
 ## 3. Bevor du abschickst – 4 Dinge
 
 1. **Platzhalter ersetzen.** `{{NAME}}`, `{{ANSCHRIFT}}`, `{{TELEFON}}`, `{{GEBURT}}`, `{{LINKEDIN}}`,
-   `{{DATUM}}`, `{{REFERENZ}}`, `{{FIRMA_ADRESSE}}` (Adresse des Standorts, auf den du dich bewirbst).
+   `{{DATUM}}`, `{{REFERENZ}}`, `{{FIRMA_ADRESSE}}` (Adresse des Standorts, auf den du dich bewirbst),
+   `{{STUNDEN}}` und `{{STARTDATUM}}` (Verfügbarkeit).
    Entweder direkt im Dict `PERSON` in `scripts/build_pwc_docs.py` und neu generieren, oder in der DOCX.
    Die Hinweiszeilen am Dokumentende **löschen**.
 2. **Zahlen ergänzen.** Der größte verbleibende Hebel im CV: ungefähre Testfälle pro Sprint/Release,
@@ -89,7 +95,7 @@ Leitplanke aus `README.md`: keine erfundenen Qualifikationen. Konkret heißt das
 
 ## 4. Lernplan für die Lücke (ergänzt `lernplan.md`)
 
-Ziel: bis zum Gespräch sollen die „In Aneignung“-Punkte echt belegbar sein – dann sind sie im Interview
+Ziel: bis zum Gespräch sollen die „Im Aufbau“-Punkte echt belegbar sein – dann sind sie im Interview
 dein Trumpf statt deine Schwachstelle. Priorität nach Gewicht in der Anzeige:
 
 | Priorität | Thema | Kostenlose Ressource | Mini-Ziel (~10 h) |
@@ -119,7 +125,7 @@ kannst den Link ins Anschreiben oder in den CV-Kopf setzen. Für eine QA-Stelle 
 ## 5. ATS-Keyword-Bank für diese Stelle
 
 Alle Begriffe sind in den erzeugten Dokumenten enthalten – wahrheitsgemäß entweder in der Erfahrung
-oder im „In Aneignung“-Block:
+oder im „Im Aufbau“-Block:
 
 Quality Assurance · Qualitätssicherung · Testmanagement · Azure DevOps · Azure Test Plans · Sprint ·
 Softwarequalität · manuelle Tests ·

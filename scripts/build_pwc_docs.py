@@ -53,8 +53,10 @@ STELLE = {
 }
 
 PROFIL = (
-    "Werkstudent in der Software-Qualitätssicherung mit Praxis in Produktabnahme, manuellem "
-    "Testing und strukturierter Fehler- und Testdokumentation – im agilen Umfeld, in Sprints und "
+    "Werkstudent in der Software-Qualitätssicherung mit Praxis in Testplanung, Produktabnahme, "
+    "manuellem Testing und strukturierter Fehler- und Testdokumentation. Erstellung von "
+    "Testplänen in enger Zusammenarbeit mit dem Produktmanagement – im agilen Umfeld, in Sprints "
+    "und "
     "mit Azure DevOps (Test Plans, Boards, Repos) als Testmanagement- und Tracking-Umgebung. "
     "Studium des "
     "Wirtschaftsingenieurwesens an der HTW Berlin mit abgeschlossener kaufmännischer Ausbildung – "
@@ -71,6 +73,9 @@ ERFAHRUNG = [
         "firma": "AKG Software Consulting GmbH, Berlin",
         "zeit": "12/2025 – heute",
         "bullets": [
+            "Erstellung von Testplänen in enger Zusammenarbeit mit dem Produktmanagement – "
+            "Ableitung von Testumfang, Testszenarien und Abnahmekriterien aus den "
+            "Produktanforderungen",
             "Planung und Durchführung manueller Softwaretests in der Produktabnahme – von "
             "Testfallentwurf über Ausführung bis zur Abnahmeempfehlung; Verwaltung der "
             "Testfälle und Testläufe in Azure DevOps Test Plans",
@@ -81,10 +86,9 @@ ERFAHRUNG = [
             "Zuordnung über Git / Azure Repos",
             "Erstellung strukturierter Test- und Projektdokumentation als Nachweis der "
             "Softwarequalität über alle Entwicklungsphasen",
-            "Arbeit im agilen Umfeld in Sprints – Abstimmung von Testumfang und "
+            "Arbeit im agilen Umfeld in Sprints – enge teamübergreifende Abstimmung mit "
+            "Entwicklungs- und Produktteams zu Anforderungen, Fehlerbildern und "
             "Abnahmekriterien entlang des Sprint-Zyklus",
-            "Enge teamübergreifende Abstimmung mit Entwicklung und Fachbereich zu "
-            "Anforderungen, Fehlerbildern und Abnahmekriterien",
         ],
     },
     {
@@ -144,6 +148,7 @@ AUSBILDUNG = [
 
 # QA-/Test-Kompetenzen: praxiserprobt vs. ehrlich als "in Aneignung" gekennzeichnet
 QA_PRAXIS = [
+    "Testplanung und Testkonzeption",
     "Manuelles Testing & Produktabnahme",
     "Testfallentwurf und Testdurchführung",
     "Edge-Case-/Ausnahmefall-Analyse („Unlucky Paths“)",
@@ -152,7 +157,7 @@ QA_PRAXIS = [
     "Agiles Arbeiten in Sprints (Scrum)",
     "Versionskontrolle mit Git / Azure Repos",
     "Test- und Projektdokumentation",
-    "Abstimmung mit Entwicklungs- und Fachteams",
+    "Zusammenarbeit mit Entwicklungs- und Produktteams",
 ]
 
 QA_ANEIGNUNG = [
@@ -339,7 +344,10 @@ def build_cover_letter():
         "Ihre Ausschreibung im PET AI Tech-Hub unmittelbar angesprochen hat.",
 
         "In der Produktabnahme plane und führe ich manuelle Softwaretests durch: vom Testfallentwurf "
-        "über die Ausführung bis zur Abnahmeempfehlung. Meine Testfälle und Testläufe verwalte ich "
+        "über die Ausführung bis zur Abnahmeempfehlung. Die Testpläne dazu erstelle ich in enger "
+        "Zusammenarbeit mit unserem Produktmanager – aus den Produktanforderungen leiten wir "
+        "gemeinsam Testumfang, Testszenarien und Abnahmekriterien ab. Meine Testfälle und "
+        "Testläufe verwalte ich "
         "in Azure DevOps Test Plans, gefundene Fehler erfasse ich reproduzierbar, priorisiere sie "
         "und verfolge sie bis zum Retest nach – über Git beziehungsweise Azure Repos ordne ich sie "
         "dabei versionsgenau dem jeweiligen Codestand zu. Wir arbeiten in Sprints, sodass ich "
