@@ -1,6 +1,6 @@
 # Pouya Shakourpour
 
-B.Eng. Wirtschaftsingenieurwesen (HTW Berlin) · Qualitätssicherung, technische Dokumentation, Projektkoordination
+B.Eng. Wirtschaftsingenieurwesen (HTW Berlin) · Qualitätssicherung und Softwaretest
 
 Scheffelstr. 45, 10367 Berlin · 0176 80782540 · pouyapouya144@gmail.com
 
@@ -8,11 +8,11 @@ Scheffelstr. 45, 10367 Berlin · 0176 80782540 · pouyapouya144@gmail.com
 
 ## Kurzprofil
 
-Student des Wirtschaftsingenieurwesens mit abgeschlossener kaufmännischer Ausbildung, aktuell
-Werkstudent in der Qualitätssicherung eines Softwarehauses für Bahnplanung. Erfahrung in Test und
-Abnahme, Fehlerdokumentation und -nachverfolgung sowie in der Prüfung und Pflege technischer
-Dokumentation für Anwender ohne Software-Hintergrund. Davor drei Jahre im Baustoffgroßhandel mit
-Angebots-, Auftrags- und Lieferantenprozessen für Tiefbau- und Infrastrukturprojekte.
+Student des Wirtschaftsingenieurwesens mit abgeschlossener kaufmännischer Ausbildung, seit
+Dezember 2025 Werkstudent in der Qualitätssicherung eines Softwarehauses für Bahnplanung: Test und
+Abnahme neuer Funktionen, reproduzierbare Fehlerdokumentation und -nachverfolgung in Azure DevOps
+Server sowie Prüfung und Pflege der Produktdokumentation. Grundkenntnisse in Python, SQL und C#.
+Nächster Schritt ist der Weg vom manuellen zum automatisierten Testen.
 
 ---
 
@@ -21,15 +21,16 @@ Angebots-, Auftrags- und Lieferantenprozessen für Tiefbau- und Infrastrukturpro
 ### Werkstudent Qualitätssicherung (Quality Assurance) – Bahnbau
 **AKG Software Consulting GmbH**, Berlin · 12/2025 – heute
 
-- Test und Abnahme neuer Softwarefunktionen für zwei Produkte der Bahnplanung (Vestra-Infravision);
-  Abweichungen systematisch erfasst, dokumentiert und in Azure DevOps Server bis zur Klärung nachverfolgt
+- Test und Abnahme neuer Softwarefunktionen für zwei Produkte der Bahnplanung
+  (Vestra-Infravision), einschließlich Prüfung von Ausnahme- und Randfällen
+- Abweichungen reproduzierbar beschrieben, in Azure DevOps Server dokumentiert und bis zur
+  Klärung mit der Entwicklung nachverfolgt
 - Produktdokumentation für zwei Softwareprodukte gepflegt und überarbeitet – geprüft auf
   Vollständigkeit, Konsistenz und Verständlichkeit für Fachanwender ohne Software-Hintergrund
-- Technische Produktinformationen für Fachabteilungen verdichtet und als Entscheidungsgrundlage aufbereitet
-- Anforderungen und technische Inhalte abteilungsübergreifend zwischen Entwicklung und Fachbereich
-  abgestimmt, offene Punkte nachgehalten
-- KI-gestützte Aufbereitung von Produktinformationen eingeführt und wiederverwendbare Vorlagen für
-  die laufende Dokumentationsarbeit entwickelt
+- Anforderungen und technische Inhalte zwischen Entwicklung und Fachbereich abgestimmt,
+  offene Punkte nachgehalten
+- KI-gestützte Aufbereitung von Produktinformationen eingeführt und wiederverwendbare Vorlagen
+  für die laufende Dokumentationsarbeit entwickelt
 
 ### Werkstudent Projektkoordination & Vertrieb
 **Schiller-Eventpersonal GmbH**, Berlin · 04/2025 – 11/2025
@@ -47,11 +48,11 @@ Angebots-, Auftrags- und Lieferantenprozessen für Tiefbau- und Infrastrukturpro
 
 - Prozessoptimierung im dezentralen Einkauf unterstützt: neue Analyse-Tools eingeführt und
   wiederkehrende Abläufe standardisiert
-- SAP-gestützte Angebots- und Auftragserfassung im B2B-Geschäft mit Tiefbauunternehmen
 - Produkt- und Marktdaten täglich in SAP ausgewertet und zu Kennzahlen für die Vertriebssteuerung aufbereitet
 - Bestands- und Statusübersichten aufgebaut, die den Stand des Produktportfolios abteilungsübergreifend
   transparent machten
 - Lieferkoordination zwischen Vertrieb, Lager und Einkauf für termingerechte Auftragsabwicklung
+- SAP-gestützte Angebots- und Auftragserfassung im B2B-Geschäft mit Tiefbauunternehmen
 
 ---
 
@@ -60,7 +61,7 @@ Angebots-, Auftrags- und Lieferantenprozessen für Tiefbau- und Infrastrukturpro
 ### B.Eng. Wirtschaftsingenieurwesen
 **HTW Berlin** · seit 10/2024
 
-- Relevante Module: Projektmanagement, Controlling, Produkt- und Prozessgestaltung, Lean Management
+- Relevante Module: Projektmanagement, Produkt- und Prozessgestaltung, Lean Management, Controlling
 - Fachlicher Austausch mit Siemens Mobility über Prof. Böttger (ehem. Siemens Mobility)
 
 ### Kaufmann im Groß- und Außenhandelsmanagement
@@ -82,17 +83,29 @@ Angebots-, Auftrags- und Lieferantenprozessen für Tiefbau- und Infrastrukturpro
 
 ## Kenntnisse
 
-**Qualitätssicherung und Methoden**
-Test und Abnahme, Fehlerdokumentation und -nachverfolgung, technische Dokumentation,
-Prozessstandardisierung, Projektmanagement, Lean Management
+**Qualitätssicherung und Test**
+Test und Abnahme von Softwarefunktionen, Prüfung von Ausnahme- und Randfällen, reproduzierbares
+Fehlerreporting, Fehlernachverfolgung, Testdokumentation, technische Produktdokumentation,
+Prozessstandardisierung
 
-**IT und Anwendungen**
-MS Office (PowerPoint, Excel, Word) und SAP – sehr gut · Azure DevOps Server, Asana,
-Vestra-Infravision (Bahnplanung) · Power BI, SQL, Python – Grundkenntnisse
+**Tools**
+Azure DevOps Server (Testdurchführung und Fehlernachverfolgung) · SAP · MS Office (Excel,
+PowerPoint, Word) – sehr gut · Asana · Vestra-Infravision (Bahnplanung)
+
+**Programmierung und Daten**
+Python, SQL, C# – Grundkenntnisse · Power BI
 
 **KI-Anwendungen**
 ChatGPT und Claude: strukturierte Prompts, KI-gestützte Recherche und Datenaufbereitung,
 Automatisierung von Berichtsvorlagen
+
+<!--
+OPTIONALE ZEILEN – erst einfügen, wenn sie stimmen (siehe analyse.md):
+- Testautomatisierung: Einarbeitung in Cypress/Selenium (Selbststudium)
+- Agile Methoden: Scrum / Kanban (falls dein Team bei AKG so arbeitet)
+- Versionskontrolle: Azure DevOps Repos / Git (falls du damit arbeitest)
+- Testfallverwaltung: Azure DevOps Test Plans (falls du Testfälle pflegst, nicht nur ausführst)
+-->
 
 ---
 

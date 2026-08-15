@@ -5,7 +5,7 @@ Scheffelstr. 45
 pouyapouya144@gmail.com
 
 PwC Deutschland
-Geschäftsbereich Transformation – Public Sector & Energy
+Geschäftsbereich Transformation – Public & Energy Transformation
 Berlin
 
 Berlin, {{DATUM}}
@@ -15,32 +15,31 @@ Referenz 2512
 
 Sehr geehrte Damen und Herren,
 
-meine bisherige Arbeit hat wenig mit Beratung zu tun und ziemlich viel mit dem, worüber im Public
-Sector beraten wird. Drei Jahre lang habe ich im Baustoffgroßhandel Tiefbauunternehmen beliefert –
-Kanal, Leitungsbau, Straße. Seit Dezember arbeite ich in der Qualitätssicherung eines Softwarehauses,
-dessen Programme Planungsingenieure für Bahntrassen einsetzen. Öffentliche Infrastruktur kenne ich
-damit von der Seite, auf der sie tatsächlich entsteht: mit Lieferterminen, Planungsständen und
-Beteiligten, die alle etwas anderes für dringend halten.
+die Software, die ich seit Dezember teste, nutzen Planungsingenieure für Bahntrassen. Öffentliche
+Auftraggeber, Infrastruktur, Mobilität – das ist ungefähr das Themenfeld, in dem Ihr PET AI
+Tech-Hub arbeitet, nur von der Softwareseite statt aus der Beratung. Qualitätssicherung mache ich
+also bereits; ich würde sie gern dort machen, wo die Ergebnisse in Digitalisierungs- und
+Energieprojekten der öffentlichen Hand landen.
 
-Qualitätssicherung ist dabei mein Tagesgeschäft und nicht nur eine Bezeichnung im Vertrag. Ich teste
-und nehme neue Softwarefunktionen ab, dokumentiere Abweichungen nachvollziehbar in Azure DevOps und
-halte sie nach, bis sie geklärt sind. Der zweite Teil ist die Produktdokumentation für zwei Produkte:
-prüfen, ob Beschreibungen vollständig und in sich schlüssig sind und ob ein Anwender ohne
-Software-Hintergrund damit zurechtkommt. Gelernt habe ich dabei vor allem eines – Qualitätsmängel
-fallen selten dadurch auf, dass etwas offensichtlich falsch ist, sondern dadurch, dass man eine
-Stelle zweimal lesen muss.
+Mein Tagesgeschäft ist Test und Abnahme neuer Funktionen für zwei Produkte. Abweichungen beschreibe
+ich so, dass die Entwicklung sie reproduzieren kann, dokumentiere sie in Azure DevOps und halte sie
+nach, bis sie geklärt sind – Jira und TestRail bilden denselben Ablauf ab. Ihr Punkt zu den Unlucky
+Paths beschreibt dabei ziemlich genau, was den Reiz an der Arbeit ausmacht: Auf dem erwarteten Weg
+funktioniert fast alles. Interessant wird es bei der Trassenführung mit ungewöhnlicher Geometrie,
+dem unvollständigen Datensatz, der Eingabe, an die beim Entwurf niemand gedacht hat. Diese Fälle zu
+suchen, liegt mir.
 
-An der Stelle reizt mich, dass Qualitätssicherung nicht am Ende eines Projekts steht, sondern im
-crossfunktionalen Team zwischen Business, Technologie und Beratung stattfindet. Diese
-Schnittstellenarbeit mache ich im Kleinen bereits: Anforderungen zwischen Entwicklung und Fachbereich
-abstimmen, offene Punkte nachhalten, Inhalte so aufbereiten, dass beide Seiten damit arbeiten können.
-Im Großhandel war es dasselbe Muster, nur zwischen Vertrieb, Lager und Einkauf.
+Zum Stand der Automatisierung sage ich lieber, wie es ist: Ich teste heute manuell. Mit Selenium
+oder Cypress habe ich noch nicht produktiv gearbeitet, Python und C# beherrsche ich auf
+Grundlagenniveau. Was ich mitbringe, ist das Handwerk dahinter – Testfälle durchdenken, Fehler
+sauber belegen, Ergebnisse nachvollziehbar dokumentieren – und das wende ich täglich an. Den Schritt
+zum automatisierten Testen möchte ich als Nächstes gehen, und dafür ist ein cross-funktionales Team
+mit echten Projekten der bessere Ort als ein Onlinekurs.
 
-Mein Studium des Wirtschaftsingenieurwesens und die kaufmännische Ausbildung davor bringen die
-technische und die wirtschaftliche Perspektive zusammen – in Infrastruktur- und Energieprojekten
-werden beide gebraucht. Dass ich gründlich arbeite, habe ich dort gezeigt, wo Ungenauigkeiten
-unmittelbar teuer werden: bei Lieferungen für laufende Baustellen und in Software, mit der andere
-ihre Planung machen.
+Dazu kommt ein Hintergrund, den in einem Testteam nicht alle haben: kaufmännische Ausbildung, drei
+Jahre Baustoffgroßhandel für Tiefbauunternehmen, jetzt Wirtschaftsingenieurwesen. Ich kenne die
+Projekte, für die solche Software am Ende gebaut wird – das hilft beim Testen fachlicher Randfälle
+mehr als jede zusätzliche Toolkenntnis.
 
 Über ein Gespräch freue ich mich.
 
@@ -51,8 +50,9 @@ Pouya Shakourpour
 <!--
 Vor dem Versand ersetzen/ergänzen:
 - {{DATUM}}
-- Ansprechpartner:in, falls in der Ausschreibung genannt
+- Ansprechpartner:in, falls genannt
 - Verfügbarkeit: Praktikum oder Werkstudententätigkeit, Startdatum, Wochenstunden bzw. Zeitraum
-  (am besten als letzter Satz vor dem Gesprächssatz)
-- Nach Vorliegen des Ausschreibungstextes: Absatz 3 auf die tatsächlich genannten Aufgaben schärfen
+  (als letzter Satz vor dem Gesprächssatz)
+- Falls du vor dem Versand mit Cypress/Selenium anfängst: Absatz 3 anpassen auf
+  "Mit Cypress arbeite ich mich derzeit im Selbststudium ein" – das ist deutlich stärker.
 -->

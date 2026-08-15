@@ -28,18 +28,17 @@ AKZENT = RGBColor(0x1F, 0x3B, 0x57)
 PERSON = {
     "name": "Pouya Shakourpour",
     "untertitel": "B.Eng. Wirtschaftsingenieurwesen (HTW Berlin)  |  "
-                  "Qualitätssicherung, technische Dokumentation, Projektkoordination",
+                  "Qualitätssicherung und Softwaretest",
     "adresse": ["Scheffelstr. 45", "10367 Berlin", "0176 80782540", "pouyapouya144@gmail.com"],
     "kontakt": "Scheffelstr. 45, 10367 Berlin  |  0176 80782540  |  pouyapouya144@gmail.com",
 }
 
 KURZPROFIL = (
-    "Student des Wirtschaftsingenieurwesens mit abgeschlossener kaufmännischer Ausbildung, aktuell "
-    "Werkstudent in der Qualitätssicherung eines Softwarehauses für Bahnplanung. Erfahrung in Test "
-    "und Abnahme, Fehlerdokumentation und -nachverfolgung sowie in der Prüfung und Pflege "
-    "technischer Dokumentation für Anwender ohne Software-Hintergrund. Davor drei Jahre im "
-    "Baustoffgroßhandel mit Angebots-, Auftrags- und Lieferantenprozessen für Tiefbau- und "
-    "Infrastrukturprojekte."
+    "Student des Wirtschaftsingenieurwesens mit abgeschlossener kaufmännischer Ausbildung, seit "
+    "Dezember 2025 Werkstudent in der Qualitätssicherung eines Softwarehauses für Bahnplanung: Test "
+    "und Abnahme neuer Funktionen, reproduzierbare Fehlerdokumentation und -nachverfolgung in Azure "
+    "DevOps Server sowie Prüfung und Pflege der Produktdokumentation. Grundkenntnisse in Python, SQL "
+    "und C#. Nächster Schritt ist der Weg vom manuellen zum automatisierten Testen."
 )
 
 ERFAHRUNG = [
@@ -49,15 +48,14 @@ ERFAHRUNG = [
         "zeit": "12/2025 – heute",
         "bullets": [
             "Test und Abnahme neuer Softwarefunktionen für zwei Produkte der Bahnplanung "
-            "(Vestra-Infravision); Abweichungen systematisch erfasst, dokumentiert und in Azure "
-            "DevOps Server bis zur Klärung nachverfolgt",
+            "(Vestra-Infravision), einschließlich Prüfung von Ausnahme- und Randfällen",
+            "Abweichungen reproduzierbar beschrieben, in Azure DevOps Server dokumentiert und bis "
+            "zur Klärung mit der Entwicklung nachverfolgt",
             "Produktdokumentation für zwei Softwareprodukte gepflegt und überarbeitet – geprüft auf "
             "Vollständigkeit, Konsistenz und Verständlichkeit für Fachanwender ohne "
             "Software-Hintergrund",
-            "Technische Produktinformationen für Fachabteilungen verdichtet und als "
-            "Entscheidungsgrundlage aufbereitet",
-            "Anforderungen und technische Inhalte abteilungsübergreifend zwischen Entwicklung und "
-            "Fachbereich abgestimmt, offene Punkte nachgehalten",
+            "Anforderungen und technische Inhalte zwischen Entwicklung und Fachbereich abgestimmt, "
+            "offene Punkte nachgehalten",
             "KI-gestützte Aufbereitung von Produktinformationen eingeführt und wiederverwendbare "
             "Vorlagen für die laufende Dokumentationsarbeit entwickelt",
         ],
@@ -85,13 +83,13 @@ ERFAHRUNG = [
         "bullets": [
             "Prozessoptimierung im dezentralen Einkauf unterstützt: neue Analyse-Tools eingeführt "
             "und wiederkehrende Abläufe standardisiert",
-            "SAP-gestützte Angebots- und Auftragserfassung im B2B-Geschäft mit Tiefbauunternehmen",
             "Produkt- und Marktdaten täglich in SAP ausgewertet und zu Kennzahlen für die "
             "Vertriebssteuerung aufbereitet",
             "Bestands- und Statusübersichten aufgebaut, die den Stand des Produktportfolios "
             "abteilungsübergreifend transparent machten",
             "Lieferkoordination zwischen Vertrieb, Lager und Einkauf für termingerechte "
             "Auftragsabwicklung",
+            "SAP-gestützte Angebots- und Auftragserfassung im B2B-Geschäft mit Tiefbauunternehmen",
         ],
     },
 ]
@@ -102,8 +100,8 @@ AUSBILDUNG = [
         "firma": "HTW Berlin",
         "zeit": "seit 10/2024",
         "bullets": [
-            "Relevante Module: Projektmanagement, Controlling, Produkt- und Prozessgestaltung, "
-            "Lean Management",
+            "Relevante Module: Projektmanagement, Produkt- und Prozessgestaltung, Lean Management, "
+            "Controlling",
             "Fachlicher Austausch mit Siemens Mobility über Prof. Böttger (ehem. Siemens Mobility)",
         ],
     },
@@ -132,12 +130,15 @@ WEITERBILDUNG = [
 ]
 
 KENNTNISSE = [
-    ("Qualitätssicherung und Methoden",
-     "Test und Abnahme, Fehlerdokumentation und -nachverfolgung, technische Dokumentation, "
-     "Prozessstandardisierung, Projektmanagement, Lean Management"),
-    ("IT und Anwendungen",
-     "MS Office (PowerPoint, Excel, Word) und SAP – sehr gut; Azure DevOps Server, Asana, "
-     "Vestra-Infravision (Bahnplanung); Power BI, SQL, Python – Grundkenntnisse"),
+    ("Qualitätssicherung und Test",
+     "Test und Abnahme von Softwarefunktionen, Prüfung von Ausnahme- und Randfällen, "
+     "reproduzierbares Fehlerreporting, Fehlernachverfolgung, Testdokumentation, technische "
+     "Produktdokumentation, Prozessstandardisierung"),
+    ("Tools",
+     "Azure DevOps Server (Testdurchführung und Fehlernachverfolgung); SAP und MS Office (Excel, "
+     "PowerPoint, Word) – sehr gut; Asana; Vestra-Infravision (Bahnplanung)"),
+    ("Programmierung und Daten",
+     "Python, SQL, C# – Grundkenntnisse; Power BI"),
     ("KI-Anwendungen",
      "ChatGPT und Claude: strukturierte Prompts, KI-gestützte Recherche und Datenaufbereitung, "
      "Automatisierung von Berichtsvorlagen"),
@@ -150,33 +151,31 @@ ANSCHREIBEN_BETREFF = (
 )
 
 ANSCHREIBEN_ABSAETZE = [
-    "meine bisherige Arbeit hat wenig mit Beratung zu tun und ziemlich viel mit dem, worüber im "
-    "Public Sector beraten wird. Drei Jahre lang habe ich im Baustoffgroßhandel Tiefbauunternehmen "
-    "beliefert – Kanal, Leitungsbau, Straße. Seit Dezember arbeite ich in der Qualitätssicherung "
-    "eines Softwarehauses, dessen Programme Planungsingenieure für Bahntrassen einsetzen. "
-    "Öffentliche Infrastruktur kenne ich damit von der Seite, auf der sie tatsächlich entsteht: mit "
-    "Lieferterminen, Planungsständen und Beteiligten, die alle etwas anderes für dringend halten.",
+    "die Software, die ich seit Dezember teste, nutzen Planungsingenieure für Bahntrassen. "
+    "Öffentliche Auftraggeber, Infrastruktur, Mobilität – das ist ungefähr das Themenfeld, in dem "
+    "Ihr PET AI Tech-Hub arbeitet, nur von der Softwareseite statt aus der Beratung. "
+    "Qualitätssicherung mache ich also bereits; ich würde sie gern dort machen, wo die Ergebnisse "
+    "in Digitalisierungs- und Energieprojekten der öffentlichen Hand landen.",
 
-    "Qualitätssicherung ist dabei mein Tagesgeschäft und nicht nur eine Bezeichnung im Vertrag. Ich "
-    "teste und nehme neue Softwarefunktionen ab, dokumentiere Abweichungen nachvollziehbar in Azure "
-    "DevOps und halte sie nach, bis sie geklärt sind. Der zweite Teil ist die Produktdokumentation "
-    "für zwei Produkte: prüfen, ob Beschreibungen vollständig und in sich schlüssig sind und ob ein "
-    "Anwender ohne Software-Hintergrund damit zurechtkommt. Gelernt habe ich dabei vor allem eines "
-    "– Qualitätsmängel fallen selten dadurch auf, dass etwas offensichtlich falsch ist, sondern "
-    "dadurch, dass man eine Stelle zweimal lesen muss.",
+    "Mein Tagesgeschäft ist Test und Abnahme neuer Funktionen für zwei Produkte. Abweichungen "
+    "beschreibe ich so, dass die Entwicklung sie reproduzieren kann, dokumentiere sie in Azure "
+    "DevOps und halte sie nach, bis sie geklärt sind – Jira und TestRail bilden denselben Ablauf "
+    "ab. Ihr Punkt zu den Unlucky Paths beschreibt dabei ziemlich genau, was den Reiz an der Arbeit "
+    "ausmacht: Auf dem erwarteten Weg funktioniert fast alles. Interessant wird es bei der "
+    "Trassenführung mit ungewöhnlicher Geometrie, dem unvollständigen Datensatz, der Eingabe, an "
+    "die beim Entwurf niemand gedacht hat. Diese Fälle zu suchen, liegt mir.",
 
-    "An der Stelle reizt mich, dass Qualitätssicherung nicht am Ende eines Projekts steht, sondern "
-    "im crossfunktionalen Team zwischen Business, Technologie und Beratung stattfindet. Diese "
-    "Schnittstellenarbeit mache ich im Kleinen bereits: Anforderungen zwischen Entwicklung und "
-    "Fachbereich abstimmen, offene Punkte nachhalten, Inhalte so aufbereiten, dass beide Seiten "
-    "damit arbeiten können. Im Großhandel war es dasselbe Muster, nur zwischen Vertrieb, Lager und "
-    "Einkauf.",
+    "Zum Stand der Automatisierung sage ich lieber, wie es ist: Ich teste heute manuell. Mit "
+    "Selenium oder Cypress habe ich noch nicht produktiv gearbeitet, Python und C# beherrsche ich "
+    "auf Grundlagenniveau. Was ich mitbringe, ist das Handwerk dahinter – Testfälle durchdenken, "
+    "Fehler sauber belegen, Ergebnisse nachvollziehbar dokumentieren – und das wende ich täglich "
+    "an. Den Schritt zum automatisierten Testen möchte ich als Nächstes gehen, und dafür ist ein "
+    "cross-funktionales Team mit echten Projekten der bessere Ort als ein Onlinekurs.",
 
-    "Mein Studium des Wirtschaftsingenieurwesens und die kaufmännische Ausbildung davor bringen die "
-    "technische und die wirtschaftliche Perspektive zusammen – in Infrastruktur- und "
-    "Energieprojekten werden beide gebraucht. Dass ich gründlich arbeite, habe ich dort gezeigt, wo "
-    "Ungenauigkeiten unmittelbar teuer werden: bei Lieferungen für laufende Baustellen und in "
-    "Software, mit der andere ihre Planung machen.",
+    "Dazu kommt ein Hintergrund, den in einem Testteam nicht alle haben: kaufmännische Ausbildung, "
+    "drei Jahre Baustoffgroßhandel für Tiefbauunternehmen, jetzt Wirtschaftsingenieurwesen. Ich "
+    "kenne die Projekte, für die solche Software am Ende gebaut wird – das hilft beim Testen "
+    "fachlicher Randfälle mehr als jede zusätzliche Toolkenntnis.",
 
     "Über ein Gespräch freue ich mich.",
 ]
@@ -289,7 +288,7 @@ def build_anschreiben(pfad: Path):
         absatz(doc, zeile, size=10, space_after=0)
 
     absatz(doc, "PwC Deutschland", size=10.5, space_before=18, space_after=0)
-    absatz(doc, "Geschäftsbereich Transformation – Public Sector & Energy", size=10.5, space_after=0)
+    absatz(doc, "Geschäftsbereich Transformation – Public & Energy Transformation", size=10.5, space_after=0)
     absatz(doc, "Berlin", size=10.5, space_after=0)
 
     absatz(doc, "Berlin, {{DATUM}}", size=10.5, space_before=18, space_after=14,
