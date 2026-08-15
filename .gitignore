@@ -1,5 +1,9 @@
 output/*.pdf
 output/*.txt
+
+# Persönliche Rohdaten – dürfen nicht ins öffentliche Repo
+*.local.md
+wohnungssuche/meine_daten*.md
 *.pyc
 __pycache__/
 .~lock*

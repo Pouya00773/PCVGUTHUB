@@ -1,3 +1,6 @@
+> **Zweiter Projektteil:** [`wohnungssuche/`](wohnungssuche/) – automatisierte
+> Wohnungsbewerbungen über ImmoScout24 (Anbietervergleich, Abos, fertige Bewerbermappe).
+
 # Werkstudenten-Bewerbung – Wirtschaftsingenieur (mit Schweiz-Bezug)
 
 ATS-/AI-Filter-optimierte Bewerbungsunterlagen für Werkstudenten-Stellen bei gut zahlenden
