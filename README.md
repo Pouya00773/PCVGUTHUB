@@ -24,12 +24,18 @@ Skills sind ehrlich als „(Grundkenntnisse)" markiert (Lernplan siehe `lernplan
   - `analyse.md` – Anforderungsabgleich, Differenzierung, offene Punkte vor dem Versand
   - `lebenslauf.md` / `anschreiben.md` – Textfassungen
   - erzeugt via `scripts/build_pwc.py` → `output/*_PwC.docx`
+- `bewerbungen/pwc-qa-public-sector-energy/` – Praktikum / Werkstudent Quality Assurance
+  Specialist – Public Sector & Energy (w/m/d), PwC Deutschland (Transformation, Berlin, Req. 2512)
+  - `analyse.md` – Quellenlage, Anforderungsabgleich, ATS-Mechanik, offene Punkte
+  - `lebenslauf.md` / `anschreiben.md` – Textfassungen
+  - erzeugt via `scripts/build_pwc_qa.py` → `output/*_PwC_QA.docx`
 
 ## Neu generieren
 ```bash
 pip install python-docx
 python3 scripts/build_docs.py   # Branchen-Varianten
 python3 scripts/build_pwc.py    # PwC AI Adoption & Enablement
+python3 scripts/build_pwc_qa.py # PwC Quality Assurance – Public Sector & Energy
 ```
 
 ## Vor dem Versand
