@@ -53,15 +53,13 @@ STELLE = {
 }
 
 PROFIL = (
-    "Werkstudent in der Software-Qualitätssicherung mit Praxis in Testplanung, Produktabnahme "
-    "und manuellem Testing sowie in API- und Performance-Tests. Testpläne erstelle ich in enger "
-    "Zusammenarbeit mit dem Produktmanagement; gearbeitet wird agil in Sprints mit Azure DevOps "
-    "(Test Plans, Boards, Repos) als Testmanagement- und Tracking-Umgebung. Studium des "
-    "Wirtschaftsingenieurwesens an der HTW Berlin mit abgeschlossener kaufmännischer Ausbildung – "
-    "dadurch die Brücke zwischen Business, Technologie und Beratung, wie sie in cross-funktionalen "
-    "Teams gebraucht wird. Ausgeprägte Detailorientierung, systematisches Denken in Edge Cases und "
-    "Ausnahmefällen sowie klares, nachvollziehbares Fehlerreporting. Testautomatisierung mit "
-    "Selenium, Cypress und JUnit wird aktuell im Selbststudium aufgebaut."
+    "Ich arbeite als Werkstudent in der Software-Qualitätssicherung. Zusammen mit dem "
+    "Produktmanagement schreibe ich Testpläne, teste manuell in der Produktabnahme und führe "
+    "API- und Performance-Tests durch. Wir arbeiten in Sprints; Testfälle, Fehler und Codestände "
+    "laufen über Azure DevOps. Vor meinem Studium des Wirtschaftsingenieurwesens an der HTW Berlin "
+    "habe ich eine kaufmännische Ausbildung abgeschlossen. Was mich an der Qualitätssicherung "
+    "reizt, sind die Sonderfälle, an die beim Entwurf niemand gedacht hat – und Fehlerberichte, "
+    "mit denen die Entwicklung ohne Rückfrage weiterarbeiten kann."
 )
 
 ERFAHRUNG = [
