@@ -53,7 +53,8 @@ STELLE = {
 PROFIL = (
     "Werkstudent in der Software-Qualitätssicherung mit Praxis in Produktabnahme, manuellem "
     "Testing und strukturierter Fehler- und Testdokumentation – im agilen Umfeld, in Sprints und "
-    "mit Azure DevOps als Testmanagement- und Tracking-Tool. Studium des "
+    "mit Azure DevOps (Test Plans, Boards, Repos) als Testmanagement- und Tracking-Umgebung. "
+    "Studium des "
     "Wirtschaftsingenieurwesens an der HTW Berlin mit abgeschlossener kaufmännischer Ausbildung – "
     "dadurch die Brücke zwischen Business, Technologie und Beratung, wie sie in cross-funktionalen "
     "Teams gebraucht wird. Ausgeprägte Detailorientierung, systematisches Denken in Edge Cases und "
@@ -68,12 +69,14 @@ ERFAHRUNG = [
         "firma": "AKG Software Consulting GmbH, Berlin",
         "zeit": "12/2025 – heute",
         "bullets": [
-            "Planung und Durchführung manueller Softwaretests in der Produktabnahme – "
-            "von Testfallentwurf über Ausführung bis zur Abnahmeempfehlung",
+            "Planung und Durchführung manueller Softwaretests in der Produktabnahme – von "
+            "Testfallentwurf über Ausführung bis zur Abnahmeempfehlung; Verwaltung der "
+            "Testfälle und Testläufe in Azure DevOps Test Plans",
             "Systematische Analyse von Edge Cases und Ausnahmefällen („Unlucky Paths“) "
             "über die fachlich erwarteten Standardabläufe hinaus",
-            "Reproduzierbare Fehlererfassung, Priorisierung und Nachverfolgung bis zum "
-            "Retest in Azure DevOps – inklusive Verifizierung behobener Fehler",
+            "Reproduzierbare Fehlererfassung, Priorisierung und Nachverfolgung bis zum Retest "
+            "in Azure DevOps – inklusive Verifizierung behobener Fehler und versionsgenauer "
+            "Zuordnung über Git / Azure Repos",
             "Erstellung strukturierter Test- und Projektdokumentation als Nachweis der "
             "Softwarequalität über alle Entwicklungsphasen",
             "Arbeit im agilen Umfeld in Sprints – Abstimmung von Testumfang und "
@@ -143,8 +146,9 @@ QA_PRAXIS = [
     "Testfallentwurf und Testdurchführung",
     "Edge-Case-/Ausnahmefall-Analyse („Unlucky Paths“)",
     "Fehlererfassung, Priorisierung, Nachverfolgung und Retest",
-    "Testmanagement-Tool: Azure DevOps",
+    "Testmanagement mit Azure DevOps (Test Plans, Boards, Work Items)",
     "Agiles Arbeiten in Sprints (Scrum)",
+    "Versionskontrolle mit Git / Azure Repos",
     "Test- und Projektdokumentation",
     "Abstimmung mit Entwicklungs- und Fachteams",
 ]
@@ -152,14 +156,13 @@ QA_PRAXIS = [
 QA_ANEIGNUNG = [
     "Testautomatisierung: Selenium, Cypress, JUnit",
     "API-Tests (Postman/REST), Performance- und Sicherheitstests (Grundlagen)",
-    "Versionskontrolle mit Git und Arbeit mit Code-Repositories",
     "Jira und TestRail (Umstieg von Azure DevOps, Grundlagen)",
     "Testen von KI-Modellen und datengetriebenen Systemen (Grundlagen)",
 ]
 
 IT_PRAXIS = [
-    "Azure DevOps", "MS Excel", "MS PowerPoint", "MS Word",
-    "SAP", "Asana", "CRM (Pipedrive, Zoho)",
+    "Azure DevOps (Test Plans, Boards, Repos)", "Git", "MS Excel", "MS PowerPoint",
+    "MS Word", "SAP", "Asana", "CRM (Pipedrive, Zoho)",
 ]
 IT_GRUND = ["Python", "SQL", "C#"]
 
@@ -280,9 +283,9 @@ def build_cv():
 
     hinweis(
         doc,
-        "HINWEIS (vor Versand löschen): Platzhalter {{...}} ersetzen. Falls du bei AKG auch Azure "
-        "Repos/Git oder Azure Test Plans nutzt: entsprechenden Punkt aus „In Aneignung“ nach oben "
-        "zu „Praxiserprobt“ verschieben.",
+        "HINWEIS (vor Versand löschen): Platzhalter {{...}} ersetzen und diese Zeile entfernen. "
+        "Optional: konkrete Zahlen in die AKG-Bullets ergänzen (Testfälle pro Sprint, gemeldete "
+        "Fehler, Teamgröße, betreute Module).",
     )
 
     path = OUT / "Lebenslauf_PwC_QA.docx"
@@ -333,9 +336,10 @@ def build_cover_letter():
         "Ihre Ausschreibung im PET AI Tech-Hub unmittelbar angesprochen hat.",
 
         "In der Produktabnahme plane und führe ich manuelle Softwaretests durch: vom Testfallentwurf "
-        "über die Ausführung bis zur Abnahmeempfehlung. Gefundene Fehler erfasse ich reproduzierbar "
-        "in Azure DevOps, priorisiere sie, verfolge sie bis zum Retest nach und dokumentiere "
-        "Testverlauf sowie Ergebnisse strukturiert. Wir arbeiten dabei in Sprints, sodass ich "
+        "über die Ausführung bis zur Abnahmeempfehlung. Meine Testfälle und Testläufe verwalte ich "
+        "in Azure DevOps Test Plans, gefundene Fehler erfasse ich reproduzierbar, priorisiere sie "
+        "und verfolge sie bis zum Retest nach – über Git beziehungsweise Azure Repos ordne ich sie "
+        "dabei versionsgenau dem jeweiligen Codestand zu. Wir arbeiten in Sprints, sodass ich "
         "gewohnt bin, Testumfang und Abnahmekriterien eng am Entwicklungszyklus abzustimmen. Dabei "
         "habe ich gelernt, dass ein Fehlerbericht erst dann gut ist, wenn die Entwicklung ohne "
         "Rückfrage damit arbeiten kann – kommunikationsstarkes Fehlerreporting ist für mich kein "
@@ -349,8 +353,9 @@ def build_cover_letter():
         "auch, wo ich stehe: Testautomatisierung mit Selenium, Cypress und JUnit sowie API- und "
         "Performance-Tests baue ich derzeit gezielt im Selbststudium auf – strukturiert, mit eigenen "
         "kleinen Testprojekten und der klaren Absicht, das bei Ihnen in die Praxis zu bringen. Als "
-        "Testmanagement-Tool nutze ich Azure DevOps; der Umstieg auf Jira oder TestRail ist für mich "
-        "eine Frage von Tagen, nicht von Monaten. Was ich sicher mitbringe, ist die Grundlage, auf "
+        "Testmanagement-Umgebung nutze ich Azure DevOps; der Umstieg auf Jira oder TestRail ist für "
+        "mich eine Frage von Tagen, nicht von Monaten – die Konzepte dahinter sind dieselben. "
+        "Was ich sicher mitbringe, ist die Grundlage, auf "
         "der Automatisierung erst sinnvoll wird: systematisches Testdenken, Detailgenauigkeit und "
         "saubere Dokumentation.",
 
@@ -372,8 +377,7 @@ def build_cover_letter():
     hinweis(
         doc,
         "HINWEIS (vor Versand löschen): Platzhalter {{...}} ersetzen (Adresse des Standorts, auf den "
-        "du dich bewirbst, Datum, Referenznummer aus der Anzeige). Absatz 4 anpassen, falls du bei "
-        "AKG auch mit Git/Azure Repos arbeitest – dann gehört das in Absatz 2 als Praxis.",
+        "du dich bewirbst, Datum, Referenznummer aus der Anzeige) und diese Zeile entfernen.",
     )
 
     path = OUT / "Anschreiben_PwC_QA.docx"
