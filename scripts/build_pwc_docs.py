@@ -53,18 +53,15 @@ STELLE = {
 }
 
 PROFIL = (
-    "Werkstudent in der Software-Qualitätssicherung mit Praxis in Testplanung, Produktabnahme, "
-    "manuellem Testing und strukturierter Fehler- und Testdokumentation. Erstellung von "
-    "Testplänen in enger Zusammenarbeit mit dem Produktmanagement – im agilen Umfeld, in Sprints "
-    "und "
-    "mit Azure DevOps (Test Plans, Boards, Repos) als Testmanagement- und Tracking-Umgebung. "
-    "Studium des "
+    "Werkstudent in der Software-Qualitätssicherung mit Praxis in Testplanung, Produktabnahme "
+    "und manuellem Testing sowie in API- und Performance-Tests. Testpläne erstelle ich in enger "
+    "Zusammenarbeit mit dem Produktmanagement; gearbeitet wird agil in Sprints mit Azure DevOps "
+    "(Test Plans, Boards, Repos) als Testmanagement- und Tracking-Umgebung. Studium des "
     "Wirtschaftsingenieurwesens an der HTW Berlin mit abgeschlossener kaufmännischer Ausbildung – "
     "dadurch die Brücke zwischen Business, Technologie und Beratung, wie sie in cross-funktionalen "
     "Teams gebraucht wird. Ausgeprägte Detailorientierung, systematisches Denken in Edge Cases und "
-    "Ausnahmefällen sowie klares, nachvollziehbares Fehlerreporting. Testautomatisierung "
-    "(Selenium, Cypress, JUnit) sowie API- und Performance-Tests werden aktuell im Selbststudium "
-    "aufgebaut (Details siehe Abschnitt „Kenntnisse & Fähigkeiten“)."
+    "Ausnahmefällen sowie klares, nachvollziehbares Fehlerreporting. Testautomatisierung mit "
+    "Selenium, Cypress und JUnit wird aktuell im Selbststudium aufgebaut."
 )
 
 ERFAHRUNG = [
@@ -81,6 +78,8 @@ ERFAHRUNG = [
             "Testfälle und Testläufe in Azure DevOps Test Plans",
             "Systematische Analyse von Edge Cases und Ausnahmefällen („Unlucky Paths“) "
             "über die fachlich erwarteten Standardabläufe hinaus",
+            "Durchführung von API- und Performance-Tests – Prüfung von Schnittstellen "
+            "gegen die Spezifikation sowie des Systemverhaltens unter Last",
             "Reproduzierbare Fehlererfassung, Priorisierung und Nachverfolgung bis zum Retest "
             "in Azure DevOps – inklusive Verifizierung behobener Fehler und versionsgenauer "
             "Zuordnung über Git / Azure Repos",
@@ -152,6 +151,8 @@ QA_PRAXIS = [
     "Manuelles Testing & Produktabnahme",
     "Testfallentwurf und Testdurchführung",
     "Edge-Case-/Ausnahmefall-Analyse („Unlucky Paths“)",
+    "API-Tests",
+    "Performance-Tests",
     "Fehlererfassung, Priorisierung, Nachverfolgung und Retest",
     "Testmanagement mit Azure DevOps (Test Plans, Boards, Work Items)",
     "Agiles Arbeiten in Sprints (Scrum)",
@@ -162,7 +163,7 @@ QA_PRAXIS = [
 
 QA_ANEIGNUNG = [
     "Testautomatisierung: Selenium, Cypress, JUnit",
-    "API-Tests (Postman/REST), Performance- und Sicherheitstests (Grundlagen)",
+    "Sicherheitstests (Grundlagen)",
     "Jira und TestRail (Umstieg von Azure DevOps, Grundlagen)",
     "Testen von KI-Modellen und datengetriebenen Systemen (Grundlagen)",
 ]
@@ -343,17 +344,19 @@ def build_cover_letter():
         "der Qualitätssicherung bei der AKG Software Consulting GmbH täglich tue – und weshalb mich "
         "Ihre Ausschreibung im PET AI Tech-Hub unmittelbar angesprochen hat.",
 
-        "In der Produktabnahme plane und führe ich manuelle Softwaretests durch: vom Testfallentwurf "
-        "über die Ausführung bis zur Abnahmeempfehlung. Die Testpläne dazu erstelle ich in enger "
+        "In der Produktabnahme plane und führe ich Softwaretests durch: vom Testfallentwurf über "
+        "die Ausführung bis zur Abnahmeempfehlung. Die Testpläne dazu erstelle ich in enger "
         "Zusammenarbeit mit unserem Produktmanager – aus den Produktanforderungen leiten wir "
-        "gemeinsam Testumfang, Testszenarien und Abnahmekriterien ab. Meine Testfälle und "
-        "Testläufe verwalte ich "
-        "in Azure DevOps Test Plans, gefundene Fehler erfasse ich reproduzierbar, priorisiere sie "
-        "und verfolge sie bis zum Retest nach – über Git beziehungsweise Azure Repos ordne ich sie "
-        "dabei versionsgenau dem jeweiligen Codestand zu. Wir arbeiten in Sprints, sodass ich "
-        "gewohnt bin, Testumfang und Abnahmekriterien eng am Entwicklungszyklus abzustimmen. Dabei "
+        "gemeinsam Testumfang, Testszenarien und Abnahmekriterien ab. Neben dem manuellen Test "
+        "gehören API- und Performance-Tests zu meinen Aufgaben: Schnittstellen gegen die "
+        "Spezifikation zu prüfen und zu sehen, wie sich das System unter Last verhält. Wir arbeiten "
+        "in Sprints, sodass ich gewohnt bin, den Testumfang eng am Entwicklungszyklus abzustimmen.",
+
+        "Testfälle und Testläufe verwalte ich in Azure DevOps Test Plans; gefundene Fehler erfasse "
+        "ich reproduzierbar, priorisiere sie und verfolge sie bis zum Retest nach – über Git "
+        "beziehungsweise Azure Repos ordne ich sie versionsgenau dem jeweiligen Codestand zu. Dabei "
         "habe ich gelernt, dass ein Fehlerbericht erst dann gut ist, wenn die Entwicklung ohne "
-        "Rückfrage damit arbeiten kann – kommunikationsstarkes Fehlerreporting ist für mich kein "
+        "Rückfrage damit arbeiten kann; kommunikationsstarkes Fehlerreporting ist für mich kein "
         "Nebenprodukt, sondern Teil der Aufgabe.",
 
         "Mein Studium des Wirtschaftsingenieurwesens an der HTW Berlin bringt neben Programmierung "
@@ -361,14 +364,11 @@ def build_cover_letter():
         "von der fachlichen Seite her und übersetze zwischen Business und Technik. Für ein "
         "cross-funktionales Team, das gesellschaftliche Problemstellungen in Public Sector und "
         "Energy in reale Lösungen überführt, sehe ich darin einen echten Mehrwert. Offen sage ich "
-        "auch, wo ich stehe: Testautomatisierung mit Selenium, Cypress und JUnit sowie API- und "
-        "Performance-Tests baue ich derzeit gezielt im Selbststudium auf – strukturiert, mit eigenen "
-        "kleinen Testprojekten und der klaren Absicht, das bei Ihnen in die Praxis zu bringen. Als "
-        "Testmanagement-Umgebung nutze ich Azure DevOps; der Umstieg auf Jira oder TestRail ist für "
-        "mich eine Frage von Tagen, nicht von Monaten – die Konzepte dahinter sind dieselben. "
-        "Was ich sicher mitbringe, ist die Grundlage, auf "
-        "der Automatisierung erst sinnvoll wird: systematisches Testdenken, Detailgenauigkeit und "
-        "saubere Dokumentation.",
+        "auch, wo ich stehe: Meine Tests führe ich bislang manuell aus; die Automatisierung mit "
+        "Selenium, Cypress und JUnit baue ich derzeit im Selbststudium auf, mit eigenen kleinen "
+        "Testprojekten und der klaren Absicht, das bei Ihnen in die Praxis zu bringen. Und statt "
+        "Jira oder TestRail nutze ich Azure DevOps – der Umstieg ist eine Frage von Tagen, die "
+        "Konzepte dahinter sind dieselben.",
 
         "Die Verbindung aus Digitalisierung, Energiewende und öffentlichem Auftrag ist für mich der "
         "Bereich, in dem Qualitätssicherung am meisten zählt – dort trägt eine fehlerhafte Anwendung "

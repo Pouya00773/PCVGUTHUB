@@ -28,14 +28,15 @@ Blick des Recruiters sofort darauf treffen).
 | **Versionskontrolle / Code-Repositories** | ✅ Praxis – **Git / Azure Repos** | Kernkompetenzen + AKG-Bullet 7 |
 | **Fortgeschrittenes Studium Informatik / SWE / Wirt.-Inf.** | ⚠️ Wirtschaftsingenieurwesen, 4. Semester | Ausbildung – als „vergleichbar“ positioniert |
 | Testautomatisierung (Selenium, Cypress, JUnit) | ❌ noch nicht belegt | „Im Aufbau“ |
-| API-, Performance-, Sicherheitstests | ❌ noch nicht belegt | „Im Aufbau“ |
+| **API- und Performance-Tests** | ✅ Praxis | Kernkompetenzen + AKG-Bullet 4 |
+| Sicherheitstests | ❌ noch nicht belegt | „Im Aufbau“ |
 | Testen von KI-Modellen (nur „von Vorteil“) | ❌ | „Im Aufbau“ |
 | Prozessoptimierung | ✅ Studieninhalt + kaufm. Praxis | Ausbildung |
 
-**Realistische Einschätzung:** Von den elf inhaltlichen Anforderungen der Anzeige triffst du **neun
-mit echter Praxis** – inklusive Testplanung, Testmanagement-Tool, agilem Arbeiten und
-Versionskontrolle. Für eine Werkstudentenstelle ist das sehr stark; du bringst die QA-Grundausbildung
-bereits mit, statt sie erst bei PwC zu bekommen.
+**Realistische Einschätzung:** Von den zwölf inhaltlichen Anforderungen der Anzeige triffst du
+**zehn mit echter Praxis** – inklusive Testplanung, API- und Performance-Tests, Testmanagement-Tool,
+agilem Arbeiten und Versionskontrolle. Für eine Werkstudentenstelle ist das außergewöhnlich; du
+bringst die QA-Grundausbildung bereits mit, statt sie erst bei PwC zu bekommen.
 
 Besonders schwer wiegt, dass du **Testpläne gemeinsam mit dem Produktmanagement erstellst**. Das ist
 kein ausführender Beitrag mehr, sondern Mitentscheidung darüber, *was* getestet wird – und es belegt
@@ -47,8 +48,8 @@ vollwertiges Testmanagement-Modul, Boards sind Work-Item-Tracking, Repos sind Gi
 Produktnamen, meint aber Konzepte – und die beherrschst du. Genau so steht es im Anschreiben, statt
 es zu verschweigen.
 
-Offen bleiben zwei Punkte: die **Testautomatisierung** (Selenium, Cypress, JUnit) samt API- und
-Performance-Tests – die eine Lücke, an der es sich wirklich zu arbeiten lohnt (Abschnitt 4) – und der
+Offen bleiben zwei Punkte: die **Testautomatisierung** (Selenium, Cypress, JUnit) – die einzige
+verbliebene fachliche Lücke, an der es sich zu arbeiten lohnt (Abschnitt 4) – und der
 **Studiengang**. „Oder einem vergleichbaren Studiengang“ lässt Wirtschaftsingenieurwesen zu, zumal
 die Stelle explizit an der Schnittstelle Business ↔ Technologie ↔ Beratung sitzt, wo dein
 Doppelprofil (kaufmännische Ausbildung + technisches Studium) ein Argument ist statt eine Ausrede.
@@ -101,19 +102,20 @@ dein Trumpf statt deine Schwachstelle. Priorität nach Gewicht in der Anzeige:
 | Priorität | Thema | Kostenlose Ressource | Mini-Ziel (~10 h) |
 |---|---|---|---|
 | 1 | **Cypress** (E2E) | Cypress Docs „Real World App“ + offizielles Tutorial | 3 automatisierte E2E-Tests gegen eine Demo-Web-App |
-| 2 | **API-Tests** | Postman Learning Center | Collection mit GET/POST, Status-Code- und Schema-Assertions |
-| 3 | **Selenium / JUnit** | Selenium Docs, JUnit 5 User Guide | Ein Selenium-Skript, das ein Login-Formular testet |
-| 4 | **KI-Modelle testen** | Google „Testing ML Systems“, Artikel zu LLM-Evaluation | Erklären können, warum nicht-deterministische Outputs andere Testmethoden brauchen |
+| 2 | **Selenium / JUnit** | Selenium Docs, JUnit 5 User Guide | Ein Selenium-Skript, das ein Login-Formular testet |
+| 3 | **KI-Modelle testen** | Google „Testing ML Systems“, Artikel zu LLM-Evaluation | Erklären können, warum nicht-deterministische Outputs andere Testmethoden brauchen |
+| 4 | **Sicherheitstests** | OWASP Top Ten (kostenlos) | Die häufigsten Schwachstellenklassen benennen und je einen Testansatz nennen |
 | 5 | **Jira** (nur Vokabular) | Atlassian Free Plan (bis 10 User gratis) | Begriffe auf Azure DevOps mappen: Epic/Story/Bug, Board, Sprint, Test Plan |
 
-Scrum, Testmanagement und Git stehen nicht mehr auf der Liste – die hast du über Azure DevOps
-(Test Plans, Boards, Repos) und die Sprint-Arbeit bei AKG bereits abgedeckt. Für Jira reicht das
+Scrum, Testmanagement, Git und API-Tests stehen nicht mehr auf der Liste – die hast du über Azure
+DevOps (Test Plans, Boards, Repos), die Sprint-Arbeit und deine API- und Performance-Tests bei AKG
+bereits abgedeckt. Für Jira reicht das
 Vokabular: Wenn du im Interview sagen kannst, welches Azure-DevOps-Konzept welchem Jira-Begriff
 entspricht, ist die Frage erledigt.
 
-**Der eine Punkt, der wirklich zählt, ist Nummer 1–3.** Testautomatisierung ist die einzige echte
-Lücke zwischen dir und der Anzeige. Ein Wochenende Cypress plus ein Wochenende Postman schließt sie
-so weit, dass du im Interview nicht mehr „noch nicht“ sagen musst, sondern etwas zeigen kannst.
+**Der Punkt, der wirklich zählt, ist Nummer 1.** Testautomatisierung ist die letzte echte Lücke
+zwischen dir und der Anzeige. Zwei Wochenenden Cypress schließen sie so weit, dass du im Interview
+nicht mehr „noch nicht“ sagen musst, sondern etwas zeigen kannst.
 
 **Interview-Gold:** Leg die Ergebnisse in ein öffentliches GitHub-Repo (Cypress-Tests + Postman-
 Collection + Testfall-Dokumentation). Dann belegt das Repo gleichzeitig Punkt 2, 3 und 4 – und du
