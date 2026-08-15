@@ -106,6 +106,7 @@ das Risiko ist eine Account-Sperre. Details und Anbietervergleich in
 | Datei | Inhalt |
 |---|---|
 | `README.md` | dieses Dokument – Überblick, Zeitplan, Empfehlung |
+| [`immoscout_profil_checkliste.md`](immoscout_profil_checkliste.md) | **Klick-für-Klick: Profil auf TOP-Bewerber bringen** |
 | [`anbieter-und-abos.md`](anbieter-und-abos.md) | Anbietervergleich, Preise, AGB-/Risikoanalyse |
 | [`profil_daten.md`](profil_daten.md) | Fragebogen: was ich von dir brauche |
 | `../scripts/build_wohnungsbewerbung.py` | erzeugt die DOCX-Dateien |
