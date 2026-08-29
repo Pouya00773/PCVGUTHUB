@@ -10,6 +10,7 @@ Skills sind ehrlich als „(Grundkenntnisse)" markiert (Lernplan siehe `lernplan
 - `zielfirmen.md` – kuratierte Zielfirmen je Branche + ATS-Keyword-Bank
 - `lernplan.md` – kostenlose Ressourcen für „in Aneignung"-Skills
 - `pwc_qa_bewerbung.md` – Fit-Analyse, Lernplan und ATS-Keywords für die PwC-QA-Stelle
+- `interview_vorbereitung_pwc.md` – 2-Tage-Vorbereitungsplan für das Gespräch am 04.09.2026
 - `scripts/build_docs.py` – erzeugt die branchengenerischen DOCX-Dateien (datengetrieben)
 - `scripts/build_pwc_docs.py` – erzeugt die stellenspezifischen PwC-QA-Dokumente
 - `output/` – fertige Word-Dateien
