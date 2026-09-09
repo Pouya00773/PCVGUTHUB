@@ -1,3 +1,23 @@
+# Repository-Übersicht
+
+Dieses Repository enthält zwei getrennte Arbeitsstände:
+
+1. **Hochschulprojekt „Rückverfolgbarer Kaffee"** — Umsetzungsplan zu EUDR-Konformität,
+   Herkunftsnachweis und CO₂ je Charge. Zwölf Kapitel unter [`plan/`](plan/README.md),
+   Foliensatz für den 50-Minuten-Vortrag unter `output/Kaffee_Traceability_EUDR.pptx`
+   (erzeugt aus `scripts/build_kaffee_praesentation.js`, Sprechtexte in den Foliennotizen).
+2. **Werkstudenten-Bewerbung** — siehe unten.
+
+## Präsentation neu erzeugen
+
+```bash
+npm install pptxgenjs
+node scripts/build_kaffee_praesentation.js     # schreibt output/ und gibt eine Zeitprobe aus
+python3 scripts/pptx_qa.py                     # prüft Textüberlauf, Ränder und Notizen
+```
+
+---
+
 # Werkstudenten-Bewerbung – Wirtschaftsingenieur (mit Schweiz-Bezug)
 
 ATS-/AI-Filter-optimierte Bewerbungsunterlagen für Werkstudenten-Stellen bei gut zahlenden

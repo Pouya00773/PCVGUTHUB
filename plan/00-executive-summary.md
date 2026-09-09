@@ -1,6 +1,13 @@
 # 00 — Executive Summary
 
-**Stand:** 08.09.2026 · **Adressat:** Geschäftsführung · **Entscheidungsbedarf:** Freigabe Phase 0 (sofort), Grundsatzentscheid Phase 1/2 (Q4 2026)
+**Stand:** 09.09.2026 · **Adressat:** Geschäftsführung · **Entscheidungsbedarf:** Freigabe Phase 0 (sofort), Grundsatzentscheid Phase 1/2 (Q4 2026)
+
+> **Fallrahmen:** Die Rösterei ist ein **konstruiertes Fallunternehmen** im Rahmen eines
+> Hochschulprojekts. Kennzahlen und Beschaffungsstruktur sind gesetzte Annahmen, keine
+> Erhebung — sie sind bewusst so gewählt, dass der schwierigste Fall entsteht: gleichzeitig
+> zwei regulatorische Rollen und die kürzere der beiden EUDR-Fristen. Die direkte Ansprache
+> („ihr habt 16 Wochen") ist die Form eines Beratungsberichts, keine Aussage über ein reales
+> Unternehmen. Jede Aussage trägt ihre Belastbarkeit: **[recherchiert]** · **[angenommen]** · **[geschätzt]**.
 
 ---
 

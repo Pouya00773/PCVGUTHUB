@@ -3,3 +3,4 @@ output/*.txt
 *.pyc
 __pycache__/
 .~lock*
+node_modules/
